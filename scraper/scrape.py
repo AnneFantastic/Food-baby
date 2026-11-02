@@ -11,7 +11,7 @@ DATA, SEEN = ROOT / "data" / "recipes.json", ROOT / "data" / "seen.json"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; PantryRecipesBot/1.0; personal recipe finder)", "Accept": "text/html,application/xml,application/json;q=0.9,*/*;q=0.8"}
 LOG = []
 def log(m): print(m); LOG.append(m)
-SCHEMA = 2                                      # bump to re-fetch everything
+SCHEMA = 3                                      # bump to re-fetch everything
 MAX_NEW = int(os.environ.get("MAX_NEW", 400))   # posts fetched per run
 DELAY = 1.0                                     # seconds between page requests
 
@@ -178,7 +178,7 @@ def scrape_page(url, src):
     return {"url": url, "title": title, "image": first(rec.get("image")), "source": src["name"],
             "author": src["author"], "minutes": minutes(rec.get("totalTime")),
             "servings": str((rec.get("recipeYield") or [""])[0] if isinstance(rec.get("recipeYield"), list) else rec.get("recipeYield") or ""),
-            "tags": tag_recipe(title, cats, rec.get("description", ""), ings), "ing": ings, "desc": short(rec.get("description", "")), "subs": parse_subs(soup), "prep": parse_prep(soup, rec)}
+            "tags": tag_recipe(title, cats, rec.get("description", ""), ings), "ing": ings, "t": int(time.time()), "desc": short(rec.get("description", "")), "subs": parse_subs(soup), "prep": parse_prep(soup, rec)}
 
 def robots_for(base):
     try:
@@ -212,19 +212,83 @@ def discover(base, hints):
     log("  trying the WordPress REST API instead")
     u = rest_urls(base); log(f"  REST API: {len(u)} URLs"); return u
 
+EXTRA = {"High-Protein", "Oil-Free", "Gluten-Free"}   # keyword tags kept alongside the blog's own categories
+NOT_RECIPES = {"about", "subscribe", "links", "contact", "recipes", "vegan-meal-plans", "disclaimer", "privacy-policy", "accessibility", "copyright"}
+
+def clean_cat(n):
+    n = re.sub(r"\s+", " ", n).strip()
+    if re.search(r"recipes?$", n, re.I):
+        while re.match(r"(healthy|vegan|easy)\s+", n, re.I): n = re.sub(r"^(healthy|vegan|easy)\s+", "", n, flags=re.I)
+        n = re.sub(r"\s+recipes?$", "", n, flags=re.I)
+    return n or "Other"
+
+def clean_group(t):
+    t = re.sub(r"(?i)^browse by\s+", "", t.strip().rstrip(":")).replace(", &", " &")
+    return re.sub(r"(?i)\s+recipes$", "", t)
+
+def parse_categories(html, base):
+    """Reads the blog's own category list (e.g. /recipes/) -> [{name, group, url}]."""
+    soup = BeautifulSoup(html, "html.parser"); cats = []
+    h = next((x for x in soup.find_all("h2") if re.search(r"browse by|dressings|breakfast|holiday", x.get_text(), re.I)), None)
+    group = clean_group(h.get_text(" ", strip=True)) if h else None
+    for el in (h.find_all_next(["h2", "a"]) if h else []):
+        if el.name == "h2":
+            t = el.get_text(" ", strip=True)
+            if re.search(r"nutrition", t, re.I): break
+            group = clean_group(t); continue
+        href = el.get("href", "")
+        if group and not el.find_parent(["nav", "header", "footer"]) and re.fullmatch(re.escape(base) + r"/[a-z0-9-]+/", href):
+            cats.append({"name": clean_cat(el.get_text(" ", strip=True)), "group": group, "url": href})
+    return list({c["url"]: c for c in cats}.values())
+
+def category_links(html, base, skip):
+    """Recipe links on one category page (stops before the sidebar)."""
+    soup = BeautifulSoup(html, "html.parser"); h1 = soup.find("h1"); out = []
+    for el in (h1.find_all_next(["h3", "a"]) if h1 else []):
+        if el.name == "h3":
+            if re.match(r"(?i)\s*(hey|about)", el.get_text()): break
+            continue
+        href = el.get("href", "").split("#")[0]
+        if el.find_parent(["nav", "header", "footer", "aside"]) or href in skip: continue
+        m = re.fullmatch(re.escape(base) + r"/([a-z0-9-]+)/", href)
+        if m and m.group(1) not in NOT_RECIPES and href not in out: out.append(href)
+    return out
+
+def crawl_categories(base, path, source):
+    cmap, meta = {}, []
+    try: cats = parse_categories(get(base + path), base)
+    except Exception as e: log(f"  categories page: {e}"); return cmap, meta
+    log(f"  categories page: {len(cats)} categories")
+    skip = {c["url"] for c in cats}
+    for c in cats:
+        time.sleep(DELAY)
+        try: links = category_links(get(c["url"]), base, skip)
+        except Exception as e: log(f"  category {c['name']}: {e}"); continue
+        meta.append({"name": c["name"], "group": c["group"], "source": source})
+        for u in links: cmap.setdefault(u, []).append(c["name"])
+    log(f"  category pages listed {len(cmap)} links")
+    return cmap, meta
+
 def main():
     sources = json.loads((ROOT / "sources.json").read_text())
     recipes = {r["url"]: r for r in json.loads(DATA.read_text())} if DATA.exists() else {}
     seen = json.loads(SEEN.read_text()) if SEEN.exists() else {}
     if seen.get("__v") != SCHEMA: seen = {"__v": SCHEMA}
-    budget = MAX_NEW
+    budget, all_meta = MAX_NEW, []
+    def need(u, m):
+        if m: return seen.get(u) != m
+        if u in recipes: return time.time() - recipes[u].get("t", 0) > 30 * 86400
+        return u not in seen
     for src in sources:
         base = src["url"].rstrip("/"); log(f"{src['name']}:")
         rp, hints = robots_for(base)
+        cmap, meta = crawl_categories(base, src["categories_page"], src["name"]) if src.get("categories_page") else ({}, [])
+        all_meta += meta
         urls = {u: m for u, m in discover(base, hints).items() if "/web-stories/" not in u}
+        for u in cmap: urls.setdefault(u, "")
         if not urls:
             log("  !! Found no pages, so nothing was changed for this blog."); continue
-        todo = [(u, m) for u, m in urls.items() if not (seen.get(u) == m and (u in recipes or m))]
+        todo = [(u, m) for u, m in urls.items() if need(u, m)]
         log(f"  {len(urls)} pages, {len(todo)} to check")
         added = nonrecipe = errors = streak = 0
         for url, mod in todo:
@@ -243,8 +307,14 @@ def main():
         log(f"  added/updated {added} recipes; {nonrecipe} pages were not recipes; {errors} errors")
         live = set(urls)  # drop recipes removed from the blog
         recipes = {u: r for u, r in recipes.items() if r["source"] != src["name"] or u in live}
+        if cmap:
+            for r in recipes.values():
+                if r["source"] == src["name"]:
+                    r["cats"] = sorted(set(cmap.get(r["url"], [])))
+                    if r["cats"]: r["tags"] = [t for t in r["tags"] if t in EXTRA]
     DATA.write_text(json.dumps(sorted(recipes.values(), key=lambda r: r["title"]), ensure_ascii=False, indent=0))
     SEEN.write_text(json.dumps(seen))
+    if all_meta: (ROOT / "data" / "categories.json").write_text(json.dumps(all_meta, ensure_ascii=False, indent=0))
     log(f"Total recipes saved: {len(recipes)}")
     (ROOT / "data" / "status.txt").write_text(time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()) + "\n" + "\n".join(LOG) + "\n")
 
