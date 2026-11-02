@@ -1,0 +1,82 @@
+[
+{
+"name": "Bean",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Lentil",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Chickpea",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Tofu",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Tempeh",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Pasta",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Quinoa",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Cruciferous",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Cabbage",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Chia Pudding",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Tofu Basics",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Soup & Stew",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Dinner",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Side Dish",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Green Sauce",
+"group": "Dressings & Sides",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Holiday",
+"group": "Holiday",
+"source": "Cooking for Peanuts"
+}
+]

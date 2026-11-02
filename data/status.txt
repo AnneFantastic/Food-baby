@@ -1,0 +1,34 @@
+2026-11-02 20:39 UTC
+Cooking for Peanuts:
+  categories page: 36 categories
+  category Beetroot: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/beetroot-recipes/
+  category White Bean: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/white-bean-recipes/
+  category Burger: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-burger-recipes/
+  category Salad: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-salad-recipes/
+  category Sandwich: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-sandwich-recipes/
+  category Veggie Bowls: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/veggie-bowls-recipes/
+  category Asian: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-asian-recipes/
+  category Curry: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-curry-recipes/
+  category Easy Vegan Recipes for Protein: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-protein-recipes/
+  category High-Protein Vegan Meals: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/high-protein-vegan-meals/
+  category Meat: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-meat-recipes/
+  category Bread: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/healthy-bread-recipes/
+  category Cholesterol Lowering Meals: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/cholesterol-lowering-meals/
+  category Quinoa Salad: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/quinoa-salad-recipes/
+  category Dressing: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-dressing-recipes/
+  category Vegan Dips & Condiments: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-condiment-recipes/
+  category Breakfast: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-breakfast-recipes/
+  category Healthy Vegan Treats: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/healthy-vegan-treats/
+  category Health Drinks: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/beverage-recipes/
+  category Thanksgiving: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-thanksgiving-recipes/
+  category pages listed 428 links
+  sitemap https://cookingforpeanuts.com/sitemap_index.xml: 557 URLs
+  557 pages, 557 to check
+  error https://cookingforpeanuts.com/roasted-tofu-veggies-with-dijon-dressing/: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/roasted-tofu-veggies-with-dijon-dressing/
+  error https://cookingforpeanuts.com/vegan-mexican-quinoa-bake/: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-mexican-quinoa-bake/
+  error https://cookingforpeanuts.com/homemade-baked-potato-chips/: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/homemade-baked-potato-chips/
+  error https://cookingforpeanuts.com/15-minute-lentil-veggie-curry/: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/15-minute-lentil-veggie-curry/
+  error https://cookingforpeanuts.com/vegan-pasta-bake-with-mushrooms/: 429 Client Error: Too Many Requests for url: https://cookingforpeanuts.com/vegan-pasta-bake-with-mushrooms/
+  stopped at this run's limit; run it again to continue
+  added/updated 79 recipes; 2 pages were not recipes; 319 errors
+Total recipes saved: 80
