@@ -32,15 +32,21 @@ input[type=text],select{width:100%;padding:9px 11px;border:1px solid var(--line)
 .have{color:var(--leaf);font-weight:600}.miss{color:var(--miss)}
 .swap{background:var(--swapbg);color:var(--swap);border-radius:6px;padding:3px 8px;font-size:13px}
 .tags{font-size:12px;color:var(--mute);margin-top:auto}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--leaf);flex:none}
+.ticks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:2px 12px;max-height:300px;overflow:auto;margin-top:10px;border:1px solid var(--line);border-radius:7px;padding:8px}
+.ticks label{display:flex;gap:8px;align-items:center;font-weight:400;margin:0;padding:3px 0;cursor:pointer}.ticks small{color:var(--mute)}
 .empty{padding:30px;text-align:center;color:var(--mute)}
 </style></head><body><div class="wrap">
 <h1>Pantry Recipes</h1>
 <p class="sub">Add what you have. See what you can make, what you're missing, and which swaps cover the gap.</p>
 <div class="panel">
- <label for="add">What's in your kitchen?</label>
- <input type="text" id="add" placeholder="Type an ingredient and press Enter (e.g. lentils, carrots, tofu)" autocomplete="off">
- <div class="chips" id="pantry" aria-live="polite"></div>
- <p class="by" style="margin:10px 0 0">Always assumed: <span id="staples"></span> <button class="link" id="editStaples">edit</button></p>
+ <label for="find">What's in your kitchen? Tick everything you have.</label>
+ <div class="row"><div style="flex:3"><input type="text" id="find" placeholder="Filter the list (e.g. lentil)" autocomplete="off"></div>
+ <div><label style="font-weight:400;margin:0"><input type="checkbox" id="onlyTicked"> Show only ticked</label></div>
+ <div style="flex:0;white-space:nowrap"><button class="link" id="clear">Clear all</button></div></div>
+ <div class="ticks" id="ticks" role="group" aria-label="Ingredients"></div>
+ <p class="by" id="tickinfo" aria-live="polite"></p>
+ <p class="by" style="margin:0">Always assumed: <span id="staples"></span> <button class="link" id="editStaples">edit</button></p>
 </div>
 <div class="panel"><div class="row">
  <div><label for="miss">Missing at most</label><select id="miss"><option value="99">Any number</option><option value="0">0 (I can make it now)</option><option value="1">1 ingredient</option><option value="2" selected>2 ingredients</option><option value="3">3 ingredients</option><option value="5">5 ingredients</option></select></div>
@@ -60,7 +66,7 @@ const load=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){re
 const stem=w=>w.replace(/ies$/,'y').replace(/(o|ch|sh|x)es$/,'$1').replace(/s$/,'');
 const words=t=>t.toLowerCase().replace(/[^a-z\s]/g,' ').split(/\s+/).filter(Boolean).map(stem);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let R=[],pantry=load('pantry',[]),staples=load('staples',['salt','black pepper','water','oil']),tagsOn=new Set(),shown=48;
+let R=[],pantry=load('pantry2',[]),staples=load('staples',['salt','black pepper','water','oil']),tagsOn=new Set(),shown=48;
 const has=(nw,items)=>items.some(i=>i.every(w=>nw.includes(w)));
 function analyse(r){
   const P=pantry.map(words),S=staples.map(words),swaps=[],missing=[];let have=0,total=0;
@@ -82,7 +88,7 @@ function render(){
   if(pantry.length)L=L.filter(a=>a.missing.length<=maxMiss);
   const so=$('#sort').value,m=a=>a.r.minutes??999;
   L.sort((a,b)=>so==='az'?a.r.title.localeCompare(b.r.title):so==='time'?m(a)-m(b):so==='few'?a.total-b.total:(pantry.length?a.missing.length-b.missing.length:0)||a.total-b.total);
-  $('#count').textContent=`${L.length} recipe${L.length==1?'':'s'}`+(pantry.length?'':' · add ingredients above to match your kitchen');
+  $('#count').textContent=`${L.length} recipe${L.length==1?'':'s'}`+(pantry.length?'':' · tick ingredients above to match your kitchen');
   $('#grid').innerHTML=L.slice(0,shown).map(({r,have,total,swaps,missing})=>`<article class="card">${r.image?`<img src="${esc(r.image)}" alt="" loading="lazy">`:''}<div class="cb">
    <h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></h3>
    <div class="by">by ${esc(r.author)} · ${esc(r.source)}</div>
@@ -92,13 +98,27 @@ function render(){
    <div class="tags">${r.tags.map(esc).join(' · ')}</div></div></article>`).join('')||'<div class="empty">No matches. Try allowing more missing ingredients or removing a filter.</div>';
   $('#more').hidden=L.length<=shown;
 }
-function chips(){
-  $('#pantry').innerHTML=pantry.map((p,i)=>`<button class="chip pitem" data-i="${i}" aria-label="Remove ${esc(p)}">${esc(p)}</button>`).join('');
-  $('#staples').textContent=staples.join(', ');
+const PREP=new Set('minced chopped grated fresh dried ground sliced diced large small medium cloves clove frozen cooked canned raw whole finely roughly thinly extra virgin neutral flavored for more'.split(' '));
+const core=n=>n.toLowerCase().replace(/[^a-z\s]/g,' ').split(/\s+/).filter(x=>x&&!PREP.has(x)).join(' ');
+let LIST=[];
+function buildList(){
+  const S=staples.map(words),m=new Map();
+  const add=(name,sub)=>{const c=core(name);if(!c)return;const w=words(c);if(has(w,S))return;const k=w.join(' ');
+    const e=m.get(k)||{name:c,n:0,sub:true};e.n++;if(!sub)e.sub=false;m.set(k,e)};
+  for(const r of R){for(const i of r.ing){if(!i.opt)i.names.forEach(n=>add(n,false))}(r.subs||[]).forEach(s=>s.use.forEach(u=>add(u,true)))}
+  LIST=[...m.values()].sort((a,b)=>b.n-a.n||a.name.localeCompare(b.name));
 }
-$('#add').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.value.trim()){e.target.value.split(',').map(s=>s.trim()).filter(Boolean).forEach(s=>{if(!pantry.includes(s))pantry.push(s)});e.target.value='';save('pantry',pantry);chips();render()}});
-$('#pantry').addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b){pantry.splice(+b.dataset.i,1);save('pantry',pantry);chips();render()}});
-$('#editStaples').onclick=()=>{const v=prompt('Things you always have (comma separated):',staples.join(', '));if(v!==null){staples=v.split(',').map(s=>s.trim()).filter(Boolean);save('staples',staples);chips();render()}};
+function info(){$('#tickinfo').textContent=`${pantry.length} ticked · ${LIST.length} ingredients found in the recipes (number = recipes using it)`;$('#staples').textContent=staples.join(', ')}
+function renderList(){
+  const f=$('#find').value.toLowerCase().trim(),only=$('#onlyTicked').checked;
+  $('#ticks').innerHTML=LIST.filter(e=>(!f||e.name.includes(f))&&(!only||pantry.includes(e.name))).slice(0,500).map(e=>`<label><input type="checkbox" data-n="${esc(e.name)}" ${pantry.includes(e.name)?'checked':''}><span>${esc(e.name)} <small>${e.sub?'swap · ':''}${e.n}</small></span></label>`).join('')||'<span class="by">No ingredients match.</span>';
+  info();
+}
+$('#ticks').addEventListener('change',e=>{const n=e.target.dataset.n;if(n==null)return;
+  pantry=e.target.checked?[...new Set([...pantry,n])]:pantry.filter(p=>p!==n);save('pantry2',pantry);info();shown=48;render()});
+$('#find').addEventListener('input',renderList);$('#onlyTicked').addEventListener('change',renderList);
+$('#clear').onclick=()=>{pantry=[];save('pantry2',pantry);renderList();shown=48;render()};
+$('#editStaples').onclick=()=>{const v=prompt('Things you always have (comma separated):',staples.join(', '));if(v!==null){staples=v.split(',').map(s=>s.trim()).filter(Boolean);save('staples',staples);buildList();renderList();render()}};
 ['miss','sort','src','q'].forEach(id=>$('#'+id).addEventListener('input',()=>{shown=48;render()}));
 $('#more').onclick=()=>{shown+=48;render()};
 $('#tags').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const t=b.dataset.t;tagsOn.has(t)?tagsOn.delete(t):tagsOn.add(t);b.classList.toggle('on');shown=48;render()});
@@ -106,5 +126,5 @@ fetch('data/recipes.json').then(r=>r.json()).then(d=>{R=d;
   const cnt={};d.forEach(r=>r.tags.forEach(t=>cnt[t]=(cnt[t]||0)+1));
   $('#tags').innerHTML=Object.keys(cnt).sort().map(t=>`<button class="chip" data-t="${esc(t)}">${esc(t)} (${cnt[t]})</button>`).join('');
   [...new Set(d.map(r=>r.source))].forEach(s=>$('#src').insertAdjacentHTML('beforeend',`<option>${esc(s)}</option>`));
-  chips();render()}).catch(()=>$('#grid').innerHTML='<div class="empty">Could not load data/recipes.json.</div>');
+  buildList();renderList();render()}).catch(()=>$('#grid').innerHTML='<div class="empty">Could not load data/recipes.json.</div>');
 </script></body></html>
