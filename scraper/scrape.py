@@ -8,7 +8,9 @@ from bs4 import BeautifulSoup
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SEEN = ROOT / "data" / "recipes.json", ROOT / "data" / "seen.json"
-UA = {"User-Agent": "PantryRecipesBot/1.0 (personal recipe finder; respects robots.txt)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; PantryRecipesBot/1.0; personal recipe finder)", "Accept": "text/html,application/xml,application/json;q=0.9,*/*;q=0.8"}
+LOG = []
+def log(m): print(m); LOG.append(m)
 SCHEMA = 2                                      # bump to re-fetch everything
 MAX_NEW = int(os.environ.get("MAX_NEW", 400))   # posts fetched per run
 DELAY = 1.0                                     # seconds between page requests
@@ -41,7 +43,7 @@ def sitemap_urls(url, depth=0):
         loc = re.search(r"<loc>(.*?)</loc>", blk).group(1).strip()
         mod = (re.search(r"<lastmod>(.*?)</lastmod>", blk) or [None, ""])[1]
         if loc.endswith(".xml"):
-            if depth < 2 and not re.search(r"page|categor|tag|author|attachment|product", loc):
+            if depth < 2 and not re.search(r"page|categor|tag|author|attachment|product|web-stor", loc):
                 out.update(sitemap_urls(loc, depth + 1))
         else:
             out[loc] = mod
@@ -178,6 +180,38 @@ def scrape_page(url, src):
             "servings": str((rec.get("recipeYield") or [""])[0] if isinstance(rec.get("recipeYield"), list) else rec.get("recipeYield") or ""),
             "tags": tag_recipe(title, cats, rec.get("description", ""), ings), "ing": ings, "desc": short(rec.get("description", "")), "subs": parse_subs(soup), "prep": parse_prep(soup, rec)}
 
+def robots_for(base):
+    try:
+        r = requests.get(base + "/robots.txt", headers=UA, timeout=20)
+        if r.status_code == 200:
+            rp = RobotFileParser(); rp.parse(r.text.splitlines())
+            return rp, re.findall(r"(?im)^sitemap:\s*(\S+)", r.text)
+        log(f"  robots.txt: HTTP {r.status_code} (no rules to follow)")
+    except Exception as e: log(f"  robots.txt: {e}")
+    return None, []
+
+def rest_urls(base):
+    out = {}
+    for page in range(1, 80):
+        try:
+            r = requests.get(base + "/wp-json/wp/v2/posts", params={"per_page": 100, "page": page, "_fields": "link,modified"}, headers=UA, timeout=30)
+        except Exception as e: log(f"  REST: {e}"); break
+        if r.status_code != 200: log(f"  REST page {page}: HTTP {r.status_code}"); break
+        items = r.json()
+        if not items: break
+        for it in items: out[it["link"]] = it.get("modified", "")
+    return out
+
+def discover(base, hints):
+    tries = list(dict.fromkeys(hints + [base + p for p in ("/sitemap_index.xml", "/wp-sitemap.xml", "/sitemap.xml")]))
+    for sm in tries:
+        try:
+            u = sitemap_urls(sm); log(f"  sitemap {sm}: {len(u)} URLs")
+            if u: return u
+        except Exception as e: log(f"  sitemap {sm}: {e}")
+    log("  trying the WordPress REST API instead")
+    u = rest_urls(base); log(f"  REST API: {len(u)} URLs"); return u
+
 def main():
     sources = json.loads((ROOT / "sources.json").read_text())
     recipes = {r["url"]: r for r in json.loads(DATA.read_text())} if DATA.exists() else {}
@@ -185,28 +219,33 @@ def main():
     if seen.get("__v") != SCHEMA: seen = {"__v": SCHEMA}
     budget = MAX_NEW
     for src in sources:
-        base = src["url"].rstrip("/")
-        rp = RobotFileParser(base + "/robots.txt")
-        try: rp.read()
-        except Exception: pass
-        urls = {}
-        for sm in ("/sitemap_index.xml", "/wp-sitemap.xml", "/sitemap.xml"):
-            try: urls = sitemap_urls(base + sm); break
-            except Exception: continue
-        print(f"{src['name']}: {len(urls)} URLs in sitemap")
-        for url, mod in urls.items():
-            if seen.get(url) == mod and (url in recipes or mod): continue
-            if budget <= 0: break
-            if not rp.can_fetch(UA["User-Agent"], url): continue
+        base = src["url"].rstrip("/"); log(f"{src['name']}:")
+        rp, hints = robots_for(base)
+        urls = {u: m for u, m in discover(base, hints).items() if "/web-stories/" not in u}
+        if not urls:
+            log("  !! Found no pages, so nothing was changed for this blog."); continue
+        todo = [(u, m) for u, m in urls.items() if not (seen.get(u) == m and (u in recipes or m))]
+        log(f"  {len(urls)} pages, {len(todo)} to check")
+        added = nonrecipe = errors = streak = 0
+        for url, mod in todo:
+            if budget <= 0: log("  stopped at this run's limit; run it again to continue"); break
+            if rp and not rp.can_fetch("PantryRecipesBot", url): continue
             budget -= 1; time.sleep(DELAY)
             try: r = scrape_page(url, src)
-            except Exception as e: print("skip", url, e); continue
-            seen[url] = mod
-            if r: recipes[r["url"]] = r; print("added", r["title"])
+            except Exception as e:
+                errors += 1; streak += 1
+                if errors <= 5: log(f"  error {url}: {e}")
+                if streak >= 8: log("  !! The site keeps refusing requests (see errors above). Stopping."); break
+                continue
+            streak = 0; seen[url] = mod
+            if r: recipes[r["url"]] = r; added += 1
+            else: nonrecipe += 1
+        log(f"  added/updated {added} recipes; {nonrecipe} pages were not recipes; {errors} errors")
         live = set(urls)  # drop recipes removed from the blog
         recipes = {u: r for u, r in recipes.items() if r["source"] != src["name"] or u in live}
     DATA.write_text(json.dumps(sorted(recipes.values(), key=lambda r: r["title"]), ensure_ascii=False, indent=0))
     SEEN.write_text(json.dumps(seen))
-    print(f"Done: {len(recipes)} recipes")
+    log(f"Total recipes saved: {len(recipes)}")
+    (ROOT / "data" / "status.txt").write_text(time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()) + "\n" + "\n".join(LOG) + "\n")
 
 if __name__ == "__main__": main()

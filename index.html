@@ -5,162 +5,119 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--berry:#922D50;--ghost:#FEF9FF;--sage:#6BAA75;--olive:#3E5622;--ever:#172815;--ink:#172815;--mute:#55665a;--amber:#6BAA75;--grass:#3E5622}
+:root{--white:#FEF9FF;--ever:#172815;--teal:#708D81;--tint:#eef3f0;--tint2:#dde7e2;--line:#dfe6e2;--mute:#5a6a60}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ghost);color:var(--ink);font:17px/1.5 'Bodoni Moda',Georgia,serif}
-h1,h2,h3,.script{font-family:'Lobster Two',cursive;font-weight:700}
-.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
-aside{position:sticky;top:0;height:100vh;background:var(--berry);color:var(--ghost);padding:22px 14px;display:flex;flex-direction:column;gap:6px;border-right:8px solid var(--amber)}
-.logo{font:700 30px/1 'Lobster Two',cursive;margin:0 6px 18px}
-aside a{display:flex;gap:10px;align-items:center;color:inherit;text-decoration:none;padding:9px;border-radius:12px;border:2px solid transparent}
-aside a:hover{border-color:var(--ghost)}aside a.on{background:var(--ghost);color:var(--berry)}
-.num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--amber);color:var(--ink);display:grid;place-items:center;font:700 19px 'Lobster Two',cursive}
-aside .done .num{background:var(--grass)}aside b{font:700 20px 'Lobster Two',cursive;display:block;line-height:1.1}aside small{font-size:13px;opacity:.9}
-.hero{background:repeating-linear-gradient(135deg,var(--berry) 0 22px,#a52c5e 22px 44px);color:var(--ghost);padding:46px 32px 40px}
-.hero h1{font-size:clamp(46px,8vw,88px);margin:0;line-height:.95;text-shadow:4px 4px 0 var(--ink)}
-.hero p{max-width:560px;font-size:19px;margin:14px 0 0}
-.stripe{height:18px;background:repeating-linear-gradient(90deg,var(--amber) 0 30px,var(--grass) 30px 60px,var(--sage) 60px 90px,var(--berry) 90px 120px)}
-.band{padding:34px 32px 40px}.sage{background:var(--sage)}.grass{background:var(--grass)}.amber{background:var(--amber)}
-.band h2{font-size:clamp(32px,5vw,48px);margin:0 0 4px;display:flex;gap:12px;align-items:center;line-height:1}
-.band h2 .num{width:46px;height:46px;font-size:26px;background:var(--ink);color:var(--ghost)}
-.lead{margin:0 0 18px;max-width:640px}
-.panel{background:var(--ghost);border:3px solid var(--ink);border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:6px 6px 0 var(--ink)}
-.panel h3{margin:0 0 6px;font-size:26px;color:var(--berry)}.panel ul{margin:6px 0;padding-left:20px}
-label{font-weight:600;font-size:15px;display:block;margin-bottom:5px}
-input,select,button{font:inherit;color:inherit}
-input[type=text],select{width:100%;padding:8px 10px;border:2px solid var(--ink);border-radius:8px;background:#fff}
-input[type=checkbox]{width:18px;height:18px;accent-color:var(--berry);flex:none}
-:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
-.row{display:flex;gap:12px;flex-wrap:wrap;align-items:end}.row>div{flex:1;min-width:150px}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
-.chip{border:2px solid var(--ink);background:var(--ghost);border-radius:99px;padding:3px 13px;font-size:15px;cursor:pointer}
-.chip.on{background:var(--berry);color:var(--ghost);font-weight:600}
-.btn{background:var(--berry);color:var(--ghost);border:2px solid var(--ink);border-radius:10px;padding:6px 14px;font:700 19px 'Lobster Two',cursive;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
-.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.btn.alt{background:var(--amber);color:var(--ink)}
-.link{background:none;border:0;color:var(--berry);text-decoration:underline;cursor:pointer;padding:0;font-size:15px}
-.ticks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:2px 12px;max-height:320px;overflow:auto;margin-top:10px;border:2px solid var(--ink);border-radius:8px;padding:8px;background:#fff}
-.ticks label{display:flex;gap:8px;align-items:center;font-weight:400;margin:0;padding:3px 0;cursor:pointer}.ticks small,.by{color:var(--mute);font-size:14px}
-.count{margin:6px 0 14px;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-.card{background:var(--ghost);border:3px solid var(--ink);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:6px 6px 0 var(--berry)}
-.card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--sage);border-bottom:3px solid var(--ink)}
-.cb{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
-.cb h3{font:700 22px/1.15 'Bodoni Moda',serif;margin:0}.cb h3 a{color:inherit;text-decoration:none}.cb h3 a:hover{color:var(--berry);text-decoration:underline}
-.have{color:#1f6b2e;font-weight:700}.miss{color:var(--berry);font-weight:600}
-.swap{background:var(--amber);border-radius:6px;padding:2px 8px;font-size:14px;font-weight:600}
-.tags{font-size:13px;color:var(--mute);margin-top:auto}
-.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:14px}
-.day{background:var(--ghost);border:3px solid var(--ink);border-radius:14px;padding:12px;box-shadow:5px 5px 0 var(--ink)}
-.day h3{margin:0 0 6px;font-size:26px;color:var(--berry)}.day label{margin-bottom:8px}.day select{font-size:14px;text-overflow:ellipsis}
-.prep{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;align-items:start}
-.empty{padding:24px;text-align:center}
-footer{padding:22px 32px;background:var(--ink);color:var(--ghost);font-size:14px}
-@media(max-width:820px){.app{grid-template-columns:1fr}aside{position:sticky;z-index:5;height:auto;flex-direction:row;overflow-x:auto;padding:8px;border-right:0;border-bottom:6px solid var(--amber)}.logo,aside small{display:none}aside a{padding:5px 9px;white-space:nowrap}.band{padding:26px 14px 32px}.hero{padding:30px 16px}}
-aside a.basket{background:var(--amber);color:var(--ink);margin-top:auto;border-color:var(--ink)}aside a.basket .num{background:var(--ink);font-size:17px}
-#shop{position:fixed;inset:0;z-index:50;background:var(--ghost);overflow:auto;display:flex;flex-direction:column}#shop[hidden]{display:none}
-.shophead{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:14px 20px;background:var(--berry);color:var(--ghost)}
-.logo2{font:700 32px 'Lobster Two',cursive;margin-right:auto}
-.shopbody{padding:22px 20px 40px;max-width:1100px;margin:0 auto;width:100%}
-.shopbar{position:sticky;bottom:0;background:var(--amber);border-top:3px solid var(--ink);padding:10px 20px;display:flex;gap:14px;align-items:center;justify-content:space-between;margin-top:auto;font-weight:600}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.li{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:9px 0;border-bottom:1px solid #e6d3de}
-.li label{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:0;font-size:17px}.li b{color:var(--berry)}
-.pick{display:flex;gap:12px;align-items:center;padding:4px 0;flex-wrap:wrap}.pick span{flex:1;min-width:180px}
-input[type=number]{width:64px;padding:4px 6px;border:2px solid var(--ink);border-radius:8px;background:#fff}
-@media(max-width:820px){aside a.basket{margin-top:0}}
-/* ---- Shopping mode: its own look (same palette + fonts, different layout language) ---- */
-#shop{background-color:var(--ghost);background-image:linear-gradient(rgba(107,170,117,.26) 50%,transparent 50%),linear-gradient(90deg,rgba(107,170,117,.26) 50%,transparent 50%);background-size:44px 44px}
-#shop .stripe{display:none}
-#shop .shophead{position:relative;flex-direction:column;gap:10px;justify-content:center;background:var(--sage);color:var(--ink);padding:20px 16px 18px;border-radius:0 0 32px 32px;box-shadow:0 5px 0 rgba(23,40,21,.15)}
-#shop .logo2{margin:0;font-size:38px;text-align:center}
-#shop .shophead .chip{border:0;padding:6px 20px;font-weight:600;background:rgba(254,249,255,.55)}
-#shop .shophead .chip.on{background:var(--ghost);color:var(--berry);box-shadow:0 3px 0 rgba(23,40,21,.18)}
-#shop .btn{border:0;box-shadow:none;border-radius:99px;padding:8px 20px}
-#shClose{position:absolute;top:12px;right:14px;font-size:17px;padding:6px 16px}
-#shop .shopbody{max-width:760px;padding:26px 16px 30px}
-#shop input[type=text],#shop select{border:0;border-radius:99px;padding:10px 16px;box-shadow:0 2px 0 rgba(23,40,21,.15)}
+body{margin:0;background:var(--white);color:var(--ever);font:500 16px/1.6 'Quicksand',system-ui,sans-serif}
+button,input,select{font:inherit;color:inherit}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.01em}
+a{color:inherit}:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.top{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 28px}
+.brand{font-size:21px;font-weight:700;letter-spacing:.01em;text-align:right}
+.shopbtn{display:flex;align-items:center;gap:10px;background:var(--ever);color:var(--white);border:0;border-radius:99px;padding:9px 20px 9px 16px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.shopbtn svg{width:20px;height:20px}.shopbtn small{font-size:11px;letter-spacing:.04em;text-transform:none;font-weight:600;opacity:.8}
+.shopbtn:hover{background:#243a21}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.intro{padding:56px 0 28px}.intro h1{font-size:clamp(34px,5vw,54px);line-height:1.05}.intro p{color:var(--mute);max-width:540px;margin:12px 0 0;font-size:18px}
+section{padding:28px 0}section+section{border-top:1px solid var(--line)}
+h2{font-size:24px;margin-bottom:4px}.lead{color:var(--mute);margin:0 0 18px}
+label{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:6px}
+input[type=text],select{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
+input[type=text]:hover,select:hover{border-color:var(--teal)}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--ever);flex:none}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:end}.row>div{flex:1;min-width:150px}
+.btn{background:transparent;color:var(--ever);border:1px solid var(--ever);border-radius:99px;padding:8px 20px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--ever);color:var(--white)}.btn.solid{background:var(--ever);color:var(--white)}.btn.solid:hover{background:#243a21}.btn:disabled{opacity:.4;cursor:not-allowed}
+.link{background:none;border:0;color:var(--ever);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{border:1px solid var(--line);background:var(--white);color:var(--ever);border-radius:99px;padding:5px 15px;font-size:14px;font-weight:600;cursor:pointer}
+.chip:hover{border-color:var(--teal)}.chip.on{background:var(--ever);border-color:var(--ever);color:var(--white)}
+.seg{display:inline-flex;border:1px solid var(--ever);border-radius:99px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:9px 20px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.seg button.on{background:var(--ever);color:var(--white)}
+details.pantry summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+details.pantry summary::-webkit-details-marker{display:none}details.pantry summary::after{content:"Hide";font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+details.pantry:not([open]) summary::after{content:"Show"}
+.tools{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:14px 0 0}.tools>div:first-child{flex:1;min-width:200px}
+.ticks{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 16px;max-height:330px;overflow:auto;margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--tint)}
+.ticks label{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ever);margin:0;padding:4px 0;cursor:pointer}
+.ticks small,.by{color:var(--mute);font-size:13.5px}
+.count{margin:6px 0 18px;font-weight:600;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:36px 24px}
+.card{display:flex;flex-direction:column}.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;background:var(--tint);margin-bottom:12px}
+.cb{display:flex;flex-direction:column;gap:5px;flex:1}.cb h3{font-size:17px;font-weight:700;line-height:1.3}.cb h3 a{text-decoration:none}.cb h3 a:hover{text-decoration:underline}
+.cb .btn{margin-top:8px;align-self:flex-start}
+.have{font-weight:700}.miss{color:var(--mute)}
+.swap{background:var(--tint2);border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600;align-self:flex-start}
+.tags{font-size:12.5px;color:var(--mute);margin-top:auto;padding-top:4px}
+.empty{padding:36px;text-align:center;color:var(--mute);grid-column:1/-1}
+#planner{background:var(--tint);border-radius:18px;padding:26px;margin:8px 0 10px;border-top:0}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:16px}
+.day,.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.day h3,.panel h3{font-size:14px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:10px}
+.day label{margin-bottom:10px}.day select{font-size:14px;text-overflow:ellipsis}
+.prep{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start;margin-top:12px}
+.panel ul{margin:6px 0;padding-left:20px}
+footer{border-top:1px solid var(--line);padding:26px 28px;color:var(--mute);font-size:14px;text-align:center;margin-top:30px}
+@media(max-width:700px){.top{padding:10px 14px}.brand{font-size:16px}.shopbtn small{display:none}.wrap{padding:0 16px}.intro{padding:36px 0 18px}}
+/* ---- Shopping mode (different layout: teal room, round photos, receipt list) ---- */
+#shop{position:fixed;inset:0;z-index:50;background:var(--tint2);overflow:auto;display:flex;flex-direction:column}#shop[hidden]{display:none}
+.shophead{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--teal);color:#fff;padding:24px 16px 22px}
+.logo2{font-size:28px;font-weight:700}.shophead .stripe{display:none}
+.shophead .chip{border:0;background:rgba(254,249,255,.88);color:var(--ever);padding:7px 20px}.shophead .chip.on{background:var(--ever);color:#fff}
+#shClose{position:absolute;top:14px;right:16px;background:var(--white);border-color:var(--white)}#shClose:hover{background:var(--ever);color:#fff}
+.stripe{display:none}
+.shopbody{max-width:760px;margin:0 auto;width:100%;padding:26px 16px 30px}
 .aisle{display:flex;flex-direction:column;gap:12px}
-.item{display:flex;gap:14px;align-items:center;background:#fff;border-radius:24px;padding:10px 14px 10px 10px;box-shadow:0 3px 0 rgba(23,40,21,.14)}
-.item img{width:88px;height:88px;border-radius:50%;object-fit:cover;flex:none;background:var(--sage)}
-.item .t{flex:1;min-width:0}.item h3{font:700 19px/1.2 'Bodoni Moda',serif;margin:0;color:var(--ink)}.item h3 a{color:inherit;text-decoration:none}
-.item p{margin:3px 0 2px;font-size:14px;line-height:1.35;color:var(--mute)}
-.item .btn{flex:none;width:48px;height:48px;padding:0;font-size:30px;line-height:1;border-radius:50%}
-.item.in{background:#f2fcec;outline:3px solid var(--grass)}.item.in .btn{background:var(--grass);color:var(--ink)}
-#shStep2 .panel{border:0;border-radius:6px;box-shadow:0 3px 0 rgba(23,40,21,.12);padding:22px}
-#shStep2 .receipt{border-radius:6px 6px 0 0;margin-bottom:34px;position:relative;box-shadow:none}
+.item{display:flex;gap:14px;align-items:center;background:#fff;border-radius:22px;padding:10px 14px 10px 10px}
+.item img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none;background:var(--tint)}
+.item .t{flex:1;min-width:0}.item h3{font-size:17px;line-height:1.25}.item h3 a{text-decoration:none}.item p{margin:3px 0 2px;font-size:14px;line-height:1.4;color:var(--mute)}
+.item .btn{flex:none;width:46px;height:46px;padding:0;font-size:26px;line-height:1;border-radius:50%;letter-spacing:0}
+.item.in{outline:2px solid var(--ever)}.item.in .btn{background:var(--ever);color:#fff}
+#shStep2 .panel{border:0;border-radius:6px;padding:22px;margin-bottom:16px}
+#shStep2 .receipt{border-radius:6px 6px 0 0;margin-bottom:34px;position:relative}
 #shStep2 .receipt::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:radial-gradient(circle at 50% 0,#fff 7px,transparent 8px) 0 0/16px 12px repeat-x}
-#shop input[type=checkbox]{appearance:none;-webkit-appearance:none;width:28px;height:28px;border:2px solid var(--sage);border-radius:50%;background:#fff;display:grid;place-content:center;cursor:pointer;margin-top:0}
-#shop input[type=checkbox]:checked{background:var(--grass);border-color:var(--ink)}
-#shop input[type=checkbox]:checked::after{content:"✓";font-size:17px;font-weight:700;color:var(--ink);line-height:1}
-.li{border-bottom:2px dashed #e0c9d6;align-items:center}.li b{font:700 21px 'Lobster Two',cursive}
+#shop input[type=checkbox]{appearance:none;-webkit-appearance:none;width:26px;height:26px;border:2px solid var(--teal);border-radius:50%;background:#fff;display:grid;place-content:center;cursor:pointer}
+#shop input[type=checkbox]:checked{background:var(--ever);border-color:var(--ever)}#shop input[type=checkbox]:checked::after{content:"✓";font-size:15px;font-weight:700;color:#fff;line-height:1}
+.li{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--tint2)}
+.li label{display:flex;gap:12px;align-items:center;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ever);margin:0}.li b{font-size:17px}
 .li:has(input:not(:checked)){opacity:.45}.li:has(input:not(:checked)) b{text-decoration:line-through}
-.shopbar{position:sticky;bottom:14px;align-self:center;width:calc(100% - 32px);max-width:560px;margin:auto 16px 14px;background:var(--berry);color:var(--ghost);border:0;border-radius:99px;padding:8px 8px 8px 24px;box-shadow:0 5px 0 rgba(23,40,21,.3)}
-.shopbar .btn{background:var(--amber);color:var(--ink)}
-/* ---- Theme: Vintage Berry / Ghost White / Sage / Olive / Evergreen, one font ---- */
-*{font-family:'Quicksand',system-ui,sans-serif!important}
-h1,h2,h3{font-weight:700;letter-spacing:-.01em}
-.hero{background:repeating-linear-gradient(135deg,var(--berry) 0 22px,#7d2646 22px 44px)}
-.stripe{background:repeating-linear-gradient(90deg,var(--berry) 0 30px,var(--ghost) 30px 60px,var(--sage) 60px 90px,var(--olive) 90px 120px,var(--ever) 120px 150px)}
-.topbar{position:sticky;top:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 20px;background:var(--ever);color:var(--ghost);border-bottom:6px solid var(--berry)}
-.brand{font-size:24px;font-weight:700;text-align:right;line-height:1.1}
-.shopbtn{display:flex;align-items:center;gap:10px;background:var(--berry);color:var(--ghost);border:2px solid var(--ghost);border-radius:99px;padding:6px 20px 6px 14px;font-size:20px;cursor:pointer}
-.shopbtn .st{display:block;font-weight:700;font-size:17px;line-height:1.1;text-align:left}.shopbtn small{display:block;font-size:12px;font-weight:500;opacity:.9}
-.shopbtn:hover{background:#a8355a}
-.app{min-height:calc(100vh - 64px)}aside{top:64px;height:calc(100vh - 64px)}
-aside .done .num{background:var(--ghost);color:var(--berry)}
-.grass{background:var(--olive);color:var(--ghost)}.amber{background:var(--ever);color:var(--ghost)}
-.grass h2 .num,.amber h2 .num{background:var(--ghost);color:var(--ever)}
-.panel,.day{color:var(--ink)}.chip{color:var(--ink)}.chip.on{color:var(--ghost)}
-.have{color:var(--olive)}
-.item.in .btn{background:var(--olive);color:var(--ghost)}
-#shop input[type=checkbox]:checked{background:var(--olive)}#shop input[type=checkbox]:checked::after{color:var(--ghost)}
-@media(max-width:820px){.topbar{height:56px;padding:0 10px}.brand{font-size:17px}.shopbtn{padding:5px 12px 5px 10px}.shopbtn small{display:none}aside{top:56px;height:auto}.app{min-height:0}}
-</style></head><body><header class="topbar"><button class="shopbtn" id="basketBtn" aria-label="Open shopping mode"><span aria-hidden="true">🧺</span><span class="st">Shopping mode<small>pick recipes</small></span></button><div class="brand">🌿 Longevity made easy</div></header>
-<div class="app">
-<aside aria-label="Workflow">
- <a href="#pantry" id="s1"><span class="num">1</span><span><b>Pantry</b><small></small></span></a>
- <a href="#find" id="s2"><span class="num">2</span><span><b>Find recipes</b><small></small></span></a>
- <a href="#plan" id="s3"><span class="num">3</span><span><b>Plan meals</b><small></small></span></a>
- <a href="#prep" id="s4"><span class="num">4</span><span><b>Prep list</b><small></small></span></a>
-</aside>
-<div>
-<header class="hero"><h1>Cook what you have</h1><p>Tick what's in your kitchen, find what you can cook, plan your day or week, and see what to prep first.</p></header>
-<div class="stripe"></div>
-
-<section class="band sage" id="pantry"><h2><span class="num">1</span>What's in your kitchen?</h2>
-<p class="lead">Tick everything you have. Only ingredients and swaps from the recipes are listed.</p>
-<div class="panel">
- <div class="row"><div style="flex:3"><label for="find">Filter the list</label><input type="text" id="find" placeholder="e.g. lentil" autocomplete="off"></div>
- <div><label style="display:flex;gap:8px;align-items:center;font-weight:400"><input type="checkbox" id="onlyTicked">Show only ticked</label></div>
- <div style="flex:0"><button class="btn alt" id="clear">Clear all</button></div></div>
- <div class="ticks" id="ticks" role="group" aria-label="Ingredients"></div>
- <p class="by" id="tickinfo" aria-live="polite"></p>
- <p class="by" style="margin:0">Always assumed: <span id="staples"></span> <button class="link" id="editStaples">edit</button></p>
-</div></section>
-<div class="stripe"></div>
-
-<section class="band" id="find"><h2><span class="num">2</span>What can I cook?</h2>
-<p class="lead">Matches are ranked by how little you're missing. Yellow tags show a swap that covers a gap.</p>
-<div class="panel"><div class="row">
- <div><label for="miss">Missing at most</label><select id="miss"><option value="99">Any number</option><option value="0">0 (make it now)</option><option value="1">1 ingredient</option><option value="2" selected>2 ingredients</option><option value="3">3 ingredients</option><option value="5">5 ingredients</option></select></div>
- <div><label for="sort">Sort by</label><select id="sort"><option value="best">Best match</option><option value="few">Fewest ingredients</option><option value="time">Quickest</option><option value="az">A–Z</option></select></div>
- <div><label for="src">Blog</label><select id="src"><option value="">All blogs</option></select></div>
- <div><label for="q">Search titles</label><input type="text" id="q" placeholder="e.g. burger"></div>
-</div><label style="margin-top:14px">Type of recipe</label><div class="chips" id="tags"></div></div>
-<div class="count" id="count"></div><div class="grid" id="grid"></div>
-<p style="text-align:center"><button class="btn alt" id="more" hidden>Show more</button></p></section>
-<div class="stripe"></div>
-
-<section class="band grass" id="plan"><h2><span class="num">3</span>Plan your meals</h2>
-<p class="lead">Use "Add to plan" on any recipe, or pick from the dropdowns.</p>
-<div class="chips" style="margin:0 0 6px"><button class="chip" id="mDay">One day</button><button class="chip" id="mWeek">Whole week</button><button class="btn alt" id="clearPlan" style="margin-left:auto">Clear plan</button></div>
-<div class="days" id="slots"></div></section>
-<div class="stripe"></div>
-
-<section class="band amber" id="prep"><h2><span class="num">4</span>Your prep list</h2>
-<p class="lead" id="prepLead"></p><div id="prepOut"></div></section>
+.pick{display:flex;gap:12px;align-items:center;padding:4px 0;flex-wrap:wrap}.pick span{flex:1;min-width:180px}
+input[type=number]{width:64px;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.shopbar{position:sticky;bottom:14px;align-self:center;width:calc(100% - 32px);max-width:560px;margin:auto 16px 14px;background:var(--ever);color:#fff;border-radius:99px;padding:8px 8px 8px 24px;display:flex;gap:14px;align-items:center;justify-content:space-between;font-weight:600}
+.shopbar .btn{background:var(--white);color:var(--ever);border-color:var(--white)}.shopbar .btn:disabled{opacity:.5}
+</style></head><body>
+<header class="top">
+ <button class="shopbtn" id="basketBtn" aria-label="Open shopping mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-2 11H5L3 9z"/><path d="M8 9l3-6M16 9l-3-6"/></svg><span>Shopping mode <small>pick recipes</small></span></button>
+ <div class="brand">Longevity made easy</div>
+</header>
+<main class="wrap">
+ <div class="intro"><h1>Cook what you have</h1><p>Tick what's in your kitchen and see which recipes you can make, what you're missing, and which swaps fill the gap.</p></div>
+ <section id="pantry"><details class="pantry" open><summary><h2>Your pantry</h2></summary>
+  <p class="lead">Only ingredients and swaps from the recipes are listed.</p>
+  <div class="tools"><div><label for="find">Filter the list</label><input type="text" id="find" placeholder="e.g. lentil" autocomplete="off"></div>
+   <div><label style="display:flex;gap:8px;align-items:center;margin:0 0 10px;letter-spacing:0;text-transform:none;font-size:15px;font-weight:500;color:var(--ever)"><input type="checkbox" id="onlyTicked">Only ticked</label></div>
+   <div><button class="btn" id="selAll">Select all</button></div><div><button class="btn" id="clear">Deselect all</button></div></div>
+  <div class="ticks" id="ticks" role="group" aria-label="Ingredients"></div>
+  <p class="by" id="tickinfo" aria-live="polite" style="margin:10px 0 0"></p>
+  <p class="by" style="margin:2px 0 0">"Select all" ticks everything currently showing, so filter first if you only want some. Always assumed: <span id="staples"></span> <button class="link" id="editStaples">edit</button></p>
+ </details></section>
+ <section id="find"><h2>Find a recipe</h2>
+  <p class="lead">Ranked by how little you're missing.</p>
+  <div class="row"><div style="flex:0 0 auto"><label>Mode</label><div class="seg" role="group" aria-label="Planning mode"><button id="mOff" class="on" aria-pressed="true">Browse</button><button id="mDay" aria-pressed="false">Day mode</button><button id="mWeek" aria-pressed="false">Week mode</button></div></div>
+   <div><label for="miss">Missing at most</label><select id="miss"><option value="99">Any number</option><option value="0">0 (make it now)</option><option value="1">1 ingredient</option><option value="2" selected>2 ingredients</option><option value="3">3 ingredients</option><option value="5">5 ingredients</option></select></div>
+   <div><label for="sort">Sort by</label><select id="sort"><option value="best">Best match</option><option value="few">Fewest ingredients</option><option value="time">Quickest</option><option value="az">A–Z</option></select></div>
+   <div><label for="src">Blog</label><select id="src"><option value="">All blogs</option></select></div>
+   <div><label for="q">Search</label><input type="text" id="q" placeholder="e.g. burger"></div></div>
+  <div class="chips" id="tags"></div>
+ </section>
+ <section id="planner" hidden><h2>Your plan</h2><p class="lead">Use "Add to plan" on any recipe, or pick from the dropdowns. Your prep list updates as you go.</p>
+  <div style="margin-top:6px"><button class="btn" id="clearPlan">Clear plan</button></div>
+  <div class="days" id="slots"></div>
+  <h2 style="margin-top:28px">Your prep list</h2><p class="lead" id="prepLead"></p><div id="prepOut"></div></section>
+ <section id="results"><div class="count" id="count"></div><div class="grid" id="grid"></div>
+  <p style="text-align:center;margin-top:28px"><button class="btn" id="more" hidden>Show more</button></p></section>
+</main>
 <footer>Recipes belong to their authors. Every card links to the original blog for the full method.</footer>
-</div></div>
 <div id="shop" hidden role="dialog" aria-modal="true" aria-label="Shopping mode">
  <div class="shophead"><div class="logo2">🧺 Shopping mode</div>
   <button class="chip on" id="shTab1">1 · Pick recipes</button><button class="chip" id="shTab2">2 · Shopping list <span id="shN"></span></button>
@@ -191,11 +148,11 @@ const stem=w=>w.replace(/ies$/,'y').replace(/(o|ch|sh|x)es$/,'$1').replace(/s$/,
 const words=t=>t.toLowerCase().replace(/[^a-z\s]/g,' ').split(/\s+/).filter(Boolean).map(stem);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let R=[],pantry=load('pantry2',[]),staples=load('staples',['salt','black pepper','water','oil']),tagsOn=new Set(),shown=48,lastMatches=0;
-let plan=load('plan',{mode:'week',slots:{}});
+let plan=load('plan',{mode:'off',slots:{}});
 const DAYS=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],MEALS=['Breakfast','Lunch','Dinner'];
 const has=(nw,items)=>items.some(i=>i.every(w=>nw.includes(w)));
 const byUrl=u=>R.find(r=>r.url===u);
-const visible=()=>plan.mode==='day'?[0]:[0,1,2,3,4,5,6];
+const visible=()=>plan.mode==='day'?[0]:plan.mode==='week'?[0,1,2,3,4,5,6]:[];
 const plannedList=()=>Object.entries(plan.slots).filter(([k,u])=>u&&visible().includes(+k.split('-')[0])).map(([k,u])=>byUrl(u)).filter(Boolean);
 function analyse(r){
   const P=pantry.map(words),S=staples.map(words),swaps=[],missing=[];let have=0,total=0;
@@ -211,10 +168,7 @@ function analyse(r){
   }
   return{r,have,total,swaps,missing};
 }
-const setStep=(id,done,txt)=>{const a=$('#'+id);a.classList.toggle('done',done);a.querySelector('.num').textContent=done?'✓':id[1];a.querySelector('small').textContent=txt};
-function status(){const n=plannedList().length;
-  setStep('s1',pantry.length>0,`${pantry.length} ticked`);setStep('s2',pantry.length>0&&lastMatches>0,`${lastMatches} recipes`);
-  setStep('s3',n>0,`${n} meals`);setStep('s4',n>0,n?'ready':'plan first')}
+const status=()=>{};
 function render(){
   const q=$('#q').value.toLowerCase(),src=$('#src').value,maxMiss=+$('#miss').value;
   let L=R.map(analyse).filter(a=>(!src||a.r.source===src)&&(!q||a.r.title.toLowerCase().includes(q))&&[...tagsOn].every(t=>a.r.tags.includes(t)));
@@ -230,7 +184,7 @@ function render(){
    ${missing.length?`<div class="miss">Missing: ${missing.map(esc).join(', ')}</div>`:''}
    ${swaps.map(s=>`<div class="swap">Swap: ${esc(s)}</div>`).join('')}
    <div class="tags">${r.tags.map(esc).join(' · ')}</div>
-   <button class="btn" data-add="${esc(r.url)}">Add to plan</button></div></article>`).join('')||'<div class="empty">No matches. Try allowing more missing ingredients or removing a filter.</div>';
+   ${plan.mode!=='off'?`<button class="btn" data-add="${esc(r.url)}">Add to plan</button>`:''}</div></article>`).join('')||'<div class="empty">No matches. Try allowing more missing ingredients or removing a filter.</div>';
   $('#more').hidden=L.length<=shown;status();
 }
 const PREP=new Set('minced chopped grated fresh dried ground sliced diced shredded large small medium cloves clove frozen cooked canned raw whole finely roughly thinly extra virgin neutral flavored for more'.split(' '));
@@ -243,21 +197,21 @@ function buildList(){
   for(const r of R){for(const i of r.ing){if(!i.opt)i.names.forEach(n=>add(n,false))}(r.subs||[]).forEach(s=>s.use.forEach(u=>add(u,true)))}
   LIST=[...m.values()].sort((a,b)=>b.n-a.n||a.name.localeCompare(b.name));
 }
-function info(){$('#tickinfo').textContent=`${pantry.length} ticked · ${LIST.length} ingredients found (number = recipes using it)`;$('#staples').textContent=staples.join(', ')}
+function info(){$('#tickinfo').textContent=`${pantry.length} ticked · ${LIST.length} ingredients (number = recipes using it)`;$('#staples').textContent=staples.join(', ')}
 function renderList(){
   const f=$('#find').value.toLowerCase().trim(),only=$('#onlyTicked').checked;
-  $('#ticks').innerHTML=LIST.filter(e=>(!f||e.name.includes(f))&&(!only||pantry.includes(e.name))).slice(0,500).map(e=>`<label><input type="checkbox" data-n="${esc(e.name)}" ${pantry.includes(e.name)?'checked':''}><span>${esc(e.name)} <small>${e.sub?'swap · ':''}${e.n}</small></span></label>`).join('')||'<span class="by">No ingredients match.</span>';
+  $('#ticks').innerHTML=LIST.filter(e=>(!f||e.name.includes(f))&&(!only||pantry.includes(e.name))).slice(0,1500).map(e=>`<label><input type="checkbox" data-n="${esc(e.name)}" ${pantry.includes(e.name)?'checked':''}><span>${esc(e.name)} <small>${e.sub?'swap · ':''}${e.n}</small></span></label>`).join('')||'<span class="by">No ingredients match.</span>';
   info();
 }
 function renderPlan(){
-  $('#mDay').classList.toggle('on',plan.mode==='day');$('#mWeek').classList.toggle('on',plan.mode==='week');
+  [['mOff','off'],['mDay','day'],['mWeek','week']].forEach(([id,m])=>{$('#'+id).classList.toggle('on',plan.mode===m);$('#'+id).setAttribute('aria-pressed',plan.mode===m)});$('#planner').hidden=plan.mode==='off';if(plan.mode==='off')return;
   const opts='<option value="">Choose a recipe…</option>'+[...R].sort((a,b)=>a.title.localeCompare(b.title)).map(r=>`<option value="${esc(r.url)}">${esc(r.title)}</option>`).join('');
   $('#slots').innerHTML=visible().map(d=>`<div class="day"><h3>${plan.mode==='day'?'Your day':DAYS[d]}</h3>${MEALS.map((m,i)=>{const k=d+'-'+i,v=plan.slots[k]||'';
     return `<label>${m}<select data-k="${k}">${v?opts.replace(`value="${esc(v)}"`,`value="${esc(v)}" selected`):opts}</select></label>`}).join('')}</div>`).join('');
 }
 const VERB={minced:'Mince',chopped:'Chop',grated:'Grate',diced:'Dice',sliced:'Slice',shredded:'Shred'};
 function renderPrep(){
-  const L=plannedList(),el=$('#prepOut'),wk=plan.mode==='week';
+  if(plan.mode==='off')return;const L=plannedList(),el=$('#prepOut'),wk=plan.mode==='week';
   $('#prepLead').textContent=wk?'What to do at the start of your week.':'What to do this morning.';
   if(!L.length){el.innerHTML='<div class="panel empty">Pick some meals above and your prep plan appears here.</div>';return}
   const uniq=[...new Map(L.map(r=>[r.url,r])).values()],S=staples.map(words);
@@ -280,6 +234,8 @@ $('#ticks').addEventListener('change',e=>{const n=e.target.dataset.n;if(n==null)
   pantry=e.target.checked?[...new Set([...pantry,n])]:pantry.filter(p=>p!==n);save('pantry2',pantry);info();shown=48;render();renderPrep()});
 $('#find').addEventListener('input',renderList);$('#onlyTicked').addEventListener('change',renderList);
 $('#clear').onclick=()=>{pantry=[];save('pantry2',pantry);renderList();shown=48;render();renderPrep()};
+const filtered=()=>{const f=$('#find').value.toLowerCase().trim();return LIST.filter(e=>!f||e.name.includes(f))};
+$('#selAll').onclick=()=>{pantry=[...new Set([...pantry,...filtered().map(e=>e.name)])];save('pantry2',pantry);renderList();shown=48;render();renderPrep()};
 $('#editStaples').onclick=()=>{const v=prompt('Things you always have (comma separated):',staples.join(', '));if(v!==null){staples=v.split(',').map(s=>s.trim()).filter(Boolean);save('staples',staples);buildList();renderList();render();renderPrep()}};
 ['miss','sort','src','q'].forEach(id=>$('#'+id).addEventListener('input',()=>{shown=48;render()}));
 $('#more').onclick=()=>{shown+=48;render()};
@@ -288,11 +244,9 @@ $('#grid').addEventListener('click',e=>{const b=e.target.closest('[data-add]');i
   for(const d of visible())for(let i=0;i<3;i++){const k=d+'-'+i;if(!plan.slots[k]){plan.slots[k]=b.dataset.add;save('plan',plan);renderPlan();refresh();b.textContent='Added ✓';return}}
   alert('Your plan is full. Clear a slot first.')});
 $('#slots').addEventListener('change',e=>{const k=e.target.dataset.k;if(!k)return;plan.slots[k]=e.target.value;save('plan',plan);refresh()});
-$('#mDay').onclick=()=>{plan.mode='day';save('plan',plan);renderPlan();refresh()};
-$('#mWeek').onclick=()=>{plan.mode='week';save('plan',plan);renderPlan();refresh()};
+const setMode=m=>{plan.mode=m;save('plan',plan);renderPlan();renderPrep();render()};
+$('#mOff').onclick=()=>setMode('off');$('#mDay').onclick=()=>setMode('day');$('#mWeek').onclick=()=>setMode('week');
 $('#clearPlan').onclick=()=>{plan.slots={};save('plan',plan);renderPlan();refresh()};
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('aside a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
-document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
 /*SHOPFN*/
 const VOL={tsp:5,tbsp:15,cup:240,ml:1,l:1000},WT={g:1,kg:1000,oz:28.35,lb:453.6};
 const FRC={.25:'¼',.5:'½',.75:'¾'},q4=n=>Math.ceil(n*4-1e-9)/4;
