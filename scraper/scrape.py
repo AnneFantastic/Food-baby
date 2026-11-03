@@ -11,7 +11,7 @@ DATA, SEEN = ROOT / "data" / "recipes.json", ROOT / "data" / "seen.json"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; PantryRecipesBot/1.0; personal recipe finder)", "Accept": "text/html,application/xml,application/json;q=0.9,*/*;q=0.8"}
 LOG = []
 def log(m): print(m); LOG.append(m)
-SCHEMA = 3                                      # bump to re-fetch everything
+SCHEMA = 4                                      # bump to re-fetch everything
 MAX_NEW = int(os.environ.get("MAX_NEW", 400))   # posts fetched per run
 DELAY = 1.0                                     # seconds between page requests
 
@@ -102,6 +102,7 @@ def clean_ingredient(text):
     optional = "optional" in text.lower()
     t = re.sub(r"\bor to taste\b|\boptional\b|\bto taste\b", "", t).split(",")[0]
     t = re.split(r"\babout\b", t)[0]
+    t = re.sub(r"\b(with|plus|such as|like|for|divided|at room temperature|on hand|what you have|or more)\b.*", "", t).strip()
     names = []
     for part in re.split(r"\bor\b", t):
         toks = part.split()
@@ -148,6 +149,66 @@ def parse_prep(soup, rec):
     d = re.search(r"(\d+)\s*(?:-|to)?\s*\d*\s*days", st)
     return {"flags": flags, "days": int(d.group(1)) if d else None, "freeze": "freez" in st}
 
+NKEYS = {"calories": "kcal", "carbohydrates": "carbs", "carbohydrate": "carbs", "protein": "protein", "fat": "fat",
+         "saturated_fat": "satfat", "sodium": "sodium", "potassium": "potassium", "fiber": "fibre", "fibre": "fibre",
+         "sugar": "sugar", "vitamin_a": "vitA", "vitamin_c": "vitC", "calcium": "calcium", "iron": "iron"}
+NBASE = {"kcal": "kcal", "protein": "g", "carbs": "g", "fat": "g", "satfat": "g", "fibre": "g", "sugar": "g",
+         "sodium": "mg", "potassium": "mg", "calcium": "mg", "iron": "mg", "vitC": "mg", "vitA": "ug"}
+NDV = {"kcal": 2000, "protein": 50, "carbs": 275, "fat": 78, "satfat": 20, "fibre": 28, "sugar": 50, "sodium": 2300,
+       "potassium": 4700, "calcium": 1300, "iron": 18, "vitC": 90, "vitA": 900}
+
+def to_std(key, num, unit):
+    """Convert a label value to: kcal, g, mg or (vitamin A) micrograms RAE."""
+    u = (unit or "").lower().replace("\u03bc", "\u00b5").replace("mcg", "ug").replace("\u00b5g", "ug").strip(" .")
+    if key == "kcal": return num
+    if u == "%": return num * NDV[key] / 100
+    if u == "iu": return num * 0.05 if key == "vitA" else None
+    f = {"g": 1, "mg": 1e-3, "ug": 1e-6, "kg": 1e3}.get(u)
+    if f is None: return num if not u else None
+    return num * f * {"g": 1, "mg": 1e3, "ug": 1e6}[NBASE[key]]
+
+def parse_nutrition(soup, rec):
+    """Per-serving nutrition from the recipe card label, falling back to the page's structured data."""
+    out = {}
+    for el in soup.select('[class*="nutrition-container-"]'):
+        m = re.search(r"nutrition-container-([a-z_-]+)", " ".join(el.get("class", [])))
+        k = NKEYS.get(m.group(1).replace("-", "_")) if m else None
+        v = el.select_one('[class*="nutrition-value"]'); u = el.select_one('[class*="nutrition-unit"]')
+        num = re.sub(r"[^\d.]", "", v.get_text()) if v else ""
+        if k and num:
+            val = to_std(k, float(num), u.get_text() if u else "")
+            if val is not None: out[k] = round(val, 1)
+    n = rec.get("nutrition") or {}
+    for jk, k in (("calories", "kcal"), ("proteinContent", "protein"), ("carbohydrateContent", "carbs"), ("fatContent", "fat"),
+                  ("saturatedFatContent", "satfat"), ("fiberContent", "fibre"), ("sugarContent", "sugar"), ("sodiumContent", "sodium")):
+        m = re.match(r"\s*([\d.]+)\s*([a-z\u00b5\u03bc%]*)", str(n.get(jk, "")).lower())
+        if k not in out and m:
+            val = to_std(k, float(m.group(1)), m.group(2))
+            if val is not None: out[k] = round(val, 1)
+    return out
+
+def instr_text(rec):
+    txt = []
+    def walk(x):
+        if isinstance(x, str): txt.append(x)
+        elif isinstance(x, list): [walk(i) for i in x]
+        elif isinstance(x, dict): walk(x.get("text") or x.get("itemListElement") or "")
+    walk(rec.get("recipeInstructions") or [])
+    return " ".join(txt).lower()
+
+def parse_flags(rec, title, ingredients):
+    """Does it need a blender? Is it served hot, cold or either?"""
+    t = instr_text(rec); ti = title.lower()
+    blender = bool(re.search(r"\bblend|food processor|puree|pur\u00e9e|vitamix|immersion|nutribullet|magic bullet", t + " " + " ".join(ingredients).lower()))
+    heat = bool(re.search(r"\b(bake|roast|simmer|boil|saut[e\u00e9]|fry|sear|heat|preheat|grill|steam|cook)\b", t))
+    cold_t = bool(re.search(r"salad|smoothie|pudding|dip|hummus|dressing|overnight|no-bake|no bake|slaw|spread|gazpacho|chilled|sauce", ti))
+    hot_t = bool(re.search(r"soup|stew|curry|chili|burger|pancake|porridge|casserole|roast|baked|pasta|stir[- ]fry|ramen|noodle|skillet|bake|patties|fritter", ti))
+    if hot_t and not cold_t: temp = "hot"
+    elif cold_t and hot_t: temp = "either"
+    elif cold_t: temp = "either" if heat else "cold"
+    else: temp = "hot" if heat else "cold"
+    return {"blender": blender, "temp": temp}
+
 def tag_recipe(title, cats, desc, ings):
     hay = f" {title} {cats} {desc} ".lower()
     tags = [t for t, kws in TAGS.items() if any(k in hay for k in kws)]
@@ -178,7 +239,7 @@ def scrape_page(url, src):
     return {"url": url, "title": title, "image": first(rec.get("image")), "source": src["name"],
             "author": src["author"], "minutes": minutes(rec.get("totalTime")),
             "servings": str((rec.get("recipeYield") or [""])[0] if isinstance(rec.get("recipeYield"), list) else rec.get("recipeYield") or ""),
-            "tags": tag_recipe(title, cats, rec.get("description", ""), ings), "ing": ings, "t": int(time.time()), "desc": short(rec.get("description", "")), "subs": parse_subs(soup), "prep": parse_prep(soup, rec)}
+            "tags": tag_recipe(title, cats, rec.get("description", ""), ings), "ing": ings, "t": int(time.time()), "desc": short(rec.get("description", "")), "subs": parse_subs(soup), "prep": parse_prep(soup, rec), "nut": parse_nutrition(soup, rec), **parse_flags(rec, title, rec["recipeIngredient"])}
 
 def robots_for(base):
     try:
@@ -316,6 +377,7 @@ def main():
     SEEN.write_text(json.dumps(seen))
     if all_meta: (ROOT / "data" / "categories.json").write_text(json.dumps(all_meta, ensure_ascii=False, indent=0))
     log(f"Total recipes saved: {len(recipes)}")
+    log(f"Nutrition found for {sum(1 for r in recipes.values() if r.get('nut'))} recipes; iron for {sum(1 for r in recipes.values() if 'iron' in r.get('nut', {}))}; times for {sum(1 for r in recipes.values() if r.get('minutes'))}")
     (ROOT / "data" / "status.txt").write_text(time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()) + "\n" + "\n".join(LOG) + "\n")
 
 if __name__ == "__main__": main()

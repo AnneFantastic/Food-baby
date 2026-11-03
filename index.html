@@ -2,177 +2,237 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Longevity made easy</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23172815'/%3E%3Cpath d='M32 56V30' stroke='%238fd19e' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cellipse cx='21' cy='27' rx='11' ry='6.5' transform='rotate(-30 21 27)' fill='%236BAA75'/%3E%3Cellipse cx='43' cy='27' rx='11' ry='6.5' transform='rotate(30 43 27)' fill='%238fd19e'/%3E%3Cellipse cx='32' cy='57' rx='7' ry='3.5' fill='%23d9c79a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--white:#FEF9FF;--ever:#172815;--teal:#708D81;--tint:#eef3f0;--tint2:#dde7e2;--line:#dfe6e2;--mute:#5a6a60}
+:root{--white:#FEF9FF;--ever:#172815;--olive:#3E5622;--sage:#6BAA75;--berry:#922D50;--teal:#708D81;--paper:#F2F1EF;--line:#D3D8D3;--mute:#516055}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--white);color:var(--ever);font:500 16px/1.6 'Quicksand',system-ui,sans-serif}
-button,input,select{font:inherit;color:inherit}
-h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.01em}
-a{color:inherit}:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
-.top{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 28px}
-.brand{font-size:21px;font-weight:700;letter-spacing:.01em;text-align:right}
-.shopbtn{display:flex;align-items:center;gap:10px;background:var(--ever);color:var(--white);border:0;border-radius:99px;padding:9px 20px 9px 16px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.shopbtn svg{width:20px;height:20px}.shopbtn small{font-size:11px;letter-spacing:.04em;text-transform:none;font-weight:600;opacity:.8}
-.shopbtn:hover{background:#243a21}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-.intro{padding:56px 0 28px}.intro h1{font-size:clamp(34px,5vw,54px);line-height:1.05}.intro p{color:var(--mute);max-width:540px;margin:12px 0 0;font-size:18px}
-section{padding:28px 0}section+section{border-top:1px solid var(--line)}
-h2{font-size:24px;margin-bottom:4px}.lead{color:var(--mute);margin:0 0 18px}
+body{margin:0;background:var(--white);color:var(--ever);font:500 16px/1.55 'Quicksand',system-ui,sans-serif}
+button,input,select{font:inherit;color:inherit;border-radius:2px}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.01em}a{color:inherit}:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--ever);color:var(--white);border-bottom:3px solid var(--berry);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 24px}
+.left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.brand{font-size:20px;font-weight:700;text-align:right}
+.shopbtn{display:flex;gap:10px;align-items:center;background:var(--berry);color:#fff;border:0;padding:9px 16px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.shopbtn svg{width:19px;height:19px}.shopbtn small{font-size:11px;letter-spacing:.03em;text-transform:none;font-weight:600;opacity:.85}.shopbtn:hover{background:#7a2543}
+.seg{display:inline-flex;border:1px solid rgba(254,249,255,.55)}.seg button{border:0;background:transparent;color:var(--white);padding:8px 15px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.seg button.on{background:var(--white);color:var(--ever)}.seg button:not(.on):hover{background:rgba(254,249,255,.15)}
+.hero{background:var(--sage);color:var(--ever)}.hero .wrap{padding:42px 28px 38px}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.02}.hero p{max-width:540px;margin:12px 0 0;font-size:18px;font-weight:600}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+section{padding:34px 0}section+section{border-top:1px solid var(--line)}
+h2{font-size:26px}h2::after{content:"";display:block;width:44px;height:4px;background:var(--berry);margin-top:8px}.lead{color:var(--mute);margin:12px 0 18px}
 label{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:6px}
-input[type=text],select{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
-input[type=text]:hover,select:hover{border-color:var(--teal)}
-input[type=checkbox]{width:18px;height:18px;accent-color:var(--ever);flex:none}
+input[type=text],input[type=number],select{width:100%;padding:10px 12px;border:1px solid #aab3ac;background:#fff}
+input[type=text]:hover,select:hover{border-color:var(--ever)}input[type=checkbox]{width:18px;height:18px;accent-color:var(--berry);flex:none;border-radius:0}
 .row{display:flex;gap:14px;flex-wrap:wrap;align-items:end}.row>div{flex:1;min-width:150px}
-.btn{background:transparent;color:var(--ever);border:1px solid var(--ever);border-radius:99px;padding:8px 20px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
-.btn:hover{background:var(--ever);color:var(--white)}.btn.solid{background:var(--ever);color:var(--white)}.btn.solid:hover{background:#243a21}.btn:disabled{opacity:.4;cursor:not-allowed}
-.link{background:none;border:0;color:var(--ever);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0;font-size:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{border:1px solid var(--line);background:var(--white);color:var(--ever);border-radius:99px;padding:5px 15px;font-size:14px;font-weight:600;cursor:pointer}
-.chip:hover{border-color:var(--teal)}.chip.on{background:var(--ever);border-color:var(--ever);color:var(--white)}
-.seg{display:inline-flex;border:1px solid var(--ever);border-radius:99px;overflow:hidden}
-.seg button{border:0;background:transparent;padding:9px 20px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-.seg button.on{background:var(--ever);color:var(--white)}
-details.pantry summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-details.pantry summary::-webkit-details-marker{display:none}details.pantry summary::after{content:"Hide";font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-details.pantry:not([open]) summary::after{content:"Show"}
-.tools{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:14px 0 0}.tools>div:first-child{flex:1;min-width:200px}
-.ticks{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 16px;max-height:330px;overflow:auto;margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--tint)}
-.ticks label{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ever);margin:0;padding:4px 0;cursor:pointer}
-.ticks small,.by{color:var(--mute);font-size:13.5px}
-.count{margin:6px 0 18px;font-weight:600;color:var(--mute)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:36px 24px}
-.card{display:flex;flex-direction:column}.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;background:var(--tint);margin-bottom:12px}
-.cb{display:flex;flex-direction:column;gap:5px;flex:1}.cb h3{font-size:17px;font-weight:700;line-height:1.3}.cb h3 a{text-decoration:none}.cb h3 a:hover{text-decoration:underline}
-.cb .btn{margin-top:8px;align-self:flex-start}
-.have{font-weight:700}.miss{color:var(--mute)}
-.swap{background:var(--tint2);border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600;align-self:flex-start}
-.tags{font-size:12.5px;color:var(--mute);margin-top:auto;padding-top:4px}
+.btn{background:transparent;color:var(--ever);border:2px solid var(--ever);padding:7px 18px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--ever);color:var(--white)}.btn.solid{background:var(--berry);border-color:var(--berry);color:#fff}.btn.solid:hover{background:#7a2543;border-color:#7a2543}.btn:disabled{opacity:.4;cursor:not-allowed}
+.link{background:none;border:0;color:var(--berry);font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid #aab3ac;background:#fff;color:var(--ever);padding:5px 13px;font-size:14px;font-weight:600;cursor:pointer}
+.chip:hover{border-color:var(--ever)}.chip.on{background:var(--ever);border-color:var(--ever);color:var(--white)}
+.by,small{color:var(--mute);font-size:13.5px}
+/* pantry */
+.tools{display:flex;gap:12px;align-items:end;flex-wrap:wrap}.tools>div:first-child{flex:1;min-width:220px}
+.chk{display:flex;gap:8px;align-items:center;margin:0 0 10px;text-transform:none;letter-spacing:0;font-size:15px;font-weight:600;color:var(--ever)}
+.groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px;margin-top:16px;align-items:start}
+details.grp{border:1px solid var(--line);background:#fff}details.grp[open]{border-color:var(--ever)}
+details.grp summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:11px 14px}details.grp summary::-webkit-details-marker{display:none}
+details.grp summary::before{content:"+";font-weight:700;color:var(--berry);width:14px}details.grp[open] summary::before{content:"–"}
+.gname{font-weight:700;flex:1}.gcount{font-size:13px;font-weight:700;background:var(--ever);color:var(--white);padding:1px 8px}
+.gbtns button{border:0;background:none;color:var(--berry);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;padding:2px 4px}
+.gitems{padding:4px 14px 12px;max-height:280px;overflow:auto;border-top:1px solid var(--line)}
+.gitems label{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ever);margin:0;padding:4px 0;cursor:pointer}
+.pbar{display:flex;gap:18px;align-items:end;flex-wrap:wrap;margin-top:18px;padding:16px;background:var(--paper);border-left:4px solid var(--berry)}.pbar>div{min-width:200px}
+/* recipes */
+.layout{display:block}.layout.on{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:36px;align-items:start}
+.tgroup{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}.tlabel{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);min-width:150px}
+.count{margin:22px 0 16px;font-weight:700;color:var(--olive)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:30px 22px}
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line)}.card:hover{border-color:var(--berry)}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--paper)}
+.cb{display:flex;flex-direction:column;gap:6px;flex:1;padding:14px}.cb h3{font-size:17px;line-height:1.3}.cb h3 a{text-decoration:none}.cb h3 a:hover{color:var(--berry)}
+.desc{margin:0;font-size:14px;color:var(--mute);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;font-weight:600}
+.match b{font-size:14px}.mbar{height:5px;background:var(--paper);margin-top:4px}.mbar i{display:block;height:100%;background:var(--sage)}
+.miss{font-size:14px;color:var(--berry);font-weight:600}.swap{background:var(--ever);color:var(--white);padding:2px 9px;font-size:13px;font-weight:600;align-self:flex-start}
+.tags{font-size:12.5px;color:var(--mute);margin-top:auto;padding-top:4px}.acts{display:flex;gap:14px;align-items:center;margin-top:6px;flex-wrap:wrap}
 .empty{padding:36px;text-align:center;color:var(--mute);grid-column:1/-1}
-#planner{background:var(--tint);border-radius:18px;padding:26px;margin:8px 0 10px;border-top:0}
-.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:16px}
-.day,.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
-.day h3,.panel h3{font-size:14px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:10px}
-.day label{margin-bottom:10px}.day select{font-size:14px;text-overflow:ellipsis}
-.prep{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start;margin-top:12px}
-.panel ul{margin:6px 0;padding-left:20px}
-footer{border-top:1px solid var(--line);padding:26px 28px;color:var(--mute);font-size:14px;text-align:center;margin-top:30px}
-@media(max-width:700px){.top{padding:10px 14px}.brand{font-size:16px}.shopbtn small{display:none}.wrap{padding:0 16px}.intro{padding:36px 0 18px}}
-/* ---- Shopping mode (different layout: teal room, round photos, receipt list) ---- */
-#shop{position:fixed;inset:0;z-index:50;background:var(--tint2);overflow:auto;display:flex;flex-direction:column}#shop[hidden]{display:none}
-.shophead{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--teal);color:#fff;padding:24px 16px 22px}
-.logo2{font-size:28px;font-weight:700}.shophead .stripe{display:none}
-.shophead .chip{border:0;background:rgba(254,249,255,.88);color:var(--ever);padding:7px 20px}.shophead .chip.on{background:var(--ever);color:#fff}
-#shClose{position:absolute;top:14px;right:16px;background:var(--white);border-color:var(--white)}#shClose:hover{background:var(--ever);color:#fff}
-.stripe{display:none}
-.shopbody{max-width:760px;margin:0 auto;width:100%;padding:26px 16px 30px}
-.aisle{display:flex;flex-direction:column;gap:12px}
-.item{display:flex;gap:14px;align-items:center;background:#fff;border-radius:22px;padding:10px 14px 10px 10px}
-.item img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none;background:var(--tint)}
-.item .t{flex:1;min-width:0}.item h3{font-size:17px;line-height:1.25}.item h3 a{text-decoration:none}.item p{margin:3px 0 2px;font-size:14px;line-height:1.4;color:var(--mute)}
-.item .btn{flex:none;width:46px;height:46px;padding:0;font-size:26px;line-height:1;border-radius:50%;letter-spacing:0}
-.item.in{outline:2px solid var(--ever)}.item.in .btn{background:var(--ever);color:#fff}
-#shStep2 .panel{border:0;border-radius:6px;padding:22px;margin-bottom:16px}
-#shStep2 .receipt{border-radius:6px 6px 0 0;margin-bottom:34px;position:relative}
-#shStep2 .receipt::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:radial-gradient(circle at 50% 0,#fff 7px,transparent 8px) 0 0/16px 12px repeat-x}
-#shop input[type=checkbox]{appearance:none;-webkit-appearance:none;width:26px;height:26px;border:2px solid var(--teal);border-radius:50%;background:#fff;display:grid;place-content:center;cursor:pointer}
-#shop input[type=checkbox]:checked{background:var(--ever);border-color:var(--ever)}#shop input[type=checkbox]:checked::after{content:"✓";font-size:15px;font-weight:700;color:#fff;line-height:1}
-.li{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--tint2)}
-.li label{display:flex;gap:12px;align-items:center;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ever);margin:0}.li b{font-size:17px}
+/* planner */
+#planner{position:sticky;top:72px;max-height:calc(100vh - 88px);overflow:auto;border:2px solid var(--ever);background:#fff}
+.phead{background:var(--ever);color:var(--white);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}.phead h2{font-size:20px}.phead h2::after{display:none}.phead .link{color:var(--white)}
+.profile{display:flex;gap:10px;align-items:end;padding:14px 16px;background:var(--berry);color:#fff}.profile label{color:#fff;margin-bottom:4px}.profile>div{flex:1}.profile select,.profile input{padding:7px 10px}
+.dtabs{display:flex;border-bottom:1px solid var(--line)}.dtab{flex:1;border:0;border-right:1px solid var(--line);background:#fff;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer}.dtab small{display:block;font-size:10.5px;line-height:1}.dtab.on{background:var(--olive);color:#fff}.dtab.on small{color:#fff}
+.plist{list-style:none;margin:0;padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.plist li{display:flex;gap:10px;align-items:center;border:1px solid var(--line);padding:6px 8px;background:#fff;cursor:grab}.plist li.over{border-color:var(--berry);border-top-width:4px}.plist li.drag{opacity:.4}
+.plist li.hint{cursor:default;color:var(--mute);border-style:dashed;justify-content:center;padding:16px}
+.grip{color:#9aa59d;font-weight:700;letter-spacing:-2px}.plist img{width:44px;height:44px;object-fit:cover}.pt{flex:1;font-weight:700;font-size:14px;line-height:1.25}.pt small{display:block;font-weight:500}
+.pbtns{display:flex}.pbtns button{border:0;background:none;cursor:pointer;font-weight:700;color:var(--mute);padding:4px 6px}.pbtns button:hover{color:var(--berry)}
+.nsec{padding:14px 16px;border-top:1px solid var(--line)}.nsec h3{font-size:14px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:10px}
+.kcal{display:flex;gap:12px;align-items:center}.kcal .ni{font-size:30px}.kcal b{font-size:30px}.kcal>div{flex:1}
+.track{height:9px;background:var(--paper);margin-top:5px;overflow:hidden}.track i{display:block;height:100%;background:var(--sage)}.track i.full{background:var(--olive)}.track i.over{background:var(--berry)}
+.macro{margin-top:12px}.mseg{display:flex;height:12px}.mseg i{display:block;height:100%}.mseg .p{background:var(--berry)}.mseg .c{background:var(--olive)}.mseg .f{background:var(--sage)}
+.mleg{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;font-weight:600;margin-top:6px}
+.nrow{display:flex;gap:10px;align-items:center;margin-top:10px}.ni{font-size:20px;width:28px;text-align:center}.nb{flex:1}.nl{display:flex;justify-content:space-between;gap:8px;font-size:13px}.nl em{font-style:normal;font-weight:700;color:var(--olive)}.nl span{color:var(--mute)}.nrow.nd{opacity:.5}
+.prepbox{border-top:1px solid var(--line)}.prepbox summary{padding:12px 16px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.09em;font-size:14px}
+.prepbox .lead{margin:0 16px 8px}#prepOut{padding:0 16px 16px}.prep{display:flex;flex-direction:column;gap:12px}
+.panel{border:1px solid var(--line);padding:12px 14px}.panel h3{font-size:13px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px;color:var(--berry)}.panel ul{margin:4px 0;padding-left:18px}
+footer{background:var(--ever);color:var(--white);padding:24px 28px;font-size:14px;text-align:center;margin-top:30px}
+@media(max-width:980px){.layout.on{grid-template-columns:1fr}#planner{position:static;max-height:none;order:-1}}
+@media(max-width:700px){.top{padding:8px 12px}.brand{font-size:15px}.shopbtn small{display:none}.wrap{padding:0 16px}.hero .wrap{padding:28px 16px}}
+/* ---- Shopping mode ---- */
+#shop{position:fixed;inset:0;z-index:50;background:var(--teal);overflow:auto;display:flex;flex-direction:column}#shop[hidden]{display:none}
+.shophead{display:flex;gap:16px;align-items:end;flex-wrap:wrap;background:var(--ever);color:var(--white);padding:16px 24px;border-bottom:4px solid var(--berry)}
+.logo2{font-size:24px;font-weight:700;margin-right:auto;align-self:center}.shopsel{min-width:230px}.shopsel label{color:var(--white)}.shopsel select{border:0;font-weight:700}
+.shoptabs{display:flex;gap:8px}.shoptabs .chip{background:transparent;color:#fff;border-color:rgba(254,249,255,.6)}.shoptabs .chip.on{background:var(--white);color:var(--ever);border-color:var(--white)}
+#shClose{color:#fff;border-color:rgba(254,249,255,.6)}#shClose:hover{background:var(--white);color:var(--ever)}
+.shopbody{max-width:780px;margin:0 auto;width:100%;padding:24px 16px 30px}
+#shop .filters{display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin-bottom:16px}#shop .filters>div{flex:1;min-width:150px}#shop .filters label{color:#fff}
+.aisle{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;gap:14px;align-items:center;background:#fff;padding:10px 14px 10px 10px;border-left:6px solid transparent}
+.item img{width:84px;height:84px;object-fit:cover;flex:none;background:var(--paper)}.item .t{flex:1;min-width:0}.item h3{font-size:17px;line-height:1.25}.item h3 a{text-decoration:none}.item p{margin:3px 0 2px;font-size:14px;line-height:1.4;color:var(--mute)}
+.item .btn{flex:none;width:46px;height:46px;padding:0;font-size:26px;line-height:1;letter-spacing:0;background:var(--berry);border-color:var(--berry);color:#fff}
+.item.in{border-left-color:var(--berry)}.item.in .btn{background:var(--ever);border-color:var(--ever)}
+#shStep2 .panel{background:#fff;border:0;padding:22px;margin-bottom:16px}#shStep2 .panel h3{color:var(--ever);font-size:15px}
+#shStep2 .receipt{margin-bottom:30px;position:relative}
+#shStep2 .receipt::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(-45deg,transparent 7px,#fff 0) 0 0/14px 10px,linear-gradient(45deg,transparent 7px,#fff 0) 0 0/14px 10px}
+#shop input[type=checkbox]{appearance:none;-webkit-appearance:none;width:24px;height:24px;border:2px solid var(--ever);background:#fff;display:grid;place-content:center;cursor:pointer}
+#shop input[type=checkbox]:checked{background:var(--berry);border-color:var(--berry)}#shop input[type=checkbox]:checked::after{content:"✓";font-size:15px;font-weight:700;color:#fff;line-height:1}
+.li{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line)}
+.li label{display:flex;gap:12px;align-items:center;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ever);margin:0}.li b{font-size:17px;color:var(--berry)}
 .li:has(input:not(:checked)){opacity:.45}.li:has(input:not(:checked)) b{text-decoration:line-through}
 .pick{display:flex;gap:12px;align-items:center;padding:4px 0;flex-wrap:wrap}.pick span{flex:1;min-width:180px}
-input[type=number]{width:64px;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
-.shopbar{position:sticky;bottom:14px;align-self:center;width:calc(100% - 32px);max-width:560px;margin:auto 16px 14px;background:var(--ever);color:#fff;border-radius:99px;padding:8px 8px 8px 24px;display:flex;gap:14px;align-items:center;justify-content:space-between;font-weight:600}
-.shopbar .btn{background:var(--white);color:var(--ever);border-color:var(--white)}.shopbar .btn:disabled{opacity:.5}
-#tags.chips{display:block}.tgroup{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}.tlabel{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);min-width:150px}
+.shopbar{position:sticky;bottom:14px;align-self:center;width:calc(100% - 32px);max-width:580px;margin:auto 16px 14px;background:var(--ever);color:#fff;padding:8px 8px 8px 22px;display:flex;gap:14px;align-items:center;justify-content:space-between;font-weight:700}
+.shopbar .btn{background:var(--berry);border-color:var(--berry);color:#fff}
 </style></head><body>
 <header class="top">
- <button class="shopbtn" id="basketBtn" aria-label="Open shopping mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-2 11H5L3 9z"/><path d="M8 9l3-6M16 9l-3-6"/></svg><span>Shopping mode <small>pick recipes</small></span></button>
+ <div class="left">
+  <button class="shopbtn" id="basketBtn" aria-label="Open shopping mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-2 11H5L3 9z"/><path d="M8 9l3-6M16 9l-3-6"/></svg><span>Shopping mode <small>pick recipes</small></span></button>
+  <div class="seg" role="group" aria-label="Planning mode"><button id="mOff" class="on" aria-pressed="true">Browse</button><button id="mDay" aria-pressed="false">Day</button><button id="mWeek" aria-pressed="false">Week</button></div>
+ </div>
  <div class="brand">Longevity made easy</div>
 </header>
+<div class="hero"><div class="wrap"><h1>Cook what you have</h1><p>Tick what's in your kitchen, find recipes you can make, plan your day or week with a nutrition check, then shop for the rest.</p></div></div>
 <main class="wrap">
- <div class="intro"><h1>Cook what you have</h1><p>Tick what's in your kitchen and see which recipes you can make, what you're missing, and which swaps fill the gap.</p></div>
- <section id="pantry"><details class="pantry" open><summary><h2>Your pantry</h2></summary>
-  <p class="lead">Only ingredients and swaps from the recipes are listed.</p>
-  <div class="tools"><div><label for="find">Filter the list</label><input type="text" id="find" placeholder="e.g. lentil" autocomplete="off"></div>
-   <div><label style="display:flex;gap:8px;align-items:center;margin:0 0 10px;letter-spacing:0;text-transform:none;font-size:15px;font-weight:500;color:var(--ever)"><input type="checkbox" id="onlyTicked">Only ticked</label></div>
-   <div><button class="btn" id="selAll">Select all</button></div><div><button class="btn" id="clear">Deselect all</button></div></div>
-  <div class="ticks" id="ticks" role="group" aria-label="Ingredients"></div>
-  <p class="by" id="tickinfo" aria-live="polite" style="margin:10px 0 0"></p>
-  <p class="by" style="margin:2px 0 0">"Select all" ticks everything currently showing, so filter first if you only want some. Always assumed: <span id="staples"></span> <button class="link" id="editStaples">edit</button></p>
- </details></section>
- <section id="find"><h2>Find a recipe</h2>
-  <p class="lead">Ranked by how little you're missing.</p>
-  <div class="row"><div style="flex:0 0 auto"><label>Mode</label><div class="seg" role="group" aria-label="Planning mode"><button id="mOff" class="on" aria-pressed="true">Browse</button><button id="mDay" aria-pressed="false">Day mode</button><button id="mWeek" aria-pressed="false">Week mode</button></div></div>
-   <div><label for="miss">Missing at most</label><select id="miss"><option value="99">Any number</option><option value="0">0 (make it now)</option><option value="1">1 ingredient</option><option value="2" selected>2 ingredients</option><option value="3">3 ingredients</option><option value="5">5 ingredients</option></select></div>
-   <div><label for="sort">Sort by</label><select id="sort"><option value="best">Best match</option><option value="few">Fewest ingredients</option><option value="time">Quickest</option><option value="az">A–Z</option></select></div>
-   <div><label for="src">Blog</label><select id="src"><option value="">All blogs</option></select></div>
-   <div><label for="q">Search</label><input type="text" id="q" placeholder="e.g. burger"></div></div>
-  <div class="chips" id="tags"></div>
+ <section id="pantry"><h2>Your pantry</h2>
+  <p class="lead">Tick what you have. Common ingredients are shown first; "Select all" ticks everything showing, then untick what you're missing.</p>
+  <div class="tools"><div><label for="pfind">Filter the list</label><input type="text" id="pfind" placeholder="e.g. lentil" autocomplete="off"></div>
+   <div><label class="chk"><input type="checkbox" id="rare">Show rare ingredients</label></div>
+   <div><label class="chk"><input type="checkbox" id="onlyTicked">Only ticked</label></div>
+   <div><button class="btn solid" id="selAll">Select all</button></div><div><button class="btn" id="clear">Deselect all</button></div></div>
+  <div class="groups" id="ticks"></div>
+  <div class="pbar"><div><label for="miss">Missing at most</label><select id="miss"><option value="99">Any number</option><option value="0">0 (make it now)</option><option value="1">1 ingredient</option><option value="2" selected>2 ingredients</option><option value="3">3 ingredients</option><option value="5">5 ingredients</option></select></div>
+   <div><span class="by" id="tickinfo" aria-live="polite"></span><br><span class="by">Always assumed: <span id="staples"></span> <button class="link" id="editStaples">edit</button></span></div></div>
  </section>
- <section id="planner" hidden><h2>Your plan</h2><p class="lead">Use "Add to plan" on any recipe, or pick from the dropdowns. Your prep list updates as you go.</p>
-  <div style="margin-top:6px"><button class="btn" id="clearPlan">Clear plan</button></div>
-  <div class="days" id="slots"></div>
-  <h2 style="margin-top:28px">Your prep list</h2><p class="lead" id="prepLead"></p><div id="prepOut"></div></section>
- <section id="results"><div class="count" id="count"></div><div class="grid" id="grid"></div>
-  <p style="text-align:center;margin-top:28px"><button class="btn" id="more" hidden>Show more</button></p></section>
+ <div class="layout" id="layout">
+  <section id="recipes" style="border-top:1px solid var(--line)"><h2>Find a recipe</h2>
+   <p class="lead">Ranked by how little you're missing.</p>
+   <div class="row">
+    <div><label for="time">Time</label><select id="time"><option value="">Any time</option><option value="15">15 min or less</option><option value="30">30 min or less</option><option value="45">45 min or less</option><option value="60">60 min or less</option></select></div>
+    <div><label for="temp">Served</label><select id="temp"><option value="">Hot or cold</option><option value="hot">Hot</option><option value="cold">Cold</option></select></div>
+    <div><label for="blend">Blender</label><select id="blend"><option value="">Don't mind</option><option value="no">No blender needed</option><option value="yes">Needs a blender</option></select></div>
+    <div><label for="sort">Sort by</label><select id="sort"><option value="best">Best match</option><option value="few">Fewest ingredients</option><option value="time">Quickest</option><option value="az">A–Z</option></select></div>
+    <div><label for="src">Blog</label><select id="src"><option value="">All blogs</option></select></div>
+    <div><label for="q">Search</label><input type="text" id="q" placeholder="e.g. burger"></div></div>
+   <div id="tags" style="margin-top:6px"></div>
+   <div class="count" id="count"></div><div class="grid" id="grid"></div>
+   <p style="text-align:center;margin-top:28px"><button class="btn" id="more" hidden>Show more</button></p></section>
+  <aside id="planner" hidden aria-label="Meal plan">
+   <div class="phead"><h2 id="pTitle">Your day</h2><button class="link" id="clearPlan">Clear plan</button></div>
+   <div class="profile"><div><label for="sex">👤 I am</label><select id="sex"><option value="f">Female</option><option value="m">Male</option></select></div><div><label for="age">Age</label><input type="number" id="age" min="19" max="99"></div></div>
+   <div class="dtabs" id="dayTabs"></div>
+   <ol class="plist" id="dayList"></ol>
+   <div id="nutri"></div>
+   <details class="prepbox" open><summary>Prep list</summary><p class="lead" id="prepLead"></p><div id="prepOut"></div></details>
+  </aside>
+ </div>
 </main>
-<footer>Recipes belong to their authors. Every card links to the original blog for the full method.</footer>
+<footer>Recipes belong to their authors. Every card links to the original blog for the full method. Nutrition is each blog's own label, shown for information only.</footer>
 <div id="shop" hidden role="dialog" aria-modal="true" aria-label="Shopping mode">
  <div class="shophead"><div class="logo2">🧺 Shopping mode</div>
-  <button class="chip on" id="shTab1">1 · Pick recipes</button><button class="chip" id="shTab2">2 · Shopping list <span id="shN"></span></button>
-  <button class="btn alt" id="shClose">✕ Back to site</button></div>
- <div class="stripe"></div>
+  <div class="shopsel"><label for="shShop">Shopping at</label><select id="shShop"></select></div>
+  <div class="shoptabs"><button class="chip on" id="shTab1">1 · Pick recipes</button><button class="chip" id="shTab2">2 · Shopping list <span id="shN"></span></button></div>
+  <button class="btn" id="shClose">✕ Back to site</button></div>
  <div class="shopbody">
   <div id="shStep1">
-   <div class="row" style="margin-bottom:16px"><div><label for="shq">Search recipes</label><input type="text" id="shq" placeholder="e.g. soup"></div>
-   <div><label for="sht">Type</label><select id="sht"><option value="">All types</option></select></div></div>
-   <div class="aisle" id="shGrid"></div><p style="text-align:center"><button class="btn alt" id="shMore" hidden>Show more</button></p>
+   <div class="filters"><div><label for="shq">Search recipes</label><input type="text" id="shq" placeholder="e.g. soup"></div><div><label for="sht">Type</label><select id="sht"><option value="">All types</option></select></div><div style="flex:0"><button class="btn" id="shPlan" hidden style="background:#fff">+ Everything in my plan</button></div></div>
+   <div class="aisle" id="shGrid"></div><p style="text-align:center"><button class="btn" id="shMore" hidden style="background:#fff">Show more</button></p>
   </div>
   <div id="shStep2" hidden>
    <div class="panel"><h3>Your recipes</h3><p class="by" style="margin:0 0 6px">Change × if you're cooking a recipe more than once. Amounts are added up for you.</p><div id="shPicked"></div></div>
-   <div class="panel receipt"><div class="row"><div><label for="shShop">Where are you shopping?</label><select id="shShop"></select></div>
-   <div style="flex:0;white-space:nowrap"><button class="btn" id="shCopy">Copy list</button></div>
-   <div style="flex:0;white-space:nowrap"><button class="btn alt" id="shOpen">Open searches</button></div></div>
-   <p class="by">Shops don't let other websites fill your basket, so each line links to a search for that item at your chosen shop. Untick anything you don't need.</p>
+   <div class="panel receipt"><div class="row" style="margin-bottom:10px"><div style="flex:0;white-space:nowrap"><button class="btn solid" id="shCopy">Copy list</button></div><div style="flex:0;white-space:nowrap"><button class="btn" id="shOpen">Open searches</button></div></div>
+   <p class="by">Shops don't let other websites fill your basket, so each line links to a search at the shop chosen above. Untick anything you don't need.</p>
    <div id="shList"></div></div>
   </div>
  </div>
  <div class="shopbar" id="shBar"><span id="shBarTxt"></span><button class="btn" id="shGo">Make my shopping list</button></div>
 </div>
 <script>
+
 const $=s=>document.querySelector(s);
 const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
 const load=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}};
 const stem=w=>w.replace(/ies$/,'y').replace(/(o|ch|sh|x)es$/,'$1').replace(/s$/,'');
 const words=t=>t.toLowerCase().replace(/[^a-z\s]/g,' ').split(/\s+/).filter(Boolean).map(stem);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let R=[],pantry=load('pantry2',[]),staples=load('staples',['salt','black pepper','water','oil']),tagsOn=new Set(),shown=48,lastMatches=0;
-let plan=load('plan',{mode:'off',slots:{}});
-const DAYS=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],MEALS=['Breakfast','Lunch','Dinner'];
+const DAYS=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+let R=[],pantry=load('pantry2',[]),staples=load('staples',['salt','black pepper','water','oil']),tagsOn=new Set(),shown=48,lastMatches=0,showRare=false,openG=new Set(load('openG',[])),byGroup={};
+let plan=load('plan2',{mode:'off',active:0,days:[[],[],[],[],[],[],[]]}),prof=load('prof',{sex:'f',age:35});
 const has=(nw,items)=>items.some(i=>i.every(w=>nw.includes(w)));
 const byUrl=u=>R.find(r=>r.url===u);
-const visible=()=>plan.mode==='day'?[0]:plan.mode==='week'?[0,1,2,3,4,5,6]:[];
-const plannedList=()=>Object.entries(plan.slots).filter(([k,u])=>u&&visible().includes(+k.split('-')[0])).map(([k,u])=>byUrl(u)).filter(Boolean);
+/* ---------- ingredient names ---------- */
+const PREP=new Set('minced chopped grated fresh dried ground sliced diced shredded large small medium cloves clove frozen cooked canned raw whole finely roughly thinly extra virgin neutral flavored for more organic freshly ripe baby plain unsweetened unsalted salted low reduced sodium firm toasted pure'.split(' '));
+const CANON=[[/\b(scallions?|spring onions?)\b/g,'green onion'],[/\bgarbanzo beans?\b/g,'chickpeas'],[/\bcourgettes?\b/g,'zucchini'],[/\baubergines?\b/g,'eggplant'],[/\brocket\b/g,'arugula'],[/\b(red|yellow|white|brown|sweet) onions?\b/g,'onion'],[/\b(red|green|yellow|orange) bell peppers?\b/g,'bell pepper'],[/\bcoriander (leaves|fresh)\b/g,'cilantro']];
+const coreMemo=new Map();
+const core=n=>{let v=coreMemo.get(n);if(v!==undefined)return v;let t=n.toLowerCase().replace(/\b(with|plus|such as|like|divided|on hand|what you have|or more)\b.*$/,'');CANON.forEach(([r,s])=>{t=t.replace(r,s)});v=t.replace(/[^a-z\s]/g,' ').split(/\s+/).filter(x=>x&&!PREP.has(x)).join(' ');coreMemo.set(n,v);return v};
+const GROUPS=[['Herbs & spices',/\b(salt|black pepper|white pepper|peppercorn|cayenne|paprika|cumin|turmeric|cinnamon|oregano|thyme|basil|parsley|cilantro|dill|mint|rosemary|sage|chives?|nutmeg|cardamom|coriander|curry|garam|za.?atar|seasoning|spice|chili powder|chili flakes|red pepper flakes|fennel seed|bay|saffron|herbs?)\b/],
+['Sauces, oils & jars',/\b(oil|vinegar|sauce|miso|mustard|ketchup|syrup|maple|tamari|soy|paste|broth|stock|salsa|dressing|hummus|jam|agave|molasses|juice|mayo|aminos|harissa|pickle|capers?)\b/],
+['Tofu & plant protein',/\b(tofu|tempeh|seitan|edamame|protein powder|soy curls|nutritional yeast)\b/],
+['Dairy-free & baking',/\b(milk|yogurt|yoghurt|cheese|cream|vegan butter|margarine|baking|vanilla|cocoa|cacao|chocolate|sugar|yeast|extract|starch|sweetener|powder|egg)\b/],
+['Nuts & seeds',/\b(nuts?|almond|cashew|walnut|pecan|pistachio|peanut|seeds?|tahini|hemp|chia|flax|flaxseed|sesame|sunflower|pepita|hazelnut|butter)\b/],
+['Beans, grains & pasta',/\b(lentil|chickpea|beans?|split peas?|rice|quinoa|oats?|oatmeal|barley|pasta|noodle|couscous|bulgur|flour|bread|tortilla|farro|millet|amaranth|buckwheat|orzo|cracker|spaghetti|penne|macaroni|wheat|cornmeal|polenta|pita|naan|bun)\b/],
+['Fruit',/\b(apple|banana|berry|berries|lemon|lime|orange|mango|pear|peach|dates?|figs?|prunes?|raisins?|cranberr\w*|grapes?|pineapple|avocado|coconut|pomegranate|apricot|cherr\w*|plum|melon|kiwi|papaya|currant|goji|zest)\b/],
+['Vegetables',/\b(onion|garlic|carrot|potato|tomato|pepper|spinach|kale|cabbage|broccoli|cauliflower|zucchini|cucumber|beet|beetroot|mushroom|celery|lettuce|arugula|squash|pumpkin|eggplant|corn|asparagus|leek|shallot|sprouts?|radish|ginger|bok choy|chard|artichoke|olive|jalape\w*|greens|kohlrabi|turnip|parsnip|okra|peas?|seaweed|nori|sauerkraut|kimchi|chili)\b/]];
+const ORDER=['Vegetables','Fruit','Beans, grains & pasta','Tofu & plant protein','Nuts & seeds','Dairy-free & baking','Sauces, oils & jars','Herbs & spices','Other'];
+const gMemo=new Map(),grpOf=n=>{let g=gMemo.get(n);if(!g){g=(GROUPS.find(([,re])=>re.test(n))||['Other'])[0];gMemo.set(n,g)}return g};
 function analyse(r){
   const P=pantry.map(words),S=staples.map(words),swaps=[],missing=[];let have=0,total=0;
   for(const ing of r.ing){
-    if(ing.opt)continue;const nws=ing.names.map(words);
+    if(ing.opt)continue;const nws=ing.names.map(n=>words(core(n))).filter(w=>w.length);if(!nws.length)continue;
     if(nws.some(n=>has(n,S)))continue;
     total++;
     if(nws.some(n=>has(n,P))){have++;continue}
     let sw=null;
-    for(const s of r.subs||[]){const f=words(s.for);
-      if(nws.some(n=>f.every(w=>n.includes(w)))){const u=s.use.find(a=>has(words(a),P));if(u){sw=u;break}}}
-    if(sw){have++;swaps.push(`${ing.names[0]} → ${sw}`)}else missing.push(ing.names[0]);
+    for(const s of r.subs||[]){const f=words(core(s.for));
+      if(f.length&&nws.some(n=>f.every(w=>n.includes(w)))){const u=s.use.find(a=>{const w=words(core(a));return w.length&&has(w,P)});if(u){sw=u;break}}}
+    const nm=core(ing.names[0]);
+    if(sw){have++;swaps.push(`${nm} → ${core(sw)||sw}`)}else missing.push(nm);
   }
   return{r,have,total,swaps,missing};
 }
-const status=()=>{};
+/* ---------- pantry ---------- */
+let LIST=[];
+function buildList(){
+  const S=staples.map(words),m=new Map();
+  const add=(name,sub)=>{const c=core(name);if(!c)return;const w=words(c);if(has(w,S))return;const k=w.join(' ');const e=m.get(k)||{name:c,n:0,sub:true};e.n++;if(!sub)e.sub=false;m.set(k,e)};
+  for(const r of R){for(const i of r.ing){if(!i.opt)i.names.forEach(n=>add(n,false))}(r.subs||[]).forEach(s=>s.use.forEach(u=>add(u,true)))}
+  LIST=[...m.values()].sort((a,b)=>b.n-a.n||a.name.localeCompare(b.name));
+}
+function info(){const n=Object.values(byGroup).reduce((a,l)=>a+l.length,0);$('#tickinfo').textContent=`${pantry.length} ticked · ${n} ingredients showing`;$('#staples').textContent=staples.join(', ')}
+function renderList(){
+  const f=$('#pfind').value.toLowerCase().trim(),only=$('#onlyTicked').checked;byGroup={};
+  LIST.filter(e=>(!f||e.name.includes(f))&&(!only||pantry.includes(e.name))&&(f||showRare||e.n>=2||pantry.includes(e.name))).forEach(e=>(byGroup[grpOf(e.name)]=byGroup[grpOf(e.name)]||[]).push(e));
+  $('#ticks').innerHTML=ORDER.filter(g=>byGroup[g]).map(g=>{const L=byGroup[g],on=L.filter(e=>pantry.includes(e.name)).length;
+   return `<details class="grp" data-g="${esc(g)}" ${openG.has(g)||f?'open':''}><summary><span class="gname">${esc(g)}</span><span class="gcount">${on}/${L.length}</span><span class="gbtns"><button data-all="${esc(g)}">All</button><button data-none="${esc(g)}">None</button></span></summary><div class="gitems">${L.map(e=>`<label><input type="checkbox" data-n="${esc(e.name)}" ${pantry.includes(e.name)?'checked':''}><span>${esc(e.name)}${e.sub?' <small>(swap)</small>':''}</span></label>`).join('')}</div></details>`}).join('')||'<p class="by">No ingredients match.</p>';
+  info();
+}
+const pantryChanged=()=>{save('pantry2',pantry);shown=48;renderList();render();renderPrep()};
+/* ---------- recipes ---------- */
+const fmt=n=>n>=100?Math.round(n).toLocaleString():String(Math.round(n*10)/10);
 function render(){
-  const q=$('#q').value.toLowerCase(),src=$('#src').value,maxMiss=+$('#miss').value;
-  let L=R.map(analyse).filter(a=>(!src||a.r.source===src)&&(!q||a.r.title.toLowerCase().includes(q))&&[...tagsOn].every(t=>a.r.tags.includes(t)));
+  const q=$('#q').value.toLowerCase(),src=$('#src').value,maxMiss=+$('#miss').value,tm=+$('#time').value,tp=$('#temp').value,bl=$('#blend').value;
+  let L=R.map(analyse).filter(a=>{const r=a.r;return(!src||r.source===src)&&(!q||r.title.toLowerCase().includes(q))&&[...tagsOn].every(t=>r.tags.includes(t))
+    &&(!tm||(r.minutes&&r.minutes<=tm))&&(!tp||r.temp===tp||r.temp==='either')&&(!bl||(bl==='yes'?r.blender===true:r.blender===false))});
   if(pantry.length)L=L.filter(a=>a.missing.length<=maxMiss);
   const so=$('#sort').value,m=a=>a.r.minutes??999;
   L.sort((a,b)=>so==='az'?a.r.title.localeCompare(b.r.title):so==='time'?m(a)-m(b):so==='few'?a.total-b.total:(pantry.length?a.missing.length-b.missing.length:0)||a.total-b.total);
@@ -181,73 +241,99 @@ function render(){
   $('#grid').innerHTML=L.slice(0,shown).map(({r,have,total,swaps,missing})=>`<article class="card">${r.image?`<img src="${esc(r.image)}" alt="" loading="lazy">`:''}<div class="cb">
    <h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></h3>
    <div class="by">by ${esc(r.author)} · ${esc(r.source)}</div>
-   <div>${pantry.length?`<span class="have">You have ${have} of ${total}</span>`:`${total} ingredients`}${r.minutes?` · ${r.minutes} min`:''}</div>
+   ${r.desc?`<p class="desc">${esc(r.desc)}</p>`:''}
+   <div class="meta">${r.minutes?`<span>⏱ ${r.minutes} min</span>`:''}${r.temp?`<span>${r.temp==='cold'?'🧊 Cold':r.temp==='hot'?'🔥 Hot':'♨️ Hot or cold'}</span>`:''}${r.blender?'<span>🌀 Blender</span>':''}</div>
+   <div class="match">${pantry.length?`<b>You have ${have} of ${total}</b><div class="mbar"><i style="width:${total?have/total*100:100}%"></i></div>`:`${total} ingredients`}</div>
    ${missing.length?`<div class="miss">Missing: ${missing.map(esc).join(', ')}</div>`:''}
    ${swaps.map(s=>`<div class="swap">Swap: ${esc(s)}</div>`).join('')}
-   <div class="tags">${r.tags.map(esc).join(' · ')}</div>
-   ${plan.mode!=='off'?`<button class="btn" data-add="${esc(r.url)}">Add to plan</button>`:''}</div></article>`).join('')||'<div class="empty">No matches. Try allowing more missing ingredients or removing a filter.</div>';
-  $('#more').hidden=L.length<=shown;status();
+   <div class="tags">${r.tags.slice(0,4).map(esc).join(' · ')}</div>
+   <div class="acts">${plan.mode!=='off'?`<button class="btn solid" data-add="${esc(r.url)}">+ Add to plan</button>`:''}<a class="link" href="${esc(r.url)}" target="_blank" rel="noopener">View recipe ↗</a></div></div></article>`).join('')||'<div class="empty">No matches. Try allowing more missing ingredients or removing a filter.</div>';
+  $('#more').hidden=L.length<=shown;
 }
-const PREP=new Set('minced chopped grated fresh dried ground sliced diced shredded large small medium cloves clove frozen cooked canned raw whole finely roughly thinly extra virgin neutral flavored for more'.split(' '));
-const core=n=>n.toLowerCase().replace(/[^a-z\s]/g,' ').split(/\s+/).filter(x=>x&&!PREP.has(x)).join(' ');
-let LIST=[];
-function buildList(){
-  const S=staples.map(words),m=new Map();
-  const add=(name,sub)=>{const c=core(name);if(!c)return;const w=words(c);if(has(w,S))return;const k=w.join(' ');
-    const e=m.get(k)||{name:c,n:0,sub:true};e.n++;if(!sub)e.sub=false;m.set(k,e)};
-  for(const r of R){for(const i of r.ing){if(!i.opt)i.names.forEach(n=>add(n,false))}(r.subs||[]).forEach(s=>s.use.forEach(u=>add(u,true)))}
-  LIST=[...m.values()].sort((a,b)=>b.n-a.n||a.name.localeCompare(b.name));
+/* ---------- nutrition ---------- */
+const NUT=[['protein','Protein','💪','g'],['carbs','Carbs','🌾','g'],['fat','Fat','🥑','g'],['fibre','Fibre','🌿','g'],['iron','Iron','🩸','mg'],['calcium','Calcium','🦴','mg'],['potassium','Potassium','🍌','mg'],['vitA','Vitamin A','🥕','µg'],['vitC','Vitamin C','🍊','mg'],['sodium','Sodium (limit)','🧂','mg'],['satfat','Saturated fat (limit)','🧈','g']];
+function refs(){const m=prof.sex==='m',a=Math.max(19,+prof.age||35),b=a<31?0:a<51?1:a<71?2:3,kcal=(m?[2700,2500,2300,2100]:[2100,2000,1800,1700])[b];
+  return{kcal,protein:m?56:46,carbs:Math.round(kcal*.5/4),fat:Math.round(kcal*.3/9),fibre:Math.round(kcal/1000*14),iron:m||a>50?8:18,calcium:(!m&&a>50)||a>70?1200:1000,potassium:m?3400:2600,vitA:m?900:700,vitC:m?90:75,sodium:2300,satfat:Math.round(kcal*.1/9)}}
+const curDay=()=>plan.mode==='day'?0:plan.active;
+const dayList=d=>plan.days[d].map(byUrl).filter(Boolean);
+const sumNut=L=>{const T={},N={};let nodata=0;L.forEach(r=>{if(!r.nut||!Object.keys(r.nut).length){nodata++;return}for(const [k,v] of Object.entries(r.nut)){T[k]=(T[k]||0)+v;N[k]=(N[k]||0)+1}});return{T,N,nodata}};
+function renderNutrition(){
+  const L=dayList(curDay()),el=$('#nutri');if(!L.length){el.innerHTML='';return}
+  const{T,N,nodata}=sumNut(L),ref=refs(),kc=T.kcal||0,kp=Math.round(kc/ref.kcal*100);
+  const pk=(T.protein||0)*4,ck=(T.carbs||0)*4,fk=(T.fat||0)*9,sm=pk+ck+fk||1,pp=Math.round(pk/sm*100),cp=Math.round(ck/sm*100),fp=Math.max(0,100-pp-cp);
+  const row=([k,label,icon,unit])=>{const lim=/limit/.test(label);if(!N[k])return `<div class="nrow nd"><span class="ni" aria-hidden="true">${icon}</span><div class="nb"><div class="nl"><b>${label}</b><span>no data</span></div><div class="track"></div></div></div>`;
+    const v=T[k],pct=v/ref[k]*100,cls=lim?(pct>100?'over':''):(pct>=100?'full':'');
+    return `<div class="nrow"><span class="ni" aria-hidden="true">${icon}</span><div class="nb"><div class="nl"><b>${label}</b><span>${fmt(v)} / ${fmt(ref[k])} ${unit} <em>${Math.round(pct)}%</em></span></div><div class="track"><i class="${cls}" style="width:${Math.min(100,pct)}%"></i></div></div></div>`};
+  let wk='';if(plan.mode==='week'){const tot=[0,1,2,3,4,5,6].reduce((a,d)=>a+(sumNut(dayList(d)).T.kcal||0),0),days=[0,1,2,3,4,5,6].filter(d=>plan.days[d].length).length||1;wk=`<p class="by" style="margin:10px 0 0">Week so far: ${fmt(tot)} kcal · average ${fmt(tot/days)} kcal per planned day</p>`}
+  el.innerHTML=`<div class="nsec"><h3>Estimated nutrition · ${plan.mode==='week'?DAYS[plan.active]:'your day'}</h3>
+   <div class="kcal"><span class="ni" aria-hidden="true">🔥</span><div><b>${fmt(kc)}</b> kcal <small>of about ${fmt(ref.kcal)} a day (${kp}%)</small><div class="track"><i class="${kp>=100?'full':''}" style="width:${Math.min(100,kp)}%"></i></div></div></div>
+   <div class="macro"><div class="mseg" title="Share of calories"><i class="p" style="width:${pp}%"></i><i class="c" style="width:${cp}%"></i><i class="f" style="width:${fp}%"></i></div><div class="mleg"><span>💪 Protein ${pp}%</span><span>🌾 Carbs ${cp}%</span><span>🥑 Fat ${fp}%</span></div></div>
+   ${NUT.map(row).join('')}
+   <p class="by" style="margin:12px 0 0">Per serving, one serving of each recipe, from each blog's own label${nodata?` (${nodata} recipe${nodata>1?'s have':' has'} no nutrition info)`:''}. Daily targets are general estimates for a moderately active adult.</p>${wk}</div>`;
 }
-function info(){$('#tickinfo').textContent=`${pantry.length} ticked · ${LIST.length} ingredients (number = recipes using it)`;$('#staples').textContent=staples.join(', ')}
-function renderList(){
-  const f=$('#find').value.toLowerCase().trim(),only=$('#onlyTicked').checked;
-  $('#ticks').innerHTML=LIST.filter(e=>(!f||e.name.includes(f))&&(!only||pantry.includes(e.name))).slice(0,1500).map(e=>`<label><input type="checkbox" data-n="${esc(e.name)}" ${pantry.includes(e.name)?'checked':''}><span>${esc(e.name)} <small>${e.sub?'swap · ':''}${e.n}</small></span></label>`).join('')||'<span class="by">No ingredients match.</span>';
-  info();
-}
+/* ---------- plan ---------- */
+const planned=()=>(plan.mode==='day'?[0]:plan.mode==='week'?[0,1,2,3,4,5,6]:[]).flatMap(d=>dayList(d));
 function renderPlan(){
-  [['mOff','off'],['mDay','day'],['mWeek','week']].forEach(([id,m])=>{$('#'+id).classList.toggle('on',plan.mode===m);$('#'+id).setAttribute('aria-pressed',plan.mode===m)});$('#planner').hidden=plan.mode==='off';if(plan.mode==='off')return;
-  const opts='<option value="">Choose a recipe…</option>'+[...R].sort((a,b)=>a.title.localeCompare(b.title)).map(r=>`<option value="${esc(r.url)}">${esc(r.title)}</option>`).join('');
-  $('#slots').innerHTML=visible().map(d=>`<div class="day"><h3>${plan.mode==='day'?'Your day':DAYS[d]}</h3>${MEALS.map((m,i)=>{const k=d+'-'+i,v=plan.slots[k]||'';
-    return `<label>${m}<select data-k="${k}">${v?opts.replace(`value="${esc(v)}"`,`value="${esc(v)}" selected`):opts}</select></label>`}).join('')}</div>`).join('');
+  [['mOff','off'],['mDay','day'],['mWeek','week']].forEach(([id,m])=>{$('#'+id).classList.toggle('on',plan.mode===m);$('#'+id).setAttribute('aria-pressed',plan.mode===m)});
+  $('#layout').classList.toggle('on',plan.mode!=='off');$('#planner').hidden=plan.mode==='off';
+  if(plan.mode==='off')return;
+  $('#pTitle').textContent=plan.mode==='day'?'Your day':'Your week';
+  $('#dayTabs').innerHTML=plan.mode==='week'?DAYS.map((d,i)=>{const k=sumNut(dayList(i)).T.kcal;return `<button class="dtab${i===plan.active?' on':''}" data-day="${i}" title="${d}">${d.slice(0,3)}<small>${k?Math.round(k):plan.days[i].length?plan.days[i].length+' meal'+(plan.days[i].length>1?'s':''):'–'}</small></button>`}).join(''):'';
+  const d=curDay();
+  $('#dayList').innerHTML=plan.days[d].map((u,i)=>{const r=byUrl(u);return r?`<li draggable="true" data-i="${i}"><span class="grip" aria-hidden="true">⋮⋮</span>${r.image?`<img src="${esc(r.image)}" alt="">`:''}<span class="pt">${esc(r.title)}<small>${r.nut&&r.nut.kcal?Math.round(r.nut.kcal)+' kcal':'no nutrition info'}</small></span><span class="pbtns"><button data-up="${i}" aria-label="Move up">↑</button><button data-dn="${i}" aria-label="Move down">↓</button><button data-prm="${i}" aria-label="Remove">✕</button></span></li>`:''}).join('')||'<li class="hint">Press “+ Add to plan” on a recipe</li>';
+  renderNutrition();renderPrep();
 }
-const VERB={minced:'Mince',chopped:'Chop',grated:'Grate',diced:'Dice',sliced:'Slice',shredded:'Shred'};
+const setMode=m=>{plan.mode=m;save('plan2',plan);renderPlan();render()};
+const mv=(arr,a,b)=>{if(b<0||b>=arr.length||a===b)return;const[x]=arr.splice(a,1);arr.splice(b,0,x)};
+let dragI=null;
 function renderPrep(){
-  if(plan.mode==='off')return;const L=plannedList(),el=$('#prepOut'),wk=plan.mode==='week';
+  if(plan.mode==='off')return;const L=planned(),el=$('#prepOut'),wk=plan.mode==='week';
   $('#prepLead').textContent=wk?'What to do at the start of your week.':'What to do this morning.';
-  if(!L.length){el.innerHTML='<div class="panel empty">Pick some meals above and your prep plan appears here.</div>';return}
+  if(!L.length){el.innerHTML='<div class="panel">Add some meals and your prep plan appears here.</div>';return}
   const uniq=[...new Map(L.map(r=>[r.url,r])).values()],S=staples.map(words);
   const FL={soak:'needs soaking',marinate:'needs marinating or pressing',chill:'needs chilling or setting time'};
   const first=uniq.filter(r=>r.prep&&r.prep.flags&&r.prep.flags.length);
-  const pm=new Map();
+  const VERB={minced:'Mince',chopped:'Chop',grated:'Grate',diced:'Dice',sliced:'Slice',shredded:'Shred'},pm=new Map();
   uniq.forEach(r=>r.ing.forEach(i=>{if(i.opt)return;const v=i.text.toLowerCase().match(/\b(minced|chopped|grated|diced|sliced|shredded)\b/);if(!v)return;
     const k=core(i.names[0]);if(!k||has(words(k),S))return;const e=pm.get(k)||{v:new Set(),r:new Set()};e.v.add(VERB[v[1]]);e.r.add(r.url);pm.set(k,e)}));
   const preps=[...pm].sort((a,b)=>b[1].r.size-a[1].r.size).slice(0,16);
   const ahead=uniq.filter(r=>r.prep&&(r.prep.freeze||(r.prep.days||0)>=3));
-  const buy=new Map();uniq.forEach(r=>analyse(r).missing.forEach(x=>{const k=core(x)||x;buy.set(k,(buy.get(k)||0)+1)}));
+  const buy=new Map();uniq.forEach(r=>analyse(r).missing.forEach(x=>buy.set(x,(buy.get(x)||0)+1)));
   el.innerHTML=`<div class="prep">
-  <div class="panel"><h3>Start these first</h3>${first.length?`<ul>${first.map(r=>`<li><b>${esc(r.title)}</b>: ${r.prep.flags.map(f=>FL[f]).join(', ')}</li>`).join('')}</ul>`:'<p>Nothing in your plan needs waiting time.</p>'}</div>
-  <div class="panel"><h3>Prep in one go</h3>${preps.length?`<ul>${preps.map(([k,e])=>`<li>${[...e.v].join(' / ')} <b>${esc(k)}</b> <span class="by">(${e.r.size} meal${e.r.size>1?'s':''})</span></li>`).join('')}</ul>`:'<p>No chopping or grating needed.</p>'}</div>
-  <div class="panel"><h3>${wk?'Cook at the start of the week':'Make this morning, eat later'}</h3>${ahead.length?`<ul>${ahead.map(r=>`<li><b>${esc(r.title)}</b> <span class="by">${[r.prep.days?`keeps about ${r.prep.days} days in the fridge`:'',r.prep.freeze?'freezes well':''].filter(Boolean).join(' · ')}</span></li>`).join('')}</ul>`:'<p>No make-ahead recipes in your plan.</p>'}</div>
-  <div class="panel"><h3>Still to buy</h3>${buy.size?`<div class="chips">${[...buy].sort((a,b)=>b[1]-a[1]).map(([k,n])=>`<span class="chip">${esc(k)}${n>1?` ×${n}`:''}</span>`).join('')}</div>`:'<p>Your pantry covers everything.</p>'}</div></div>`;
+  <div class="panel"><h3>Start these first</h3>${first.length?`<ul>${first.map(r=>`<li><b>${esc(r.title)}</b>: ${r.prep.flags.map(f=>FL[f]).join(', ')}</li>`).join('')}</ul>`:'<p style="margin:0">Nothing needs waiting time.</p>'}</div>
+  <div class="panel"><h3>Prep in one go</h3>${preps.length?`<ul>${preps.map(([k,e])=>`<li>${[...e.v].join(' / ')} <b>${esc(k)}</b> <small>(${e.r.size} meal${e.r.size>1?'s':''})</small></li>`).join('')}</ul>`:'<p style="margin:0">No chopping or grating needed.</p>'}</div>
+  <div class="panel"><h3>${wk?'Cook at the start of the week':'Make this morning, eat later'}</h3>${ahead.length?`<ul>${ahead.map(r=>`<li><b>${esc(r.title)}</b> <small>${[r.prep.days?`keeps about ${r.prep.days} days in the fridge`:'',r.prep.freeze?'freezes well':''].filter(Boolean).join(' · ')}</small></li>`).join('')}</ul>`:'<p style="margin:0">No make-ahead recipes in your plan.</p>'}</div>
+  <div class="panel"><h3>Still to buy</h3>${buy.size?`<div class="chips">${[...buy].sort((a,b)=>b[1]-a[1]).map(([k,n])=>`<span class="chip">${esc(k)}${n>1?` ×${n}`:''}</span>`).join('')}</div>`:'<p style="margin:0">Your pantry covers everything.</p>'}</div></div>`;
 }
-const refresh=()=>{renderPrep();status()};
-$('#ticks').addEventListener('change',e=>{const n=e.target.dataset.n;if(n==null)return;
-  pantry=e.target.checked?[...new Set([...pantry,n])]:pantry.filter(p=>p!==n);save('pantry2',pantry);info();shown=48;render();renderPrep()});
-$('#find').addEventListener('input',renderList);$('#onlyTicked').addEventListener('change',renderList);
-$('#clear').onclick=()=>{pantry=[];save('pantry2',pantry);renderList();shown=48;render();renderPrep()};
-const filtered=()=>{const f=$('#find').value.toLowerCase().trim();return LIST.filter(e=>!f||e.name.includes(f))};
-$('#selAll').onclick=()=>{pantry=[...new Set([...pantry,...filtered().map(e=>e.name)])];save('pantry2',pantry);renderList();shown=48;render();renderPrep()};
+/* ---------- events ---------- */
+$('#ticks').addEventListener('change',e=>{const n=e.target.dataset.n;if(n==null)return;pantry=e.target.checked?[...new Set([...pantry,n])]:pantry.filter(p=>p!==n);pantryChanged()});
+$('#ticks').addEventListener('click',e=>{const a=e.target.dataset.all,x=e.target.dataset.none,g=a||x;if(!g)return;e.preventDefault();e.stopPropagation();
+  const names=(byGroup[g]||[]).map(i=>i.name);pantry=a?[...new Set([...pantry,...names])]:pantry.filter(p=>!names.includes(p));pantryChanged()});
+$('#ticks').addEventListener('toggle',e=>{const d=e.target;if(d.dataset&&d.dataset.g){d.open?openG.add(d.dataset.g):openG.delete(d.dataset.g);save('openG',[...openG])}},true);
+$('#pfind').addEventListener('input',renderList);$('#onlyTicked').addEventListener('change',renderList);
+$('#rare').addEventListener('change',e=>{showRare=e.target.checked;renderList()});
+$('#selAll').onclick=()=>{pantry=[...new Set([...pantry,...Object.values(byGroup).flat().map(e=>e.name)])];pantryChanged()};
+$('#clear').onclick=()=>{pantry=[];pantryChanged()};
 $('#editStaples').onclick=()=>{const v=prompt('Things you always have (comma separated):',staples.join(', '));if(v!==null){staples=v.split(',').map(s=>s.trim()).filter(Boolean);save('staples',staples);buildList();renderList();render();renderPrep()}};
-['miss','sort','src','q'].forEach(id=>$('#'+id).addEventListener('input',()=>{shown=48;render()}));
+['miss','sort','src','q','time','temp','blend'].forEach(id=>$('#'+id).addEventListener('input',()=>{shown=48;render()}));
 $('#more').onclick=()=>{shown+=48;render()};
 $('#tags').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const t=b.dataset.t;tagsOn.has(t)?tagsOn.delete(t):tagsOn.add(t);b.classList.toggle('on');shown=48;render()});
-$('#grid').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;
-  for(const d of visible())for(let i=0;i<3;i++){const k=d+'-'+i;if(!plan.slots[k]){plan.slots[k]=b.dataset.add;save('plan',plan);renderPlan();refresh();b.textContent='Added ✓';return}}
-  alert('Your plan is full. Clear a slot first.')});
-$('#slots').addEventListener('change',e=>{const k=e.target.dataset.k;if(!k)return;plan.slots[k]=e.target.value;save('plan',plan);refresh()});
-const setMode=m=>{plan.mode=m;save('plan',plan);renderPlan();renderPrep();render()};
 $('#mOff').onclick=()=>setMode('off');$('#mDay').onclick=()=>setMode('day');$('#mWeek').onclick=()=>setMode('week');
-$('#clearPlan').onclick=()=>{plan.slots={};save('plan',plan);renderPlan();refresh()};
+$('#grid').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;plan.days[curDay()].push(b.dataset.add);save('plan2',plan);renderPlan();b.textContent='Added ✓'});
+$('#clearPlan').onclick=()=>{plan.days=[[],[],[],[],[],[],[]];save('plan2',plan);renderPlan()};
+$('#dayTabs').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(b){plan.active=+b.dataset.day;save('plan2',plan);renderPlan()}});
+$('#dayTabs').addEventListener('dragover',e=>{if(e.target.closest('[data-day]'))e.preventDefault()});
+$('#dayTabs').addEventListener('drop',e=>{const b=e.target.closest('[data-day]');if(!b||dragI==null)return;e.preventDefault();const[x]=plan.days[curDay()].splice(dragI,1);plan.days[+b.dataset.day].push(x);dragI=null;save('plan2',plan);renderPlan()});
+const L$=$('#dayList');
+L$.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const a=plan.days[curDay()];
+  if(b.dataset.up!=null)mv(a,+b.dataset.up,+b.dataset.up-1);else if(b.dataset.dn!=null)mv(a,+b.dataset.dn,+b.dataset.dn+1);else if(b.dataset.prm!=null)a.splice(+b.dataset.prm,1);else return;save('plan2',plan);renderPlan()});
+L$.addEventListener('dragstart',e=>{const li=e.target.closest('li[data-i]');if(!li)return;dragI=+li.dataset.i;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',String(dragI));li.classList.add('drag')});
+L$.addEventListener('dragover',e=>{e.preventDefault();L$.querySelectorAll('.over').forEach(x=>x.classList.remove('over'));const li=e.target.closest('li[data-i]');if(li)li.classList.add('over')});
+L$.addEventListener('drop',e=>{e.preventDefault();if(dragI==null)return;const li=e.target.closest('li[data-i]'),a=plan.days[curDay()];mv(a,dragI,li?+li.dataset.i:a.length-1);dragI=null;save('plan2',plan);renderPlan()});
+L$.addEventListener('dragend',()=>{dragI=null;renderPlan()});
+$('#sex').addEventListener('change',e=>{prof.sex=e.target.value;save('prof',prof);renderNutrition()});
+$('#age').addEventListener('input',e=>{prof.age=+e.target.value||35;save('prof',prof);renderNutrition()});
+
 /*SHOPFN*/
 const VOL={tsp:5,tbsp:15,cup:240,ml:1,l:1000},WT={g:1,kg:1000,oz:28.35,lb:453.6};
 const FRC={.25:'¼',.5:'½',.75:'¾'},q4=n=>Math.ceil(n*4-1e-9)/4;
@@ -277,8 +363,8 @@ function lineText(e){
   return{q:p.join(' + '),n:e.name};
 }
 /*ENDSHOPFN*/
-let shop=load('shop',{picked:{},sel:{}}),store=load('store','sainsburys'),shShown=36;
-const STORES={sainsburys:{n:"Sainsbury's",g:'Supermarkets',u:'https://www.sainsburys.co.uk/gol-ui/SearchResults/{q}'},tesco:{n:'Tesco',g:'Supermarkets',u:'https://www.tesco.com/groceries/en-GB/search?query={q}'},ocado:{n:'Ocado',g:'Supermarkets',u:'https://www.ocado.com/search?entry={q}'},waitrose:{n:'Waitrose',g:'Supermarkets',u:'https://www.waitrose.com/ecom/shop/search?&searchTerm={q}'},asda:{n:'Asda',g:'Supermarkets',u:'https://groceries.asda.com/search/{q}'},morrisons:{n:'Morrisons',g:'Supermarkets',u:'https://groceries.morrisons.com/search?entry={q}'},planet:{n:'Planet Organic',g:'Organic shops',u:'https://www.planetorganic.com/search?q={q}'},google:{n:'Any shop (Google search)',g:'Other',u:'https://www.google.com/search?q={q}+buy+online+UK'}};
+let shop=load('shop',{picked:{},sel:{}}),store=load('store','planet'),shShown=36;
+const STORES={planet:{n:'Planet Organic',g:'Organic shops',u:'https://www.planetorganic.com/search?q={q}'},sainsburys:{n:"Sainsbury's",g:'Supermarkets',u:'https://www.sainsburys.co.uk/gol-ui/SearchResults/{q}'},waitrose:{n:'Waitrose',g:'Supermarkets',u:'https://www.waitrose.com/ecom/shop/search?&searchTerm={q}'},ms:{n:'M&S',g:'Supermarkets',u:'https://www.marksandspencer.com/search?searchTerm={q}'},tesco:{n:'Tesco',g:'Supermarkets',u:'https://www.tesco.com/groceries/en-GB/search?query={q}'},ocado:{n:'Ocado',g:'Supermarkets',u:'https://www.ocado.com/search?entry={q}'},asda:{n:'Asda',g:'Supermarkets',u:'https://groceries.asda.com/search/{q}'},morrisons:{n:'Morrisons',g:'Supermarkets',u:'https://groceries.morrisons.com/search?entry={q}'},aldi:{n:'Aldi',g:'Supermarkets',u:'https://www.aldi.co.uk/results?q={q}'},google:{n:'Any shop (Google search)',g:'Other',u:'https://www.google.com/search?q={q}+buy+online+UK'}};
 const storeUrl=(e)=>STORES[store].u.replace('{q}',encodeURIComponent(e.name));
 const isOn=e=>shop.sel[e.key]??!(e.staple||e.have),ticked=()=>buildShopping().filter(isOn);
 function shCount(){const n=Object.keys(shop.picked).length;$('#shBarTxt').textContent=`${n} recipe${n==1?'':'s'} in your basket`;$('#shN').textContent=n?`(${n})`:'';$('#basketBtn small').textContent=n?`${n} picked`:'pick recipes';$('#shGo').disabled=!n}
@@ -286,7 +372,7 @@ function renderShop1(){
   const q=$('#shq').value.toLowerCase(),t=$('#sht').value;
   const L=R.filter(r=>(!q||r.title.toLowerCase().includes(q))&&(!t||r.tags.includes(t)));
   $('#shGrid').innerHTML=L.slice(0,shShown).map(r=>{const on=shop.picked[r.url];return `<article class="item${on?' in':''}">${r.image?`<img src="${esc(r.image)}" alt="" loading="lazy">`:''}<div class="t"><h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></h3><p>${esc(r.desc||'')}</p><div class="by">by ${esc(r.author)} · ${esc(r.source)}</div></div><button class="btn" data-pick="${esc(r.url)}" aria-label="${on?'Remove from':'Add to'} basket: ${esc(r.title)}">${on?'✓':'+'}</button></article>`}).join('')||'<div class="empty">No recipes match.</div>';
-  $('#shMore').hidden=L.length<=shShown;shCount();
+  $('#shMore').hidden=L.length<=shShown;$('#shPlan').hidden=!plan.days.flat().length;shCount();
 }
 function renderPicked(){$('#shPicked').innerHTML=Object.entries(shop.picked).map(([u,b])=>{const r=byUrl(u);return r?`<div class="pick"><span><b>${esc(r.title)}</b></span><label style="margin:0">×<input type="number" min="1" max="9" value="${b}" data-b="${esc(u)}" aria-label="Times cooking ${esc(r.title)}"></label><button class="link" data-rm="${esc(u)}">remove</button></div>`:''}).join('')||'<p>No recipes picked yet.</p>'}
 function renderShopList(){
@@ -301,7 +387,7 @@ function shInit(){
   $('#shShop').innerHTML=Object.entries(groups).map(([g,o])=>`<optgroup label="${g}">${o.join('')}</optgroup>`).join('');$('#shShop').value=store;
   shop.picked=Object.fromEntries(Object.entries(shop.picked).filter(([u])=>byUrl(u)));renderShop1();
 }
-$('#basketBtn').addEventListener('click',e=>{e.preventDefault();$('#shop').hidden=false;document.body.style.overflow='hidden';shTab(1)});
+$('#basketBtn').addEventListener('click',e=>{e.preventDefault();$('#shop').hidden=false;document.body.style.overflow='hidden';renderShop1();shTab(1)});
 $('#shClose').onclick=()=>{$('#shop').hidden=true;document.body.style.overflow=''};
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#shop').hidden)$('#shClose').click()});
 $('#shTab1').onclick=()=>shTab(1);$('#shTab2').onclick=()=>shTab(2);$('#shGo').onclick=()=>shTab(2);
@@ -317,10 +403,22 @@ $('#shShop').addEventListener('change',e=>{store=e.target.value;save('store',sto
 $('#shCopy').onclick=async()=>{const t=ticked().map(e=>{const l=lineText(e);return `- ${l.q} ${l.n}`}).join('\n');
   try{await navigator.clipboard.writeText(t);$('#shCopy').textContent='Copied ✓'}catch(x){prompt('Copy your list:',t)}setTimeout(()=>$('#shCopy').textContent='Copy list',2000)};
 $('#shOpen').onclick=()=>{const T=ticked();if(!T.length)return;if(!confirm(`This opens ${T.length} tabs at ${STORES[store].n}. Allow pop-ups if your browser asks. Continue?`))return;T.forEach(e=>window.open(storeUrl(e),'_blank','noopener'))};
-Promise.all([fetch('data/recipes.json').then(r=>r.json()),fetch('data/categories.json').then(r=>r.ok?r.json():[]).catch(()=>[])]).then(([d,cg])=>{R=d;d.forEach(r=>{r.tags=[...new Set([...(r.tags||[]),...(r.cats||[])])]});const GROUP={};cg.forEach(c=>GROUP[c.name]=c.group);
+
+$('#shPlan').onclick=()=>{plan.days.flat().forEach(u=>{if(byUrl(u))shop.picked[u]=Math.min(9,(shop.picked[u]||0)+1)});save('shop',shop);renderShop1()};
+
+Promise.all([fetch('data/recipes.json').then(r=>r.json()),fetch('data/categories.json').then(r=>r.ok?r.json():[]).catch(()=>[])]).then(([d,cg])=>{R=d;d.forEach(r=>{r.tags=[...new Set([...(r.tags||[]),...(r.cats||[])])]});
+  const GROUP={};cg.forEach(c=>GROUP[c.name]=c.group);
   const cnt={};d.forEach(r=>r.tags.forEach(t=>cnt[t]=(cnt[t]||0)+1));
   const order=[...new Set(cg.map(c=>c.group)),'Other'];
   $('#tags').innerHTML=order.map(g=>{const names=Object.keys(cnt).filter(t=>(GROUP[t]||'Other')===g).sort();return names.length?`<div class="tgroup">${cg.length?`<span class="tlabel">${esc(g)}</span>`:''}${names.map(t=>`<button class="chip" data-t="${esc(t)}">${esc(t)} (${cnt[t]})</button>`).join('')}</div>`:''}).join('');
   [...new Set(d.map(r=>r.source))].forEach(s=>$('#src').insertAdjacentHTML('beforeend',`<option>${esc(s)}</option>`));
-  buildList();renderList();render();renderPlan();renderPrep();shInit()}).catch(()=>$('#grid').innerHTML='<div class="empty">Could not load data/recipes.json.</div>');
+  $('#sex').value=prof.sex;$('#age').value=prof.age;
+  buildList();renderList();render();renderPlan();shInit()}).catch(e=>{console.error(e);$('#grid').innerHTML='<div class="empty">Could not load data/recipes.json.</div>'});
+/* animated sprout favicon */
+(function(){try{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d'),link=document.querySelector('link[rel=icon]');if(!x)return;let t=0,timer;
+ function draw(){t+=.2;const s=Math.sin(t)*.13,g=1+Math.sin(t*.8)*.05;x.clearRect(0,0,64,64);x.fillStyle='#172815';x.fillRect(0,0,64,64);
+  x.save();x.translate(32,56);x.rotate(s);x.strokeStyle='#8fd19e';x.lineWidth=5;x.lineCap='round';x.beginPath();x.moveTo(0,0);x.quadraticCurveTo(-4,-14,0,-27*g);x.stroke();
+  [[-1,'#6BAA75'],[1,'#8fd19e']].forEach(([d,col])=>{x.save();x.translate(0,-26*g);x.rotate(d*(.55+Math.sin(t*1.3)*.14));x.fillStyle=col;x.beginPath();x.ellipse(d*10,0,11,6.5,0,0,7);x.fill();x.restore()});
+  x.restore();x.fillStyle='#d9c79a';x.beginPath();x.ellipse(32,57,7,3.5,0,0,7);x.fill();link.type='image/png';link.href=c.toDataURL('image/png')}
+ const start=()=>{clearInterval(timer);timer=setInterval(draw,140)};document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):start());draw();start()}catch(e){}})();
 </script></body></html>
