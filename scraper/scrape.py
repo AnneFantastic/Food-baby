@@ -13,7 +13,7 @@ LOG = []
 def log(m): print(m); LOG.append(m)
 SCHEMA = 4                                      # bump to re-fetch everything
 MAX_NEW = int(os.environ.get("MAX_NEW", 400))   # posts fetched per run
-DELAY = 1.0                                     # seconds between page requests
+DELAY = 1.5                                     # seconds between page requests
 
 TAGS = {  # tag -> keywords found in title/categories/description
  "Salad": ["salad", "slaw"], "Soup & Stew": ["soup", "stew", "chili", "chowder", "dal "],
@@ -34,7 +34,14 @@ UNITS = r"(cups?|tablespoons?|tbsp|teaspoons?|tsp|ounces?|oz|pounds?|lbs?|lb|gra
 ADJ = r"^(?:(?:a|an|the|variety|of|fresh|dried|grated|chopped|sliced|diced|frozen|more)\s+)+"
 
 def get(url):
-    r = requests.get(url, headers=UA, timeout=30); r.raise_for_status(); return r.text
+    last = None
+    for wait in (0, 5, 20, 60):          # retry politely if the site is busy or throttling
+        if wait: time.sleep(wait)
+        try: r = requests.get(url, headers=UA, timeout=30)
+        except requests.RequestException as e: last = e; continue
+        if r.status_code in (429, 403, 500, 502, 503, 504): last = Exception(f"HTTP {r.status_code}"); continue
+        r.raise_for_status(); return r.text
+    raise last
 
 def sitemap_urls(url, depth=0):
     out = {}
@@ -227,10 +234,23 @@ def first(v):
     v = v[0] if isinstance(v, list) and v else v
     return v.get("url") if isinstance(v, dict) else v
 
+def html_recipe(soup):
+    lis = soup.select("li.wprm-recipe-ingredient")
+    if not lis: return None
+    og = lambda p: (soup.find("meta", property=p) or {}).get("content", "")
+    h1 = soup.find("h1"); tt = soup.select_one('[class*="wprm-recipe-total_time"]')
+    tx = tt.get_text(" ").lower() if tt else ""
+    h, m = re.search(r"(\d+)\s*hour", tx), re.search(r"(\d+)\s*min", tx)
+    return {"name": h1.get_text(" ", strip=True) if h1 else og("og:title"), "image": og("og:image"), "description": og("og:description"),
+            "recipeIngredient": [li.get_text(" ", strip=True) for li in lis],
+            "recipeInstructions": [x.get_text(" ", strip=True) for x in soup.select(".wprm-recipe-instruction-text")],
+            "totalTime": f"PT{int(h.group(1)) if h else 0}H{int(m.group(1)) if m else 0}M" if (h or m) else None}
+
 def scrape_page(url, src):
     soup = BeautifulSoup(get(url), "html.parser")
     rec = find_recipe(soup)
-    if not rec or not rec.get("recipeIngredient"): return None
+    if not rec or not rec.get("recipeIngredient"): rec = html_recipe(soup)
+    if not rec: return None
     bc = soup.select_one("[class*=breadcrumb]")
     cats = " ".join(a.get_text() for a in bc.find_all("a")) if bc else ""
     cats += " " + str(rec.get("recipeCategory", "")) + " " + str(rec.get("keywords", ""))
@@ -351,7 +371,7 @@ def main():
             log("  !! Found no pages, so nothing was changed for this blog."); continue
         todo = [(u, m) for u, m in urls.items() if need(u, m)]
         log(f"  {len(urls)} pages, {len(todo)} to check")
-        added = nonrecipe = errors = streak = 0
+        added = nonrecipe = errors = streak = cools = 0
         for url, mod in todo:
             if budget <= 0: log("  stopped at this run's limit; run it again to continue"); break
             if rp and not rp.can_fetch("PantryRecipesBot", url): continue
@@ -360,11 +380,16 @@ def main():
             except Exception as e:
                 errors += 1; streak += 1
                 if errors <= 5: log(f"  error {url}: {e}")
-                if streak >= 8: log("  !! The site keeps refusing requests (see errors above). Stopping."); break
+                if streak >= 8:
+                    cools += 1
+                    if cools > 3: log("  !! The site keeps refusing requests (see errors above). Stopping; run it again later."); break
+                    log("  site is refusing requests; pausing 2 minutes"); time.sleep(120); streak = 0
                 continue
             streak = 0; seen[url] = mod
             if r: recipes[r["url"]] = r; added += 1
-            else: nonrecipe += 1
+            else:
+                nonrecipe += 1
+                if nonrecipe <= 6: log(f"  not a recipe: {url}")
         log(f"  added/updated {added} recipes; {nonrecipe} pages were not recipes; {errors} errors")
         live = set(urls)  # drop recipes removed from the blog
         recipes = {u: r for u, r in recipes.items() if r["source"] != src["name"] or u in live}
