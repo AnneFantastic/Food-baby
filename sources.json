@@ -5,5 +5,13 @@
     "author": "Nisha Melvani, RDN",
     "url": "https://cookingforpeanuts.com",
     "categories_page": "/recipes/"
+  },
+  {
+    "id": "earthygoodness",
+    "name": "Earthy Goodness Kitchen",
+    "author": "George",
+    "type": "youtube",
+    "channel_id": "UC1er_22Xw1A8Fpx6z9gNgOg",
+    "url": "https://www.youtube.com/@EarthyGoodnessKitchen"
   }
 ]
