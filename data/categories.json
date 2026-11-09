@@ -45,6 +45,16 @@
 "source": "Cooking for Peanuts"
 },
 {
+"name": "Beetroot",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "White Bean",
+"group": "Ingredient",
+"source": "Cooking for Peanuts"
+},
+{
 "name": "Chia Pudding",
 "group": "Ingredient",
 "source": "Cooking for Peanuts"
@@ -55,7 +65,37 @@
 "source": "Cooking for Peanuts"
 },
 {
+"name": "Burger",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Salad",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Sandwich",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
 "name": "Soup & Stew",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Veggie Bowls",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Asian",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Curry",
 "group": "Type",
 "source": "Cooking for Peanuts"
 },
@@ -65,13 +105,73 @@
 "source": "Cooking for Peanuts"
 },
 {
+"name": "Easy Vegan Recipes for Protein",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "High-Protein Vegan Meals",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Meat",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Bread",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
 "name": "Side Dish",
 "group": "Type",
 "source": "Cooking for Peanuts"
 },
 {
+"name": "Cholesterol Lowering Meals",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Quinoa Salad",
+"group": "Type",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Dressing",
+"group": "Dressings & Sides",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Vegan Dips & Condiments",
+"group": "Dressings & Sides",
+"source": "Cooking for Peanuts"
+},
+{
 "name": "Green Sauce",
 "group": "Dressings & Sides",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Breakfast",
+"group": "Breakfasts, Teas & Desserts",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Healthy Vegan Treats",
+"group": "Breakfasts, Teas & Desserts",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Health Drinks",
+"group": "Breakfasts, Teas & Desserts",
+"source": "Cooking for Peanuts"
+},
+{
+"name": "Thanksgiving",
+"group": "Holiday",
 "source": "Cooking for Peanuts"
 },
 {
