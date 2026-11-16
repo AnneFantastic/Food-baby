@@ -137,7 +137,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "Beans and greens is the perfect easy lunch or dinner that can be easily elevated with simple ingredients. Click/press on *more* for the recipes. Join…",
 "subs": [],
 "prep": {
@@ -879,7 +879,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "These are my 5 go-to seasoning mixes for delicious plant-based cooking. Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen…",
 "subs": [],
 "prep": {
@@ -11922,7 +11922,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "Squash is in season so cook up a delicious and hearty butternut squash chili Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen…",
 "subs": [],
 "prep": {
@@ -16047,6 +16047,207 @@
 ]
 },
 {
+"url": "https://cookingforpeanuts.com/chickpea-tuna-salad-no-mayo/",
+"title": "Chickpea Tuna Salad Recipe",
+"steps": [
+"Mash the chickpeas: Transfer the chickpeas to a large bowl. Use a fork or potato masher to mash until most are broken down, leaving small pieces for texture.",
+"Blend the dressing: Add the tofu, nutritional yeast, lemon juice, Dijon mustard, capers, three snack-size nori sheets, garlic powder, black pepper, hot sauce if using, and water to a small blender. Blend until smooth, scraping down the sides as needed. Alternatively, use an immersion blender in a narrow container. Add the remaining water if needed to reach a thick, creamy consistency.",
+"Taste: Add the remaining snack-size nori sheet for a stronger sea flavor, if desired, and blend again. Adjust the pepper and hot sauce to taste.",
+"Combine: Add the celery, red onion, and dill to the mashed chickpeas. Pour in the dressing and mix until evenly coated.",
+"Serve: Enjoy immediately, or refrigerate for 20 to 30 minutes to let the flavors develop. Serve in sandwiches, wraps, lettuce cups, or over roasted sweet potato halves."
+],
+"servings": "3 3 servings",
+"nut": {
+"kcal": 389.0,
+"protein": 27.0,
+"carbs": 56.0,
+"fat": 8.0,
+"fibre": 17.0,
+"iron": 7.0,
+"calcium": 198.0,
+"potassium": 860.0,
+"vitA": 9.2,
+"vitC": 9.1,
+"sodium": 263.0,
+"satfat": 1.0,
+"sugar": 10.0
+},
+"nutEst": true,
+"nutCov": 0.75,
+"image": "https://cookingforpeanuts.com/wp-content/uploads/2026/11/high-protein-chickpea-tuna-featured.jpg",
+"source": "Cooking for Peanuts",
+"author": "Nisha Melvani, RDN",
+"minutes": null,
+"tags": [
+"High-Protein"
+],
+"ing": [
+{
+"text": "3 cups cooked chickpeas (drained and rinsed (about two 15-ounce cans))",
+"names": [
+"cooked chickpeas )"
+],
+"opt": false,
+"q": 3.0,
+"u": "cup",
+"c": null
+},
+{
+"text": "2 stalks celery (finely diced)",
+"names": [
+"stalks celery"
+],
+"opt": false,
+"q": 2.0,
+"u": "stalk",
+"c": null
+},
+{
+"text": "1/3 cup finely diced red onion",
+"names": [
+"finely diced red onion"
+],
+"opt": false,
+"q": 0.3333333333333333,
+"u": "cup",
+"c": null
+},
+{
+"text": "1/3 cup chopped fresh dill",
+"names": [
+"chopped fresh dill"
+],
+"opt": false,
+"q": 0.3333333333333333,
+"u": "cup",
+"c": null
+},
+{
+"text": "7 to 8 ounces firm tofu (drained, or 3/4 cup plain unsweetened Greek-style yogurt)",
+"names": [
+"to 8 ounces firm tofu"
+],
+"opt": false,
+"q": 8.0,
+"u": "oz",
+"c": null
+},
+{
+"text": "4 tablespoons nutritional yeast",
+"names": [
+"nutritional yeast"
+],
+"opt": false,
+"q": 4.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "1/4 cup fresh lemon juice",
+"names": [
+"fresh lemon juice"
+],
+"opt": false,
+"q": 0.25,
+"u": "cup",
+"c": null
+},
+{
+"text": "4 teaspoons Dijon mustard (or wholegrain mustard)",
+"names": [
+"dijon mustard"
+],
+"opt": false,
+"q": 4.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "2 tablespoons capers (drained)",
+"names": [
+"capers"
+],
+"opt": false,
+"q": 2.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "3 to 4 snack-size nori sheets (or approximately 1 full-size sushi nori sheet)",
+"names": [
+"to 4 snack-size nori sheets"
+],
+"opt": false,
+"q": 4.0,
+"u": "",
+"c": null
+},
+{
+"text": "1 teaspoon garlic powder",
+"names": [
+"garlic powder"
+],
+"opt": false,
+"q": 1.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "Freshly ground black pepper (to taste)",
+"names": [
+"freshly ground black pepper"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Hot sauce (to taste (optional))",
+"names": [
+"hot sauce )"
+],
+"opt": true,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "5 to 6 tablespoons water (as needed (see notes))",
+"names": [
+"to 6 tablespoons water )"
+],
+"opt": false,
+"q": 6.0,
+"u": "tbsp",
+"c": null
+}
+],
+"t": 1794835930,
+"desc": "High-Protein Chickpea Tuna Salad with a creamy mayo-free dressing. A fiber-rich, heart-healthy vegan lunch for sandwiches, wraps, and meal prep.",
+"subs": [],
+"prep": {
+"flags": [
+"chill"
+],
+"days": 4,
+"freeze": true
+},
+"blender": true,
+"temp": "cold",
+"cats": [
+"Chickpea",
+"Cholesterol Lowering Meals",
+"Dinner",
+"Easy Vegan Recipes for Protein",
+"High-Protein Vegan Meals",
+"Salad",
+"Sandwich",
+"Side Dish",
+"Tofu"
+]
+},
+{
 "url": "https://cookingforpeanuts.com/chickpea-vegetable-fried-rice/",
 "title": "Chickpea Vegetable Stir-Fry with Rice",
 "steps": [
@@ -18517,7 +18718,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "Tofu fried rice is my go to dinner after a long day. Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -21794,6 +21995,318 @@
 "Soup & Stew",
 "White Bean"
 ]
+},
+{
+"url": "https://www.youtube.com/watch?v=0uUcj_wQK4c",
+"title": "Creamy Leek Tart That Anyone Can Make",
+"steps": [
+"Preheat the oven to 220°C (425°F). Place a baking tray in the oven to heat up, helping to give the pastry a crisp base.",
+"Make the tofu ricotta by adding the tofu, lemon zest and juice, nutritional yeast, garlic, miso, thyme and olive oil to a food processor.",
+"Blend until mostly smooth but still slightly textured. Season with salt and black pepper to taste.",
+"Heat the olive oil and butter in a large frying pan over a medium heat.",
+"Add the leeks with a good pinch of salt and gently cook for 12–15 minutes with the lid on, stirring occasionally, until completely soft and sweet. Keep the heat low so they soften without taking on too much colour. Remove the lid towards the end if necessary to evaporate any excess moisture. Allow to cool slightly.",
+"Unroll the puff pastry onto baking paper. Score a 1.5cm border around the edge, being careful not to cut all the way through.",
+"Spread the tofu ricotta evenly over the pastry, keeping within the border.",
+"Arrange the softened leeks evenly over the ricotta.",
+"Lightly brush the exposed pastry border with olive oil and sprinkle with a little flaky salt and onion seeds.",
+"Carefully transfer the tart, still on the baking paper, onto the preheated baking tray. Bake for 25–35 minutes until the pastry is golden, crisp and well risen.",
+"Turn down the heat of the oven if the leeks start to brown too much.",
+"While the tart is baking, prepare the walnut and rosemary crumb. Add the walnuts to a frying pan over a medium heat and toast for a few minutes until golden.",
+"Add the olive oil and rosemary and fry for 1 minute stirring regularly.",
+"Add the maple syrup and a pinch of flaky salt. Stir well and continue cooking for another 30 seconds until everything is toasted and slightly caramelised. Remove from the heat.",
+"Remove the tart from the oven and allow it to rest for 5 minutes.",
+"Generously scatter the walnut and rosemary crumb over the tart before serving.",
+"STAY IN TOUCH",
+"If you love what I’m creating and want to support me, consider joining my Patreon for early access to videos, recipe PDFs, and more: https://www.patreon.com/EarthyGoodnessKitchen"
+],
+"servings": "4",
+"nut": {
+"kcal": 279,
+"protein": 2.9,
+"carbs": 14.6,
+"fat": 24.2,
+"fibre": 2.4,
+"iron": 2.2,
+"calcium": 64.5,
+"potassium": 174.0,
+"vitA": 56.4,
+"vitC": 8.3,
+"sodium": 122.8,
+"satfat": 3.4
+},
+"nutEst": true,
+"nutCov": 0.86,
+"image": "https://i1.ytimg.com/vi/0uUcj_wQK4c/hqdefault.jpg",
+"source": "Earthy Goodness Kitchen",
+"author": "George",
+"minutes": null,
+"tags": [
+"Dessert & Treats",
+"Tofu"
+],
+"ing": [
+{
+"text": "Tofu Ricotta",
+"names": [
+"tofu ricotta"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "400g extra-firm tofu (about 1 block)",
+"names": [
+"400g extra-firm tofu"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Zest and juice of 1 lemon",
+"names": [
+"zest and juice of 1 lemon"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "2-3 tbsp nutritional yeast",
+"names": [
+"nutritional yeast"
+],
+"opt": false,
+"q": 3.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "1 medium garlic clove",
+"names": [
+"garlic clove"
+],
+"opt": false,
+"q": 1.0,
+"u": "clove",
+"c": null
+},
+{
+"text": "1-2 tsp white miso",
+"names": [
+"white miso"
+],
+"opt": false,
+"q": 2.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "1½ tsp fresh thyme leaves or 1 tsp dried thyme",
+"names": [
+"fresh thyme leaves",
+"dried thyme"
+],
+"opt": false,
+"q": 1.5,
+"u": "tsp",
+"c": null
+},
+{
+"text": "3-4 tbsp olive oil",
+"names": [
+"olive oil"
+],
+"opt": false,
+"q": 4.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "Salt and black pepper, to taste",
+"names": [
+"salt and black pepper"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Leeks",
+"names": [
+"leeks"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "3 medium leeks, dark part removed and sliced into 1 cm half moons",
+"names": [
+"leeks"
+],
+"opt": false,
+"q": 3.0,
+"u": "",
+"c": null
+},
+{
+"text": "1 tbsp olive oil",
+"names": [
+"olive oil"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "1 tbsp plant-based butter",
+"names": [
+"plant-based butter"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "Salt and black pepper, to taste",
+"names": [
+"salt and black pepper"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Tart",
+"names": [
+"tart"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "1 sheet ready-rolled puff pastry (about 320g)",
+"names": [
+"sheet ready-rolled puff pastry"
+],
+"opt": false,
+"q": 1.0,
+"u": "",
+"c": null
+},
+{
+"text": "1 tbsp olive oil, for brushing the pastry",
+"names": [
+"olive oil"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "1 tsp onion seeds",
+"names": [
+"onion seeds"
+],
+"opt": false,
+"q": 1.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "Flaky salt",
+"names": [
+"flaky salt"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Walnut & Rosemary Crumb",
+"names": [
+"walnut & rosemary crumb"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "60g walnuts (about ½ cup), roughly chopped",
+"names": [
+"60g walnuts"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "1 tbsp fresh rosemary, finely chopped",
+"names": [
+"fresh rosemary"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "1 tbsp olive oil",
+"names": [
+"olive oil"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "2 tsp maple syrup",
+"names": [
+"maple syrup"
+],
+"opt": false,
+"q": 2.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "Flaky sea salt, to taste",
+"names": [
+"flaky sea salt"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+}
+],
+"t": 1794835934,
+"desc": "A golden, flaky puff pastry tart topped with creamy lemon and thyme tofu ricotta, sweet leeks and a crunchy walnut and rosemary crumb. Click/press on…",
+"subs": [],
+"prep": {
+"flags": [],
+"days": null,
+"freeze": false
+},
+"blender": true,
+"temp": "hot"
 },
 {
 "url": "https://cookingforpeanuts.com/creamy-lentil-barley-soup/",
@@ -31613,6 +32126,270 @@
 "Side Dish",
 "Tempeh"
 ]
+},
+{
+"url": "https://www.youtube.com/watch?v=90LmAMYlrO0",
+"title": "Easy Thanksgiving Centrepiece Everyone Will Love",
+"steps": [
+"Add the onion and mushrooms to a large frying pan with 1 tbsp water.",
+"Cover with a lid and cook over medium heat for a few minutes until they begin to soften.",
+"Remove the lid and allow any liquid to evaporate. Add the olive oil and continue cooking for 8–10 minutes until the mushrooms are nicely browned.",
+"Add the garlic, thyme, rosemary and dried sage. Cook for another minute, then stir through the Marmite and umami seasoning or porcini mushroom powder. Remove from the heat and allow the mixture to cool completely.",
+"Remove the skins from the sausages and add the sausage meat to a large mixing bowl. Add the cooked mushroom mixture, lentils, stuffing mix and dried cranberries. Mix everything together until well combined.",
+"Taste and adjust the seasoning if needed. The mixture should be firm enough to hold its shape. If it feels too wet, add a little extra stuffing mix.",
+"Preheat the oven to 200°C fan / 220°C conventional / 425°F.",
+"Unroll the puff pastry onto a lined baking tray. Cut a small square from each corner of the pastry to remove the excess and avoid too much pastry overlapping when you wrap the filling.",
+"Shape the sausage filling into a compact log down the centre of the pastry, leaving enough pastry on either side to wrap around it.",
+"Fold one side of the pastry over the filling, brush the other edge with a little plant milk and fold over to seal. Turn the roast seam-side down and tuck the ends underneath.",
+"Mix the tablespoon of plant milk with the maple syrup. Lightly score the top of the pastry with a sharp knife, being careful not to cut all the way through, then brush generously with the maple glaze.",
+"Place the assembled roast in the fridge for 20–30 minutes to chill the pastry.",
+"Bake for 35–40 minutes until deeply golden and crisp, ensuring the sausage filling is thoroughly cooked (75°C in the centre).",
+"Allow to rest for 5–10 minutes before slicing and serving with homemade red wine and cranberry gravy.",
+"STAY IN TOUCH",
+"If you love what I’m creating and want to support me, consider joining my Patreon for early access to videos, recipe PDFs, and more: https://www.patreon.com/EarthyGoodnessKitchen"
+],
+"servings": "4",
+"nut": {
+"kcal": 33,
+"protein": 0.6,
+"carbs": 7.8,
+"fat": 0.1,
+"fibre": 1.0,
+"iron": 0.5,
+"calcium": 33.6,
+"potassium": 77.7,
+"vitA": 2.7,
+"vitC": 2.6,
+"sodium": 4.2,
+"satfat": 0.0
+},
+"nutEst": true,
+"nutCov": 0.82,
+"image": "https://i2.ytimg.com/vi/90LmAMYlrO0/hqdefault.jpg",
+"source": "Earthy Goodness Kitchen",
+"author": "George",
+"minutes": null,
+"tags": [
+"Dinner",
+"Lentils"
+],
+"ing": [
+{
+"text": "Sausage & Mushroom Filling",
+"names": [
+"sausage & mushroom filling"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "270g plant-based pork sausages (6 sausages), skins removed",
+"names": [
+"270g plant-based pork sausages"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "100g cooked green or brown lentils (about ½ cup)",
+"names": [
+"100g cooked green",
+"brown lentils"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "250g portobello or chestnut mushrooms, finely diced",
+"names": [
+"250g portobello",
+"chestnut mushrooms"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "1 medium onion, finely diced (about 150g)",
+"names": [
+"onion"
+],
+"opt": false,
+"q": 1.0,
+"u": "",
+"c": null
+},
+{
+"text": "3 garlic cloves, minced",
+"names": [
+"garlic cloves"
+],
+"opt": false,
+"q": 3.0,
+"u": "clove",
+"c": null
+},
+{
+"text": "15ml olive oil (1 tbsp)",
+"names": [
+"15ml olive oil"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "2 tsp fresh thyme leaves",
+"names": [
+"fresh thyme leaves"
+],
+"opt": false,
+"q": 2.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "1 tsp finely chopped fresh rosemary",
+"names": [
+"finely chopped fresh rosemary"
+],
+"opt": false,
+"q": 1.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "½ tsp dried sage",
+"names": [
+"dried sage"
+],
+"opt": false,
+"q": 0.5,
+"u": "tsp",
+"c": null
+},
+{
+"text": "1 tsp Marmite",
+"names": [
+"marmite"
+],
+"opt": false,
+"q": 1.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "1 tsp everyday umami seasoning or porcini mushroom powder",
+"names": [
+"everyday umami seasoning",
+"porcini mushroom powder"
+],
+"opt": false,
+"q": 1.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "40g sage and onion stuffing mix (about ½ cup)",
+"names": [
+"40g sage and onion stuffing mix"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "40g dried cranberries (about ¼ cup)",
+"names": [
+"40g dried cranberries"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "½ tsp freshly ground black pepper",
+"names": [
+"freshly ground black pepper"
+],
+"opt": false,
+"q": 0.5,
+"u": "tsp",
+"c": null
+},
+{
+"text": "Salt to taste",
+"names": [
+"salt"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Pastry",
+"names": [
+"pastry"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "1 sheet ready-rolled vegan puff pastry (approximately 320g)",
+"names": [
+"sheet ready-rolled vegan puff pastry"
+],
+"opt": false,
+"q": 1.0,
+"u": "",
+"c": null
+},
+{
+"text": "1 tbsp unsweetened plant milk",
+"names": [
+"unsweetened plant milk"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "1 tbsp maple syrup",
+"names": [
+"maple syrup"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+}
+],
+"t": 1794835934,
+"desc": "A simple but delicious plant-based centrepiece, perfect for Thanksgiving or Christmas dinner. Click/press on *more* for the recipes. Join the Earthy…",
+"subs": [],
+"prep": {
+"flags": [
+"chill"
+],
+"days": null,
+"freeze": false
+},
+"blender": false,
+"temp": "hot"
 },
 {
 "url": "https://cookingforpeanuts.com/easy-tofu-marinade-recipes/",
@@ -52955,7 +53732,7 @@
 "c": null
 }
 ],
-"t": 1794235052,
+"t": 1794835928,
 "desc": "These High-Protein Zucchini Muffins are moist, gluten-free, and naturally sweetened with dates. Made with just 4 ingredients, each muffin packs 11…",
 "subs": [
 {
@@ -55611,7 +56388,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "Roasted Red Cabbage with Garlic Miso Butter & Hazelnut Crumb Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -55983,7 +56760,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "Creamy broccoli pasta with smoky and sticky tofu Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -68215,7 +68992,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "One broth recipe makes a warming noodles soup and a fragrant teriyaki tofu rice bowl. Click/press on *more* for the recipes. Join the Earthy Goodness…",
 "subs": [],
 "prep": {
@@ -72690,7 +73467,7 @@
 "image": "https://cookingforpeanuts.com/wp-content/uploads/2025/07/protein-barley-salad-featured.jpg",
 "source": "Cooking for Peanuts",
 "author": "Nisha Melvani, RDN",
-"minutes": 30,
+"minutes": 55,
 "tags": [
 "High-Protein",
 "Oil-Free"
@@ -72867,11 +73644,11 @@
 "c": null
 }
 ],
-"t": 1794233156,
-"desc": "Protein Barley Salad is a marinated, fiber-rich meal made with beans, lentils, and barley in an oil-free herb dressing. It supports cholesterol,…",
+"t": 1794835917,
+"desc": "This Protein Barley Salad combines chewy barley, hearty beans, and lentils in a fresh, tangy oil-free herb dressing. It's a satisfying meal that…",
 "subs": [
 {
-"for": "pearl barley",
+"for": "pearled barley",
 "use": [
 "hulled barley",
 "quinoa",
@@ -88867,7 +89644,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "The perfet soup to enjoy as we move into Autumn. Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -89431,7 +90208,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "Garlic and lemon sautéed greens, mega green pesto and a fragrant cabbage noodle broth. Click/press on *more* for the recipes. Join the Earthy…",
 "subs": [],
 "prep": {
@@ -90631,8 +91408,8 @@
 "c": null
 }
 ],
-"t": 1794234411,
-"desc": "A flavorful, dairy-free feta cheese alternative that’s high in protein and easy to make, this Oil-Free Tofu Feta in Brine is a must-try!",
+"t": 1794835934,
+"desc": "This Tofu Feta Recipe features tender, crumbly cubes in a tangy, herb-infused brine. High in protein, dairy-free, oil-free, and easy to make!",
 "subs": [
 {
 "for": "super firm tofu",
@@ -90656,7 +91433,7 @@
 "chill"
 ],
 "days": 5,
-"freeze": false
+"freeze": true
 },
 "blender": false,
 "temp": "cold",
@@ -95841,7 +96618,7 @@
 "c": null
 }
 ],
-"t": 1794235042,
+"t": 1794835925,
 "desc": "Super moist vegan banana bread tofu brownies. High-protein, gluten-free, rich in chocolate flavor, and sweetened with bananas and dates.",
 "subs": [],
 "prep": {
@@ -108714,7 +109491,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "With one base recipe you can create 3 delicious meals. Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -108979,7 +109756,7 @@
 "c": null
 }
 ],
-"t": 1794235115,
+"t": 1794835934,
 "desc": "I've worked as a chef for 10 years and this is why I started eating plant-based. Click/press on *more* for the recipes. Join the Earthy Goodness…",
 "subs": [],
 "prep": {

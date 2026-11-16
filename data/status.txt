@@ -1,19 +1,13 @@
-2026-11-09 14:38 UTC
+2026-11-16 13:32 UTC
 Cooking for Peanuts:
   categories page: 36 categories
-  category pages listed 550 links
-  sitemap https://cookingforpeanuts.com/sitemap_index.xml: 558 URLs
-  558 pages, 558 to check
-  not a recipe: https://cookingforpeanuts.com/vegan-protein-guide-with-recipes/
-  not a recipe: https://cookingforpeanuts.com/is-soy-healthy/
-  not a recipe: https://cookingforpeanuts.com/simple-chickpea-recipes/
-  not a recipe: https://cookingforpeanuts.com/vegan-super-bowl-recipes/
-  not a recipe: https://cookingforpeanuts.com/freeze-tofu/
-  not a recipe: https://cookingforpeanuts.com/how-to-press-tofu/
-  added/updated 538 recipes; 20 pages were not recipes; 0 errors
+  category pages listed 551 links
+  sitemap https://cookingforpeanuts.com/sitemap_index.xml: 559 URLs
+  559 pages, 5 to check
+  added/updated 5 recipes; 0 pages were not recipes; 0 errors
 Earthy Goodness Kitchen:
   No YOUTUBE_API_KEY set, so only the 15 newest videos can be read (see the setup steps for all of them)
   YouTube feed: 15 videos
   13 videos had a recipe in the description; 2 had none (e.g. Creamy Leek and Tofu Pie - The Only Recipe You Need This Fall, Why I Always Keep Cooked Lentils In My Fridge)
-Total recipes saved: 551
-Estimated nutrition for 542 recipes (average ingredient coverage 79%); nutrition found for 550 recipes; iron for 545; times for 536
+Total recipes saved: 554
+Estimated nutrition for 545 recipes (average ingredient coverage 79%); nutrition found for 553 recipes; iron for 548; times for 536
