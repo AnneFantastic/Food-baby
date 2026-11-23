@@ -137,7 +137,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "Beans and greens is the perfect easy lunch or dinner that can be easily elevated with simple ingredients. Click/press on *more* for the recipes. Join…",
 "subs": [],
 "prep": {
@@ -879,7 +879,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "These are my 5 go-to seasoning mixes for delicious plant-based cooking. Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen…",
 "subs": [],
 "prep": {
@@ -11922,7 +11922,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "Squash is in season so cook up a delicious and hearty butternut squash chili Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen…",
 "subs": [],
 "prep": {
@@ -13488,7 +13488,7 @@
 "c": null
 }
 ],
-"t": 1794234982,
+"t": 1795449089,
 "desc": "Light, creamy cauliflower cream sauce with fewer calories than traditional cream sauces. Vegan, oil-free, and full of flavor.",
 "subs": [],
 "prep": {
@@ -13505,6 +13505,125 @@
 "Soup & Stew",
 "Thanksgiving",
 "Vegan Dips & Condiments"
+]
+},
+{
+"url": "https://cookingforpeanuts.com/cauliflower-fudge/",
+"title": "Cauliflower Fudge Recipe",
+"steps": [
+"Prepare the container (optional). Line the glass container with parchment paper, leaving an overhang. (Skip this step if making a pudding.)",
+"Prepare the dates. Pit the Medjool dates and soak them in warm water for 10 minutes, or until softened. Drain well, then tear each date into small pieces so it blends smoothly into the fudge.",
+"Steam the cauliflower. Cover and steam the florets for about 12 minutes, or until a fork slides easily through the thickest pieces. Measure 2 packed cups after steaming and transfer them to the blender while still hot.",
+"Blend with the chocolate. Add the finely chopped chocolate and blend until melted and smooth. Add 2 tablespoons of water, plus more as needed, just to get the blades moving.",
+"Add the protein powder and tahini. Blend until incorporated, adding about 2 tablespoons of water or as needed, so it blends smoothly.",
+"Add the dates. Add the soaked, drained dates and blend until completely smooth. If needed, add another 1 to 2 tablespoons of water, a tablespoon at a time. Taste and blend in an additional date if you prefer it sweeter.",
+"Chill and cut. Transfer the mixture to the lined container, if making fudge. Smooth the top, and refrigerate for at least 4 hours or until firm. Lift out using the parchment and cut into 12 cubes. Remove the parchment, return the cubes to the glass container, cover, and refrigerate.",
+"For pudding, divide the blended mixture among small bowls and serve as is or chill before serving."
+],
+"servings": "12 12 servings",
+"nut": {
+"kcal": 107.0,
+"protein": 4.0,
+"carbs": 14.0,
+"fat": 7.0,
+"fibre": 3.0,
+"iron": 1.0,
+"calcium": 38.0,
+"potassium": 294.0,
+"vitA": 0.1,
+"vitC": 0.0,
+"sodium": 8.0,
+"satfat": 3.0,
+"sugar": 7.0
+},
+"nutEst": true,
+"nutCov": 0.6,
+"image": "https://cookingforpeanuts.com/wp-content/uploads/2026/11/cauliflower-fudge-featured.jpg",
+"source": "Cooking for Peanuts",
+"author": "Nisha Melvani, RDN",
+"minutes": 15,
+"tags": [
+"High-Protein",
+"Gluten-Free"
+],
+"ing": [
+{
+"text": "1/2 medium head cauliflower ((2 packed cups steamed cauliflower florets, measured after steaming))",
+"names": [
+"head cauliflower )"
+],
+"opt": false,
+"q": 0.5,
+"u": "head",
+"c": null
+},
+{
+"text": "4 ounce chocolate bar ((about 114 g, finely chopped) see notes)",
+"names": [
+"chocolate bar see notes)"
+],
+"opt": false,
+"q": 4.0,
+"u": "oz",
+"c": null
+},
+{
+"text": "1/4 cup protein powder (about 25g, or peanut butter powder)",
+"names": [
+"protein powder"
+],
+"opt": false,
+"q": 0.25,
+"u": "cup",
+"c": null
+},
+{
+"text": "2 tablespoons tahini",
+"names": [
+"tahini"
+],
+"opt": false,
+"q": 2.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "5 Medjool dates (plus more to taste)",
+"names": [
+"medjool dates"
+],
+"opt": false,
+"q": 5.0,
+"u": "",
+"c": null
+},
+{
+"text": "Water (as needed for blending)",
+"names": [
+"water"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+}
+],
+"t": 1795449093,
+"desc": "Creamy, no-bake Cauliflower Fudge with dark chocolate, Medjool dates, and 4 g protein and 3 g fiber per bite. Chill and slice or serve as pudding.",
+"subs": [],
+"prep": {
+"flags": [
+"soak",
+"chill"
+],
+"days": 4,
+"freeze": false
+},
+"blender": true,
+"temp": "hot",
+"cats": [
+"Cruciferous",
+"Healthy Vegan Treats"
 ]
 },
 {
@@ -22297,7 +22416,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "A golden, flaky puff pastry tart topped with creamy lemon and thyme tofu ricotta, sweet leeks and a crunchy walnut and rosemary crumb. Click/press on…",
 "subs": [],
 "prep": {
@@ -31271,7 +31390,7 @@
 "c": null
 }
 ],
-"t": 1794234892,
+"t": 1795449085,
 "desc": "Gluten-Free Oat Bread with Seeds and Dried Fruit is delcious, nutty, and naturally sweetened with dried fruit. An easy, healthy homemade bread with…",
 "subs": [],
 "prep": {
@@ -31286,7 +31405,8 @@
 "cats": [
 "Bread",
 "Breakfast",
-"Cholesterol Lowering Meals"
+"Cholesterol Lowering Meals",
+"Thanksgiving"
 ]
 },
 {
@@ -32378,7 +32498,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "A simple but delicious plant-based centrepiece, perfect for Thanksgiving or Christmas dinner. Click/press on *more* for the recipes. Join the Earthy…",
 "subs": [],
 "prep": {
@@ -36893,7 +37013,8 @@
 "Bread",
 "Breakfast",
 "Cholesterol Lowering Meals",
-"Quinoa"
+"Quinoa",
+"Thanksgiving"
 ]
 },
 {
@@ -46012,7 +46133,7 @@
 "c": null
 }
 ],
-"t": 1794233855,
+"t": 1795449087,
 "desc": "Soft, fluffy high-protein bread rolls made with tofu and Greek-style yogurt. No yeast, no protein powder, and easy to make.",
 "subs": [],
 "prep": {
@@ -46029,6 +46150,7 @@
 "High-Protein Vegan Meals",
 "Sandwich",
 "Side Dish",
+"Thanksgiving",
 "Tofu"
 ]
 },
@@ -56388,7 +56510,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "Roasted Red Cabbage with Garlic Miso Butter & Hazelnut Crumb Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -56760,7 +56882,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "Creamy broccoli pasta with smoky and sticky tofu Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -63603,25 +63725,25 @@
 "steps": [
 "Rinse the lentils in a sieve under running tap water, or in a bowl, until the water runs clear.",
 "Cook the lentils:Option 1 Stovetop: Transfer the lentils to a medium saucepan. Add water to cover by about 2-inches high. Cook over medium-high heat until the water comes to gentle boil. Reduce to heat to a gentle simmer and cook, partially covered, for about 25 minutes, or until the lentils lose their shape and are very tender. Stir occasionally and remove the white scum from the top with a slotted spoon. Add more water as needed to keep the lentils submerged. Option 2 Instant Pot: Transfer the lentils to the inner pot of an Instant Pot. Add 1 ½ cups water. Select the ‘Pressure Cook’ option on the ‘Low’ setting. Set the timer to 7 minutes. Manually release the pressure.",
-"Meanwhile, prepare the tarka (or temper): In a medium-large saucepan or sauté pan, heat the oil over medium-high heat. Add the cumin seeds to the hot oil and cook until fragrant (about 30 seconds), stirring frequently so they do not burn.",
-"Add the aromatics: Transfer the onion to the saucepan and cook for about 7 minutes, or until golden, adding more oil as needed. Add the garlic, ginger, coriander, cumin, turmeric, cayenne pepper, and the green chili or whole red dried chili peppers. Cook for 30 seconds more, stirring constantly, and adding more oil as needed.",
+"Meanwhile, prepare the tarka (or temper): In a medium-large saucepan or sauté pan, cook the cumin seeds over medium heat until fragrant (about 30 seconds), stirring frequently so they do not burn.",
+"Add the aromatics: Transfer the vegetable broth and onion to the saucepan and cook for about 7 minutes, or until golden, adding more oil as needed. Add the garlic, ginger, coriander, cumin, turmeric, cayenne pepper, and the green chili or whole red dried chili peppers. Cook for 30 seconds more, stirring constantly, and adding more broth (or oil) as needed.",
 "Combine: Stir in the tomatoes and cook for 2 minutes more, stirring frequently. Transfer the undrained cooked red lentils to the saucepan and mix to combine. Add about 1 cup more water or the amount needed until the desired consistency, plus the vegan butter (if using). Simmer for about 5 minutes or until the desired consistency.",
-"Season: Add fresh lemon juice, cashew yogurt, garam masala (if using), and salt to taste. Mix to combine. Garnish with chopped cilantro, and hemp seeds (if using)."
+"Season: Add fresh lemon juice, cashew yogurt, garam masala, and salt to taste. Mix to combine. Garnish with chopped cilantro, and hemp seeds (if using)."
 ],
 "servings": "3 3 people",
 "nut": {
-"kcal": 388.0,
+"kcal": 334.0,
 "protein": 20.0,
 "carbs": 50.0,
-"fat": 13.0,
+"fat": 7.0,
 "fibre": 22.0,
 "iron": 7.0,
 "calcium": 114.0,
-"potassium": 871.0,
+"potassium": 872.0,
 "vitA": 5.2,
 "vitC": 5.7,
-"sodium": 65.0,
-"satfat": 2.0,
+"sodium": 95.0,
+"satfat": 1.0,
 "sugar": 6.0
 },
 "nutEst": true,
@@ -63646,16 +63768,6 @@
 "c": null
 },
 {
-"text": "2 tablespoon olive oil (or neutral cooking oil, plus more to taste)",
-"names": [
-"olive oil"
-],
-"opt": false,
-"q": 2.0,
-"u": "tbsp",
-"c": null
-},
-{
 "text": "1 teaspoon cumin seeds",
 "names": [
 "cumin seeds"
@@ -63663,6 +63775,16 @@
 "opt": false,
 "q": 1.0,
 "u": "tsp",
+"c": null
+},
+{
+"text": "2 tablespoon vegetable broth (or neutral cooking oil, plus more to taste)",
+"names": [
+"vegetable broth"
+],
+"opt": false,
+"q": 2.0,
+"u": "tbsp",
 "c": null
 },
 {
@@ -63826,9 +63948,15 @@
 "c": null
 }
 ],
-"t": 1794234123,
+"t": 1795449091,
 "desc": "This easy Masoor Dal recipe is protein-rich, healthy, vegan, and flavorful. Made with easy-to-find ingredients. Quick and meal-prep friendly, with…",
 "subs": [
+{
+"for": "oil",
+"use": [
+"vegetable broth instead for oil-free"
+]
+},
 {
 "for": "tomatoes",
 "use": [
@@ -65619,19 +65747,19 @@
 ],
 "servings": "6 6 servings",
 "nut": {
-"kcal": 376.0,
+"kcal": 368.0,
 "protein": 17.0,
-"carbs": 47.0,
+"carbs": 44.0,
 "fat": 16.0,
 "fibre": 15.0,
 "iron": 5.0,
-"calcium": 117.0,
-"potassium": 524.0,
+"calcium": 108.0,
+"potassium": 485.0,
 "vitA": 121.2,
 "vitC": 45.4,
-"sodium": 181.0,
+"sodium": 180.0,
 "satfat": 2.0,
-"sugar": 5.0
+"sugar": 4.0
 },
 "nutEst": true,
 "nutCov": 0.85,
@@ -65785,7 +65913,7 @@
 "c": null
 }
 ],
-"t": 1794233999,
+"t": 1795449083,
 "desc": "This savory high-protein Miso Vegetable Oats recipe is a nutrient-dense powerhouse, perfect for a hearty breakfast.",
 "subs": [
 {
@@ -67580,170 +67708,6 @@
 ]
 },
 {
-"url": "https://cookingforpeanuts.com/oats-chia-seeds-yogurt/",
-"title": "Oats with Chia Seeds & Yogurt Recipe",
-"steps": [
-"Assemble the base: In a bowl or jar, combine the cooked oats, non-dairy milk, ground chia seeds, flaxseed meal, Greek-style yogurt, and blueberries. Stir well until everything is evenly mixed.",
-"Add strawberries last: Top with the fresh chopped strawberries.",
-"Optional for serving: Add pumpkin seeds and a drizzle of maple or date syrup."
-],
-"servings": "1 1 serving",
-"nut": {
-"kcal": 502.0,
-"protein": 31.0,
-"carbs": 59.0,
-"fat": 18.0,
-"fibre": 14.0,
-"iron": 5.0,
-"calcium": 284.0,
-"potassium": 862.0,
-"vitA": 10.7,
-"vitC": 13.1,
-"sodium": 223.0,
-"satfat": 2.0,
-"sugar": 11.0
-},
-"nutEst": true,
-"nutCov": 1.0,
-"image": "https://cookingforpeanuts.com/wp-content/uploads/2025/07/chia-seed-oatmeal-protein-featured.jpg",
-"source": "Cooking for Peanuts",
-"author": "Nisha Melvani, RDN",
-"minutes": 10,
-"tags": [
-"High-Protein"
-],
-"ing": [
-{
-"text": "1/3 cup cooked oats (oat groats, steel cut oats, or uncooked rolled oats (see notes))",
-"names": [
-"cooked oats )"
-],
-"opt": false,
-"q": 0.3333333333333333,
-"u": "cup",
-"c": null
-},
-{
-"text": "1 tablespoon chia seeds (ground)",
-"names": [
-"chia seeds"
-],
-"opt": false,
-"q": 1.0,
-"u": "tbsp",
-"c": null
-},
-{
-"text": "2 teaspoons flaxseed meal (or ground flaxseed)",
-"names": [
-"flaxseed meal"
-],
-"opt": false,
-"q": 2.0,
-"u": "tsp",
-"c": null
-},
-{
-"text": "1/3 cup unsweetened nondairy milk (see notes)",
-"names": [
-"unsweetened nondairy milk"
-],
-"opt": false,
-"q": 0.3333333333333333,
-"u": "cup",
-"c": null
-},
-{
-"text": "3/4 cup Greek-style yogurt (or plain yogurt or silken tofu)",
-"names": [
-"greek-style yogurt"
-],
-"opt": false,
-"q": 0.75,
-"u": "cup",
-"c": null
-},
-{
-"text": "1/2 cup blueberries",
-"names": [
-"blueberries"
-],
-"opt": false,
-"q": 0.5,
-"u": "cup",
-"c": null
-},
-{
-"text": "1/2 cup strawberries",
-"names": [
-"strawberries"
-],
-"opt": false,
-"q": 0.5,
-"u": "cup",
-"c": null
-},
-{
-"text": "Drizzle of date syrup (or maple syrup)",
-"names": [
-"drizzle of date syrup"
-],
-"opt": false,
-"q": null,
-"u": "",
-"c": null
-},
-{
-"text": "Pumpkin seeds",
-"names": [
-"pumpkin seeds"
-],
-"opt": false,
-"q": null,
-"u": "",
-"c": null
-}
-],
-"t": 1794233142,
-"desc": "Oats with Chia Seeds & Yogurt recipe is the perfect balance of protein, fiber, and healthy fats to keep your blood sugar steady, support heart and…",
-"subs": [
-{
-"for": "oat groats",
-"use": [
-"cooked steel-cut oats",
-"rolled oats"
-]
-},
-{
-"for": "ground chia seeds",
-"use": [
-"basil seeds instead"
-]
-},
-{
-"for": "unsweetened plant-based greek-style yogurt",
-"use": [
-"any plant-based yogurt you like",
-"but greek-style has the most protein"
-]
-}
-],
-"prep": {
-"flags": [],
-"days": 4,
-"freeze": false
-},
-"blender": false,
-"temp": "cold",
-"cats": [
-"Breakfast",
-"Chia Pudding",
-"Cholesterol Lowering Meals",
-"Easy Vegan Recipes for Protein",
-"High-Protein Vegan Meals"
-]
-},
-{
 "url": "https://cookingforpeanuts.com/pesto-without-nuts/",
 "title": "Oil-Free & Nut-Free Pesto Recipe",
 "steps": [
@@ -68992,7 +68956,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "One broth recipe makes a warming noodles soup and a fragrant teriyaki tofu rice bowl. Click/press on *more* for the recipes. Join the Earthy Goodness…",
 "subs": [],
 "prep": {
@@ -70421,6 +70385,170 @@
 "Breakfast",
 "Chia Pudding",
 "Cholesterol Lowering Meals"
+]
+},
+{
+"url": "https://cookingforpeanuts.com/oats-chia-seeds-yogurt/",
+"title": "Overnight Oats with Yogurt and Chia Seeds",
+"steps": [
+"Assemble the base: In a bowl or jar, combine the cooked oats, non-dairy milk, ground chia seeds, flaxseed meal, Greek-style yogurt, and blueberries. Stir well until everything is evenly mixed.",
+"Add strawberries last: Top with the fresh chopped strawberries.",
+"Optional for serving: Add pumpkin seeds and a drizzle of maple or date syrup."
+],
+"servings": "1 1 serving",
+"nut": {
+"kcal": 502.0,
+"protein": 31.0,
+"carbs": 59.0,
+"fat": 18.0,
+"fibre": 14.0,
+"iron": 5.0,
+"calcium": 284.0,
+"potassium": 862.0,
+"vitA": 10.7,
+"vitC": 13.1,
+"sodium": 223.0,
+"satfat": 2.0,
+"sugar": 11.0
+},
+"nutEst": true,
+"nutCov": 1.0,
+"image": "https://cookingforpeanuts.com/wp-content/uploads/2025/07/chia-seed-oatmeal-protein-featured.jpg",
+"source": "Cooking for Peanuts",
+"author": "Nisha Melvani, RDN",
+"minutes": 10,
+"tags": [
+"High-Protein"
+],
+"ing": [
+{
+"text": "1/3 cup cooked oats (oat groats, steel cut oats, or uncooked rolled oats (see notes))",
+"names": [
+"cooked oats )"
+],
+"opt": false,
+"q": 0.3333333333333333,
+"u": "cup",
+"c": null
+},
+{
+"text": "1 tablespoon chia seeds (ground)",
+"names": [
+"chia seeds"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "2 teaspoons flaxseed meal (or ground flaxseed)",
+"names": [
+"flaxseed meal"
+],
+"opt": false,
+"q": 2.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "1/3 cup unsweetened nondairy milk (see notes)",
+"names": [
+"unsweetened nondairy milk"
+],
+"opt": false,
+"q": 0.3333333333333333,
+"u": "cup",
+"c": null
+},
+{
+"text": "3/4 cup Greek-style yogurt (or plain yogurt or silken tofu)",
+"names": [
+"greek-style yogurt"
+],
+"opt": false,
+"q": 0.75,
+"u": "cup",
+"c": null
+},
+{
+"text": "1/2 cup blueberries",
+"names": [
+"blueberries"
+],
+"opt": false,
+"q": 0.5,
+"u": "cup",
+"c": null
+},
+{
+"text": "1/2 cup strawberries",
+"names": [
+"strawberries"
+],
+"opt": false,
+"q": 0.5,
+"u": "cup",
+"c": null
+},
+{
+"text": "Drizzle of date syrup (or maple syrup)",
+"names": [
+"drizzle of date syrup"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Pumpkin seeds",
+"names": [
+"pumpkin seeds"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+}
+],
+"t": 1795449081,
+"desc": "Overnight Oats with Yogurt and Chia Seeds are creamy and bursting with blueberries. Protein and fiber-rich for gut, heart, and bone health.",
+"subs": [
+{
+"for": "oat groats",
+"use": [
+"cooked steel-cut oats",
+"rolled oats"
+]
+},
+{
+"for": "ground chia seeds",
+"use": [
+"basil seeds instead"
+]
+},
+{
+"for": "unsweetened plant-based greek-style yogurt",
+"use": [
+"any plant-based yogurt you like",
+"but greek-style has the most protein"
+]
+}
+],
+"prep": {
+"flags": [],
+"days": 4,
+"freeze": false
+},
+"blender": false,
+"temp": "cold",
+"cats": [
+"Breakfast",
+"Chia Pudding",
+"Cholesterol Lowering Meals",
+"Easy Vegan Recipes for Protein",
+"High-Protein Vegan Meals"
 ]
 },
 {
@@ -78808,6 +78936,361 @@
 ]
 },
 {
+"url": "https://cookingforpeanuts.com/roasted-cauliflower-salad/",
+"title": "Roasted Cauliflower Salad Recipe",
+"steps": [
+"Preheat the oven: Heat to 425°F. Line two large rimmed baking sheets with parchment paper rated for this temperature, or use nonstick baking sheets. Have a third tray ready for the kale and onion. If your oven cannot comfortably accommodate three trays, roast the kale and onion after the lentils finish.",
+"Cut the cauliflower: Remove the leaves and turn the cauliflower stem-side up. Use a paring knife to cut around and remove the tough central core. Separate into medium florets, then slice larger florets through their stems to create flat sides.",
+"Smash the garlic: Place each peeled clove on a cutting board beneath the flat side of a chef’s knife, with the sharp edge facing away from you. Press gently with the heel of your hand until the clove cracks but remains mostly intact.",
+"Prepare the onion, kale, and dates: Trim the onion’s stem end, then cut in half through the root. Peel away the papery skin. Place each half cut-side down and slice lengthwise into thin, even strips, about 1/4 inch thick. Discard the root end and separate the layers. Wash and thoroughly dry the kale so it roasts rather than steams. Pull each date open lengthwise, remove the pit and any hard stem cap, and tear into medium pieces.",
+"Season the cauliflower: In a large bowl, toss the cauliflower and smashed garlic with the olive oil—or lemon juice for oil-free—smoked paprika, coriander, cumin, salt, and black pepper. Spread on one baking sheet, placing the cauliflower flat sides down. Arrange larger florets around the edges, where the pan tends to get hotter, and smaller pieces toward the center. Leave space between the florets.",
+"Season the lentils: Pat the lentils thoroughly dry with a clean dish towel. Toss directly on the second baking sheet with the olive oil—or lemon juice for oil-free—garlic powder, salt, and black pepper. Spread in a thin, even layer.",
+"Start roasting: Place the lentils on the upper rack and the cauliflower on the lower rack. Roast for 15 minutes. Stir the lentils and scatter the torn dates across their tray. Return to the oven for another 7–15 minutes, checking the dates after 5 minutes. Remove the dates when warm and sticky and the lentils when dry and lightly crisp at the edges. Transfer either ingredient off the tray early as needed; the lentils will firm up further as they cool.",
+"Finish the cauliflower: After 20 minutes of total roasting time, turn the cauliflower and flip the garlic. Remove any garlic cloves that are already deeply golden. Continue roasting for 10–15 minutes, until the cauliflower is tender and browned in spots. Check the remaining garlic frequently and remove before it burns.",
+"Roast the kale and onion: Toss the thoroughly dried kale and sliced onion directly on the third baking sheet with the olive oil—or lemon juice for oil-free—garlic powder, salt, and black pepper. Spread evenly without tightly packing the leaves. Roast for 5–7 minutes, checking early, until the kale is just softened and the onion’s sharpness has mellowed. If the kale finishes first, remove it and give the onion a few more minutes as needed.",
+"Make the dressing: Add the tahini, artichoke hearts, lemon juice, raw garlic, nutritional yeast, mustard, capers, black pepper, and cold water to a blender or wide-mouth jar. Blend until completely smooth, using an immersion blender if working in a jar. Add water a tablespoon at a time until creamy and pourable. Taste and add the optional caper brine, more lemon juice, or salt as needed.",
+"Assemble: Let the roasted vegetables cool slightly. Arrange the kale and onion on a platter and top with the cauliflower, roasted garlic, and dates. Drizzle with dressing, then scatter the lentils over the top. Alternatively, combine everything in a large bowl and toss with dressing. Finish with Aleppo pepper, if using, and serve the remaining dressing alongside."
+],
+"servings": "5 5 servings",
+"nut": {
+"kcal": 449.0,
+"protein": 27.0,
+"carbs": 72.0,
+"fat": 8.0,
+"fibre": 23.0,
+"iron": 8.0,
+"calcium": 186.0,
+"potassium": 735.0,
+"vitA": 257.2,
+"vitC": 130.1,
+"sodium": 287.0,
+"satfat": 1.0,
+"sugar": 17.0
+},
+"nutEst": true,
+"nutCov": 0.8,
+"image": "https://cookingforpeanuts.com/wp-content/uploads/2026/11/roasted-cauliflower-salad-featured.jpg",
+"source": "Cooking for Peanuts",
+"author": "Nisha Melvani, RDN",
+"minutes": 50,
+"tags": [
+"High-Protein"
+],
+"ing": [
+{
+"text": "1 medium head cauliflower",
+"names": [
+"head cauliflower"
+],
+"opt": false,
+"q": 1.0,
+"u": "head",
+"c": null
+},
+{
+"text": "6 large cloves garlic (peeled)",
+"names": [
+"cloves garlic"
+],
+"opt": false,
+"q": 6.0,
+"u": "clove",
+"c": null
+},
+{
+"text": "Drizzle of lemon juice (or avocado or olive oil, plus more only as needed)",
+"names": [
+"drizzle of lemon juice"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "1 teaspoon smoked paprika",
+"names": [
+"smoked paprika"
+],
+"opt": false,
+"q": 1.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "½ teaspoon ground coriander",
+"names": [
+"ground coriander"
+],
+"opt": false,
+"q": 0.5,
+"u": "tsp",
+"c": null
+},
+{
+"text": "½ teaspoon ground cumin",
+"names": [
+"ground cumin"
+],
+"opt": false,
+"q": 0.5,
+"u": "tsp",
+"c": null
+},
+{
+"text": "Salt and freshly ground black pepper (to taste)",
+"names": [
+"salt and freshly ground black pepper"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "2 cups cooked Puy lentils (or black lentils, or French green lentils, drained and rinsed)",
+"names": [
+"cooked puy lentils"
+],
+"opt": false,
+"q": 2.0,
+"u": "cup",
+"c": null
+},
+{
+"text": "Drizzle of lemon juice (or avocado or olive oil)",
+"names": [
+"drizzle of lemon juice"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "½ teaspoon garlic powder",
+"names": [
+"garlic powder"
+],
+"opt": false,
+"q": 0.5,
+"u": "tsp",
+"c": null
+},
+{
+"text": "Salt and freshly ground black pepper (to taste (see notes))",
+"names": [
+"salt and freshly ground black pepper )"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "4 large Medjool dates",
+"names": [
+"medjool dates"
+],
+"opt": false,
+"q": 4.0,
+"u": "",
+"c": null
+},
+{
+"text": "6 cups chopped kale (tough stems removed)",
+"names": [
+"chopped kale"
+],
+"opt": false,
+"q": 6.0,
+"u": "cup",
+"c": null
+},
+{
+"text": "1 small red onion",
+"names": [
+"red onion"
+],
+"opt": false,
+"q": 1.0,
+"u": "",
+"c": null
+},
+{
+"text": "Drizzle of lemon juice (or avocado or olive oil)",
+"names": [
+"drizzle of lemon juice"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "¼ teaspoon garlic powder",
+"names": [
+"garlic powder"
+],
+"opt": false,
+"q": 0.25,
+"u": "tsp",
+"c": null
+},
+{
+"text": "Salt and freshly ground black pepper (to taste (see notes))",
+"names": [
+"salt and freshly ground black pepper )"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "¼ cup tahini",
+"names": [
+"tahini"
+],
+"opt": false,
+"q": 0.25,
+"u": "cup",
+"c": null
+},
+{
+"text": "½ cup drained artichoke hearts (packed in water or brine, or frozen and thawed)",
+"names": [
+"drained artichoke hearts"
+],
+"opt": false,
+"q": 0.5,
+"u": "cup",
+"c": null
+},
+{
+"text": "2 to 3 tablespoons fresh lemon juice (plus more to taste)",
+"names": [
+"to 3 tablespoons fresh lemon juice"
+],
+"opt": false,
+"q": 3.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "1 small clove garlic",
+"names": [
+"clove garlic"
+],
+"opt": false,
+"q": 1.0,
+"u": "clove",
+"c": null
+},
+{
+"text": "1 tablespoon nutritional yeast (plus more to taste)",
+"names": [
+"nutritional yeast"
+],
+"opt": false,
+"q": 1.0,
+"u": "tbsp",
+"c": null
+},
+{
+"text": "2 teaspoons Dijon ( or whole-grain mustard)",
+"names": [
+"dijon"
+],
+"opt": false,
+"q": 2.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "2 teaspoons drained capers",
+"names": [
+"drained capers"
+],
+"opt": false,
+"q": 2.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "1 teaspoon caper brine (optional)",
+"names": [
+"caper brine"
+],
+"opt": true,
+"q": 1.0,
+"u": "tsp",
+"c": null
+},
+{
+"text": "½ teaspoon freshly ground black pepper",
+"names": [
+"freshly ground black pepper"
+],
+"opt": false,
+"q": 0.5,
+"u": "tsp",
+"c": null
+},
+{
+"text": "¼ cup cold water (plus more as needed)",
+"names": [
+"cold water"
+],
+"opt": false,
+"q": 0.25,
+"u": "cup",
+"c": null
+},
+{
+"text": "Salt (to taste (see notes))",
+"names": [
+"salt )"
+],
+"opt": false,
+"q": null,
+"u": "",
+"c": null
+},
+{
+"text": "Aleppo pepper (or red pepper flakes (optional_)",
+"names": [
+"aleppo pepper"
+],
+"opt": true,
+"q": null,
+"u": "",
+"c": null
+}
+],
+"t": 1795449076,
+"desc": "Roasted cauliflower salad with crispy lentils, sticky dates, and creamy lemon dressing. Perfect for Thanksgiving or meal-prep lunches and dinners.",
+"subs": [],
+"prep": {
+"flags": [],
+"days": 4,
+"freeze": false
+},
+"blender": true,
+"temp": "either",
+"cats": [
+"Cruciferous",
+"Dinner",
+"High-Protein Vegan Meals",
+"Holiday",
+"Lentil",
+"Salad",
+"Side Dish",
+"Thanksgiving",
+"Veggie Bowls"
+]
+},
+{
 "url": "https://cookingforpeanuts.com/roasted-chickpea-veggie-bowl/",
 "title": "Roasted Chickpea & Veggie Bowl",
 "steps": [
@@ -82714,7 +83197,7 @@
 "c": null
 }
 ],
-"t": 1794234921,
+"t": 1795449095,
 "desc": "Silken Tofu Mousse is a healthy chocolate dessert packed with protein and fiber. Rich, creamy, naturally sweetened, and easy to meal prep.",
 "subs": [],
 "prep": {
@@ -89644,7 +90127,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "The perfet soup to enjoy as we move into Autumn. Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -90208,7 +90691,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "Garlic and lemon sautéed greens, mega green pesto and a fragrant cabbage noodle broth. Click/press on *more* for the recipes. Join the Earthy…",
 "subs": [],
 "prep": {
@@ -97979,7 +98462,7 @@
 "c": null
 }
 ],
-"t": 1794235063,
+"t": 1795449078,
 "desc": "Creamy vegan Caesar dressing with tahini and artichoke hearts. No mayo, cashews, or added oil. Blend in a jar in just 5 minutes!",
 "subs": [],
 "prep": {
@@ -103741,7 +104224,7 @@
 },
 "nutEst": true,
 "nutCov": 0.83,
-"image": "https://cookingforpeanuts.com/wp-content/uploads/2025/11/spinach-and-artichoke-dip-featured.jpg",
+"image": "https://cookingforpeanuts.com/wp-content/uploads/2026/11/spinach-artichoke-dip-canva-featured.jpg",
 "source": "Cooking for Peanuts",
 "author": "Nisha Melvani, RDN",
 "minutes": 25,
@@ -103902,8 +104385,8 @@
 "c": null
 }
 ],
-"t": 1794233313,
-"desc": "High-Protein Vegan Spinach and Artichoke Dip with a creamy texture, savory depth, and functional ingredients. It hits every mark for taste and…",
+"t": 1795449098,
+"desc": "This Vegan Spinach Artichoke Dip is thick and creamy, with flecks of artichoke hearts, plenty of garlic, and a cheesy flavor without dairy.",
 "subs": [],
 "prep": {
 "flags": [],
@@ -109491,7 +109974,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "With one base recipe you can create 3 delicious meals. Click/press on *more* for the recipes. Join the Earthy Goodness Kitchen Community:…",
 "subs": [],
 "prep": {
@@ -109756,7 +110239,7 @@
 "c": null
 }
 ],
-"t": 1794835934,
+"t": 1795449098,
 "desc": "I've worked as a chef for 10 years and this is why I started eating plant-based. Click/press on *more* for the recipes. Join the Earthy Goodness…",
 "subs": [],
 "prep": {

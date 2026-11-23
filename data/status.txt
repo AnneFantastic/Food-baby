@@ -1,13 +1,13 @@
-2026-11-16 13:32 UTC
+2026-11-23 15:51 UTC
 Cooking for Peanuts:
   categories page: 36 categories
-  category pages listed 551 links
-  sitemap https://cookingforpeanuts.com/sitemap_index.xml: 559 URLs
-  559 pages, 5 to check
-  added/updated 5 recipes; 0 pages were not recipes; 0 errors
+  category pages listed 553 links
+  sitemap https://cookingforpeanuts.com/sitemap_index.xml: 561 URLs
+  561 pages, 11 to check
+  added/updated 11 recipes; 0 pages were not recipes; 0 errors
 Earthy Goodness Kitchen:
   No YOUTUBE_API_KEY set, so only the 15 newest videos can be read (see the setup steps for all of them)
   YouTube feed: 15 videos
-  13 videos had a recipe in the description; 2 had none (e.g. Creamy Leek and Tofu Pie - The Only Recipe You Need This Fall, Why I Always Keep Cooked Lentils In My Fridge)
-Total recipes saved: 554
-Estimated nutrition for 545 recipes (average ingredient coverage 79%); nutrition found for 553 recipes; iron for 548; times for 536
+  12 videos had a recipe in the description; 3 had none (e.g. Why I Always Keep Roast Squash In My Fridge, Creamy Leek and Tofu Pie - The Only Recipe You Need This Fall, Why I Always Keep Cooked Lentils In My Fridge)
+Total recipes saved: 556
+Estimated nutrition for 547 recipes (average ingredient coverage 79%); nutrition found for 555 recipes; iron for 550; times for 538
